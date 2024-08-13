@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>GT FANTASY CHECKER</title>
+</head>
+<body>
+    <header>
+        <h1>GameTime Fantasy Score Calculator <a href="https://emoji.gg/emoji/3181_lfg"><img src="https://cdn3.emoji.gg/emojis/3181_lfg.png" width="64px" height="64px" alt="lfg"></a></h1>
+    </header>
+    <div class="sports-selection">
+        <p>NBA/WNBA</p>
+        <p>MLB - PITCHER</p>
+        <p>MLB - HITTER</p>
+        <p>NFL - OFFENSIVE</p>
+        <p>NFL - DEFENSIVE</p>
+        <p>TENNIS</p>
+        <p>MMA</p>
+        <p>BOXING</p>
+        <p>NASCAR</p>
+    </div>
+
+    <div>
+        <h2>NBA/WNBA Fantasy Score</h2>
+        <ul>
+            <li>Points: 1 pt <span id="bball-points-val"></span></li> 
+            <input type="number" name="bball-points" id="bball-pts" class="bball-fs" />
+            <li>Rebound: 1.2 pts <span id="bball-rebounds-val"></span></li> 
+            <input type="number" name="bball-rebounds" id="bball-rebs" class="bball-fs">
+            <li>Assist: 1.5 pts <span id="bball-assists-val"></span></li> 
+            <input type="number" name="bball-assists" id="bball-asst" class="bball-fs">
+            <li>Block: 3 pts <span id="bball-blocks-val"></span></li> 
+            <input type="number" name="bball-blocks" id="bball-blk" class="bball-fs">
+            <li>Steal: 3 pts <span id="bball-steals-val"></span></li> 
+            <input type="number" name="bball-steals" id="bball-stl" class="bball-fs">
+            <li>Turnover: -1 pt <span id="bball-turnovers-val"></span></li> 
+            <input type="number" name="bball-turnovers" id="bball-to" class="bball-fs">
+        </ul>
+        <button id="bball-btn">Go</button>
+        <p>TOTAL: <span id="bball-total-fs"></span> Fantasy Score</p>
+    </div>
+
+    <div>
+        <h2>MLB Pitcher Fantasy Score</h2>
+        <ul>
+            <li>Win: 6 pts <span id="bsballp-win-val"></span></li> 
+            <input type="number" name="bsballp-win" id="bsballp-win">
+            <li>Quality Start: 4 pts <span id="bsballp-qs-val"></span></li> 
+            <input type="number" name="bsballp-quality-start" id="bsballp-qs">
+            <li>Earned Run: -3 pt <span id="bsballp-er-val"></span></li> 
+            <input type="number" name="bsballp-earned-run" id="bsballp-er">
+            <li>Strikeout: 3 pts <span id="bsballp-k-val"></span></li> 
+            <input type="number" name="bsballp-strikeout" id="bsballp-k">
+            <li>Out: 1 pt <span id="bsballp-out-val"></span></li> 
+            <input type="number" name="bsballp-out" id="bsballp-out">
+        </ul>
+        <button id="bsballp-btn">Go</button>
+        <p>TOTAL: <span id="bsballp-total-fs"></span> Fantasy Score</p>
+    </div>
+
+    <div>
+        <h2>MLB Hitter Fantasy Score</h2>
+        <ul>
+            <li>Single: (3 pts)</li> <input type="number" name="" id="">
+            <li>Double: (5 pts)</li> <input type="number" name="" id="">
+            <li>Triple: (8 pts)</li> <input type="number" name="" id="">
+            <li>Home Run: (10 pts)</li> <input type="number" name="" id="">
+            <li>Run: (2 pts)</li> <input type="number" name="" id="">
+            <li>Run Batted In: (2 pts)</li> <input type="number" name="" id="">
+            <li>Base on Balls: (2 pts)</li> <input type="number" name="" id="">
+            <li>Hit By Pitch: (2 pts)</li> <input type="number" name="" id="">
+            <li>Stolen Base: (5 pts)</li> <input type="number" name="" id="">
+        </ul>
+        <p>TOTAL: 0 Fantasy Score</p>
+    </div>
+
+    <div>
+        <h2>MLB Hitter Fantasy Score</h2>
+        <ul>
+            <li>Single: (3 pts)</li> <input type="number" name="" id="">
+            <li>Double: (5 pts)</li> <input type="number" name="" id="">
+            <li>Triple: (8 pts)</li> <input type="number" name="" id="">
+            <li>Home Run: (10 pts)</li> <input type="number" name="" id="">
+            <li>Run: (2 pts)</li> <input type="number" name="" id="">
+            <li>Run Batted In: (2 pts)</li> <input type="number" name="" id="">
+            <li>Base on Balls: (2 pts)</li> <input type="number" name="" id="">
+            <li>Hit By Pitch: (2 pts)</li> <input type="number" name="" id="">
+            <li>Stolen Base: (5 pts)</li> <input type="number" name="" id="">
+        </ul>
+        <p>TOTAL: 0 Fantasy Score</p>
+    </div>
+
+    <div>
+        <h2>NFL Offensive Fantasy Score</h2>
+        <ul>
+            <li>Passing Yards: (0.04 pts per yard)</li> <input type="number" name="" id="">
+            <li>Passing TDs: (4 pts)</li> <input type="number" name="" id="">
+            <li>Interceptions: (-1 pt)</li> <input type="number" name="" id="">
+            <li>Rushing Yards: (0.1 pts per yard)</li> <input type="number" name="" id="">
+            <li>Rushing TDs: (6 pts)</li> <input type="number" name="" id="">
+            <li>Receiving Yards: (0.1 pts per yard)</li> <input type="number" name="" id="">
+            <li>Receiving TDs: (6 pts)</li> <input type="number" name="" id="">
+            <li>Receptions: (1 pt)</li> <input type="number" name="" id="">
+            <li>Fumbles Lost: (-1 pt)</li> <input type="number" name="" id="">
+            <li>2 Point Conversions: (2 pts)</li> <input type="number" name="" id="">
+            <li>Offensive Fumble Recovery Touchdown: (6 pts)</li> <input type="number" name="" id="">
+            <li>Kick/Punt/Field Goal Return Touchdown: (6 pts)</li> <input type="number" name="" id="">
+        </ul>
+        <p>TOTAL: 0 Fantasy Score</p>
+    </div>
+
+    <div>
+        <h2>NFL Defensive Fantasy Score</h2>
+        <ul>
+            <li>Sack: (1 pt)</li> <input type="number" name="" id="">
+            <li>Interception: (2 pts)</li> <input type="number" name="" id="">
+            <li>Fubmle Recovery: (2 pts)</li> <input type="number" name="" id="">
+            <li>Punt/Kickoff/FG Return for TD: (6 pts)</li> <input type="number" name="" id="">
+            <li>Interception Return TD: (6 pts)</li> <input type="number" name="" id="">
+            <li>Fumble Recovery TD: (6 pts)</li> <input type="number" name="" id="">
+            <li>Blocked Punt or FG Return TD: (6 pts)</li> <input type="number" name="" id="">
+            <li>Safety: (2 pts)</li> <input type="number" name="" id="">
+            <li>Blocked Kick: (2 pts)</li> <input type="number" name="" id="">
+            <li>2 Point Conversions/Extra Point Returns: (2 pts)</li> <input type="number" name="" id="">
+            <li>0 Point Allowed: (10 pts)</li> <input type="number" name="" id="">
+            <li>1-6 Points Allowed: (7 pts)</li> <input type="number" name="" id="">
+            <li>7-13 Points Allowed: (4 pts)</li> <input type="number" name="" id="">
+            <li>14-20 Points Allowed: (1 pt)</li> <input type="number" name="" id="">
+            <li>21-27 Points Allowed: (0 pt)</li> <input type="number" name="" id="">
+            <li>28-34 Points Allowed: (-1 pts)</li> <input type="number" name="" id="">
+            <li>35+ Point Allowed: (-4 pts)</li> <input type="number" name="" id="">
+            
+        </ul>
+        <p>TOTAL: 0 Fantasy Score</p>
+    </div>
+
+    
+    
+    <script type="module" src="./app.js"></script>
+<!-- <script>
+        // NBA/WNBA FANTASY SCORE
+
+// const bballFantasyScore = document.querySelector("#bball-total-fs");
+
+// const bballPoints = document.getElementById("bball-pts");
+// const bballRebound = document.getElementById("bball-rebs");
+// const bballAssist = document.getElementById("bball-asst");
+// const bballBlock = document.getElementById("bball-blk");
+// const bballSteal = document.getElementById("bball-stl");
+// const bballTurnover = document.getElementById("bball-to");
+
+// var buttonBball = document.querySelector("#bball-btn")
+
+// buttonBball.addEventListener('click', () => {
+//     let bballFantasy = Number(bballPoints.value) + 
+//                        Number(bballRebound.value) * 1.2 + 
+//                        Number(bballAssist.value) * 1.5 + 
+//                        Number(bballBlock.value) * 3 + 
+//                        Number(bballSteal.value) * 3 + 
+//                        Number(bballTurnover.value) * -1
+
+//     bballFantasyScore.innerHTML = bballFantasy;
+
+//     document.querySelector("#bball-points-val").innerHTML = "= " + Number(bballPoints.value)
+//     document.querySelector("#bball-rebounds-val").innerHTML = "= " + Number(bballRebound.value) * 1.2
+//     document.querySelector("#bball-assists-val").innerHTML = "= " + Number(bballAssist.value) * 1.5
+//     document.querySelector("#bball-blocks-val").innerHTML = "= " + Number(bballBlock.value) * 3
+//     document.querySelector("#bball-steals-val").innerHTML = "= " + Number(bballSteal.value) * 3
+//     document.querySelector("#bball-turnovers-val").innerHTML = "= " + Number(bballTurnover.value) * -1
+//   });
+//  
+</script> -->
+
+</body>
+</html>

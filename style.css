@@ -1,0 +1,41 @@
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+      
+  /* Fixed width container class that will "auto-center" itself */
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn {
+      box-shadow: 2px 2px 1px black;
+  }
+  
+  .btn:hover {
+      cursor: pointer;
+  }
+  
+  /* Navbar class that will stick to the top when page is scrolled down */
+  .navbar {
+      position: sticky;
+      top: 0px;
+  }
+  
+  /* Containers with .row and .col classes that will center-align the items inside */
+  .row, .col {
+      display: flex;
+      align-items: center;
+  }
+
+.sports-selection p {
+    border: 1px solid blue;
+    display: inline-block;
+    padding: 8px;
+}
