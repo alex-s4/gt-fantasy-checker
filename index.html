@@ -15,7 +15,7 @@
         <p>MLB - PITCHER</p>
         <p>MLB - HITTER</p>
         <p>NFL - OFFENSIVE</p>
-        <p>NFL - DEFENSIVE</p>
+        <p>NFL - DST</p>
         <p>TENNIS</p>
         <p>MMA</p>
         <p>BOXING</p>
@@ -160,7 +160,32 @@
         <p>TOTAL: <span id="fballd-total-fs"></span> Fantasy Score</p>
     </div>
 
-    
+    <div>
+        <h2>Tennis Fantasy Score</h2>
+        <ul>
+            <li>Match Played: 10 pts <span id="tennis-mp-val"></span></li> 
+            <input type="number" name="tennis-matchplayed" id="tennis-mp" class="tennis-fs" />
+            <li>Game Win: 1 pt <span id="tennis-gw-val"></span></li> 
+            <input type="number" name="tennis-gamewin" id="tennis-gw" class="tennis-fs">
+            <li>Game Loss: -1 pt <span id="tennis-gl-val"></span></li> 
+            <input type="number" name="tennis-gameloss" id="tennis-gl" class="tennis-fs">
+            <li>Set Won: 3 pts <span id="tennis-sw-val"></span></li> 
+            <input type="number" name="tennis-setwon" id="tennis-sw" class="tennis-fs">
+            <li>Set Loss: -3 pts <span id="tennis-sl-val"></span></li> 
+            <input type="number" name="tennis-setloss" id="tennis-sl" class="tennis-fs">
+            <li>Ace: 0.5 pt <span id="tennis-ac-val"></span></li> 
+            <input type="number" name="tennis-ace" id="tennis-ac" class="tennis-fs">
+            <li>Double Fault: -0.5 pt <span id="tennis-dblft-val"></span></li> 
+            <input type="number" name="tennis-doublefault" id="tennis-dblft" class="tennis-fs">
+        </ul>
+        <button id="tennis-btn">Go</button>
+        <p>TOTAL: <span id="tennis-total-fs"></span> Fantasy Score</p>
+    </div>
+
+
+
+
+
     
     <script type="module" src="./app.js"></script>
 

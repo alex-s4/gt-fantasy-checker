@@ -197,7 +197,7 @@ window.onload = function() {
 
     // NFL DST FANTASY SCORE
 
-    const fballdFantasyScore = document.querySelector("#fballd-total-fs")
+    const fballdFantasyScore = document.querySelector("#fballd-total-fs");
 
     var buttonFballD = document.querySelector("#fballd-btn");
 
@@ -281,5 +281,50 @@ window.onload = function() {
 
     })
 
+    // TENNIS FANTASY SCORE
+
+    const tennisFantasyScore = document.querySelector("#tennis-total-fs");
+
+    var buttonTennis = document.querySelector("#tennis-btn");
+
+    buttonTennis.addEventListener('click', ()=> {
+        console.log("buttonTennis")
+
+        const tennisMatchPlayed = document.querySelector("#tennis-mp")
+        const tennisGameWin = document.querySelector("#tennis-gw")
+        const tennisGameLoss = document.querySelector("#tennis-gl")
+        const tennisSetWon = document.querySelector("#tennis-sw")
+        const tennisSetLoss = document.querySelector("#tennis-sl")
+        const tennisAce = document.querySelector("#tennis-ac")
+        const tennisDoubleFault = document.querySelector("#tennis-dblft")
+
+        var tennisMpVal = Number(tennisMatchPlayed.value) * 10;
+        var tennisGwVal = Number(tennisGameWin.value) * 1;
+        var tennisGlVal = Number(tennisGameLoss.value) * -1;
+        var tennisSwVal = Number(tennisSetWon.value) * 3;
+        var tennisSlVal = Number(tennisSetLoss.value) * -3;
+        var tennisAcVal = Number(tennisAce.value) * 0.5;
+        var tennisDblftVal = Number(tennisDoubleFault.value) * -0.5;
+
+        var tennisFantasy = tennisMpVal +
+                            tennisGwVal +
+                            tennisGlVal +
+                            tennisSwVal +
+                            tennisSlVal +
+                            tennisAcVal +
+                            tennisDblftVal;
+
+        tennisFantasyScore.innerHTML = tennisFantasy;
+
+        document.querySelector("#tennis-mp-val").innerHTML = `= ${tennisMpVal}`
+        document.querySelector("#tennis-gw-val").innerHTML = `= ${tennisGwVal}`
+        document.querySelector("#tennis-gl-val").innerHTML = `= ${tennisGlVal}`
+        document.querySelector("#tennis-sw-val").innerHTML = `= ${tennisSwVal}`
+        document.querySelector("#tennis-sl-val").innerHTML = `= ${tennisSlVal}`
+        document.querySelector("#tennis-ac-val").innerHTML = `= ${tennisAcVal}`
+        document.querySelector("#tennis-dblft-val").innerHTML = `= ${tennisDblftVal}`
+
+
+    })
 
 }
