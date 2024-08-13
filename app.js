@@ -7,6 +7,7 @@ window.onload = function() {
     var buttonBball = document.querySelector("#bball-btn")
 
     buttonBball.addEventListener('click', () => {
+        console.log("buttonBball")
 
         const bballPoints = document.getElementById("bball-pts");
         const bballRebound = document.getElementById("bball-rebs");
@@ -47,6 +48,7 @@ window.onload = function() {
     var buttonBsballP = document.querySelector("#bsballp-btn")
 
     buttonBsballP.addEventListener('click', ()=> {
+        console.log("buttonBsballP")
 
         const bsballpWin = document.getElementById("bsballp-win");
         const bsballpQS = document.getElementById("bsballp-qs");
@@ -83,6 +85,7 @@ window.onload = function() {
     var buttonBsballH = document.querySelector("#bsballh-btn")
 
     buttonBsballH.addEventListener('click', ()=> {
+        console.log("buttonBsballH")
 
         const bsballhSingle = document.getElementById("bsballh-sing");
         const bsballhDouble = document.getElementById("bsballh-doub");
@@ -134,6 +137,7 @@ window.onload = function() {
     var buttonFballO = document.querySelector("#fballo-btn");
 
     buttonFballO.addEventListener('click', ()=> {
+        console.log("buttonFballO")
         
         const fballoPassingYards = document.getElementById("fballo-passyd");
         const fballoPassingTDs = document.getElementById("fballo-passtd");
@@ -198,7 +202,7 @@ window.onload = function() {
     var buttonFballD = document.querySelector("#fballd-btn");
 
     buttonFballD.addEventListener('click', ()=> {
-        console.log("Hello pooo, rinig ako? Ayan")
+        console.log("buttonFballD")
 
         const fballdSack = document.getElementById("fballd-sac");
         const fballdInterception = document.getElementById("fballd-int");
