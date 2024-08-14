@@ -183,6 +183,43 @@
     </div>
 
 
+    <div>
+        <h2>MMA Fantasy Score</h2>
+        <ul>
+            <li>Significant Strikes: 0.6 pts <span id="mma-sigstr-val"></span></li> 
+            <input type="number" name="mma-matchplayed" id="mma-sigstr" class="mma-fs" />
+            <li>Takedown: 6 pts <span id="mma-td-val"></span></li> 
+            <input type="number" name="mma-takedown" id="mma-td" class="mma-fs">
+            <li>Takedown Defense: 3 pts <span id="mma-tddef-val"></span></li> 
+            <input type="number" name="mma-takedowndefense" id="mma-tddef" class="mma-fs">
+            <li>Submission Attempt: 5 pts <span id="mma-subatt-val"></span></li> 
+            <input type="number" name="mma-submissionattempt" id="mma-subatt" class="mma-fs">
+            <li>Knockdown: 12 pts <span id="mma-kd-val"></span></li> 
+            <input type="number" name="mma-knockdown" id="mma-kd" class="mma-fs">
+        </ul>
+        <h4>Fight Conclusion Bonuses</h4>
+
+        <input type="radio" name="mma-fcb" id="mma-1strd" value="100" class="mma-fcb">
+        <label for="mma-1strd">1st Round Win: 100 pts</label><br>
+
+        <input type="radio" name="mma-fcb" id="mma-2ndrd" value="75" class="mma-fcb">
+        <label for="mma-2ndrd">2nd Round Win: 75 pts</label><br>
+
+        <input type="radio" name="mma-fcb" id="mma-3rdrd" value="50" class="mma-fcb">
+        <label for="mma-3rdrd">3rd Round Win: 50 pts</label><br>
+
+        <input type="radio" name="mma-fcb" id="mma-4thrd" value="35" class="mma-fcb">
+        <label for="mma-4thrd">4th Round Win: 35 pts</label><br>
+
+        <input type="radio" name="mma-fcb" id="mma-5thrd" value="25" class="mma-fcb">
+        <label for="mma-5thrd">5th Round Win: 25 pts</label><br>
+
+        <input type="radio" name="mma-fcb" id="mma-dec" value="20" class="mma-fcb">
+        <label for="mma-dec">Decision Win: 20 pts</label><br>
+
+        <button id="mma-btn">Go</button>
+        <p>TOTAL: <span id="mma-total-fs"></span> Fantasy Score</p>
+    </div>
 
 
 

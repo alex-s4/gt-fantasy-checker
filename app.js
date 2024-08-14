@@ -324,7 +324,61 @@ window.onload = function() {
         document.querySelector("#tennis-ac-val").innerHTML = `= ${tennisAcVal}`
         document.querySelector("#tennis-dblft-val").innerHTML = `= ${tennisDblftVal}`
 
-
     })
 
+
+    // MMA FANTASY SCORE
+
+    const mmaFantasyScore = document.querySelector("#mma-total-fs");
+
+    var buttonMma = document.querySelector("#mma-btn");
+
+    buttonMma.addEventListener("click", ()=> {
+        // console.log("buttonMma");
+
+        var mmaFcbRadio = document.querySelectorAll('.mma-fcb');
+
+        const mmaSignificantStrikes = document.querySelector("#mma-sigstr");
+        const mmaTakedown = document.querySelector("#mma-td");
+        const mmaTakedownDefense = document.querySelector("#mma-tddef");
+        const mmaSubmissionAttempt = document.querySelector("#mma-subatt");
+        const mmaKnockdown = document.querySelector("#mma-kd");
+
+        const mma1stRound = document.querySelector("#mma-1strd");
+        const mma2ndRound = document.querySelector("#mma-2ndrd");
+        const mma3rdRound = document.querySelector("#mma-3rdrd");
+        const mma4thRound = document.querySelector("#mma-4thrd");
+        const mma5thRound = document.querySelector("#mma-5thrd");
+        const mmaDecision = document.querySelector("#mma-dec");
+
+        var mmaSigStrVal = Number(mmaSignificantStrikes.value) * 0.6;
+        var mmaTdVal = Number(mmaTakedown.value) * 6;
+        var mmaTdDefVal = Number(mmaTakedownDefense.value) * 3;
+        var mmaSubAttVal = Number(mmaSubmissionAttempt.value) * 5;
+        var mmaKdVal = Number(mmaKnockdown.value) * 12;
+
+        var mmaFcbVal = 0
+
+        for(var i=0; i<mmaFcbRadio.length; i++){
+            if(mmaFcbRadio[i].checked === true){
+                mmaFcbVal = Number(mmaFcbRadio[i].value)
+            }
+        }
+        
+        var mmaFantasy = mmaSigStrVal +
+                         mmaTdVal +
+                         mmaTdDefVal +
+                         mmaSubAttVal +
+                         mmaKdVal +
+                         mmaFcbVal;
+
+        mmaFantasyScore.innerHTML = mmaFantasy
+
+        document.querySelector("#mma-sigstr-val").innerHTML = `= ${mmaSigStrVal}`
+        document.querySelector("#mma-td-val").innerHTML = `= ${mmaTdVal}`
+        document.querySelector("#mma-tddef-val").innerHTML = `= ${mmaTdDefVal}`
+        document.querySelector("#mma-subatt-val").innerHTML = `= ${mmaSubAttVal}`
+        document.querySelector("#mma-kd-val").innerHTML = `= ${mmaKdVal}`                 
+
+    })
 }
