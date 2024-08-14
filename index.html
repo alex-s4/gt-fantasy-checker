@@ -22,42 +22,56 @@
         <p>NASCAR</p>
     </div>
 
-    <div>
-        <h2>NBA/WNBA Fantasy Score</h2>
-        <ul>
-            <li>Points: 1 pt <span id="bball-points-val"></span></li> 
-            <input type="number" name="bball-points" id="bball-pts" class="bball-fs" />
-            <li>Rebound: 1.2 pts <span id="bball-rebounds-val"></span></li> 
-            <input type="number" name="bball-rebounds" id="bball-rebs" class="bball-fs">
-            <li>Assist: 1.5 pts <span id="bball-assists-val"></span></li> 
-            <input type="number" name="bball-assists" id="bball-asst" class="bball-fs">
-            <li>Block: 3 pts <span id="bball-blocks-val"></span></li> 
-            <input type="number" name="bball-blocks" id="bball-blk" class="bball-fs">
-            <li>Steal: 3 pts <span id="bball-steals-val"></span></li> 
-            <input type="number" name="bball-steals" id="bball-stl" class="bball-fs">
-            <li>Turnover: -1 pt <span id="bball-turnovers-val"></span></li> 
-            <input type="number" name="bball-turnovers" id="bball-to" class="bball-fs">
-        </ul>
-        <button id="bball-btn">Go</button>
-        <p>TOTAL: <span id="bball-total-fs"></span> Fantasy Score</p>
-    </div>
+        <div>
+            <h2>NBA/WNBA Fantasy Score</h2>
+            
+            <ul>
+                <li>Points: 1 pt 
+                <input type="number" name="bball-points" id="bball-pts" class="bball-fs input-num-global">
+                <span id="bball-points-val" class="bball-val"></span></li> 
+                <li>Rebound: 1.2 pts 
+                <input type="number" name="bball-rebounds" id="bball-rebs" class="bball-fs input-num-global">
+                <span id="bball-rebounds-val" class="bball-val"></span></li> 
+                <li>Assist: 1.5 pts 
+                <input type="number" name="bball-assists" id="bball-asst" class="bball-fs input-num-global">
+                <span id="bball-assists-val" class="bball-val"></span></li> 
+                <li>Block: 3 pts 
+                <input type="number" name="bball-blocks" id="bball-blk" class="bball-fs input-num-global">
+                <span id="bball-blocks-val" class="bball-val"></span></li> 
+                <li>Steal: 3 pts 
+                <input type="number" name="bball-steals" id="bball-stl" class="bball-fs input-num-global">
+                <span id="bball-steals-val" class="bball-val"></span></li> 
+                <li>Turnover: -1 pt 
+                <input type="number" name="bball-turnovers" id="bball-to" class="bball-fs input-num-global">
+                <span id="bball-turnovers-val" class="bball-val"></span></li> 
+            </ul>
+            <p>TOTAL: <span id="bball-total-fs"></span> Fantasy Score</p>
+            <button id="bball-btn">Go</button>
+            <button id="bball-clear">Clear</button>
+        </div>
 
     <div>
         <h2>MLB Pitcher Fantasy Score</h2>
         <ul>
-            <li>Win: 6 pts <span id="bsballp-win-val"></span></li> 
-            <input type="number" name="bsballp-win" id="bsballp-win">
-            <li>Quality Start: 4 pts <span id="bsballp-qs-val"></span></li> 
-            <input type="number" name="bsballp-quality-start" id="bsballp-qs">
-            <li>Earned Run: -3 pt <span id="bsballp-er-val"></span></li> 
-            <input type="number" name="bsballp-earned-run" id="bsballp-er">
-            <li>Strikeout: 3 pts <span id="bsballp-k-val"></span></li> 
-            <input type="number" name="bsballp-strikeout" id="bsballp-k">
-            <li>Out: 1 pt <span id="bsballp-out-val"></span></li> 
-            <input type="number" name="bsballp-out" id="bsballp-out">
+            <li>Win: 6 pts
+            <input type="number" name="bsballp-win" id="bsballp-win" class="bsballp-fs input-num-global">
+            <span id="bsballp-win-val" class="bsballp-val"></span></li> 
+            <li>Quality Start: 4 pts 
+            <input type="number" name="bsballp-quality-start" id="bsballp-qs" class="bsballp-fs input-num-global">
+            <span id="bsballp-qs-val" class="bsballp-val"></span></li> 
+            <li>Earned Run: -3 pt 
+            <input type="number" name="bsballp-earned-run" id="bsballp-er" class="bsballp-fs input-num-global">
+            <span id="bsballp-er-val" class="bsballp-val"></span></li> 
+            <li>Strikeout: 3 pts 
+            <input type="number" name="bsballp-strikeout" id="bsballp-k" class="bsballp-fs input-num-global">
+            <span id="bsballp-k-val" class="bsballp-val"></span></li> 
+            <li>Out: 1 pt 
+            <input type="number" name="bsballp-out" id="bsballp-out" class="bsballp-fs input-num-global">
+            <span id="bsballp-out-val" class="bsballp-val"></span></li> 
         </ul>
-        <button id="bsballp-btn">Go</button>
         <p>TOTAL: <span id="bsballp-total-fs"></span> Fantasy Score</p>
+        <button id="bsballp-btn">Go</button>
+        <button id="bsballp-clear">Clear</button>
     </div>
 
     <div>

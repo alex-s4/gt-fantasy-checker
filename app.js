@@ -5,16 +5,20 @@ window.onload = function() {
     const bballFantasyScore = document.querySelector("#bball-total-fs");
 
     var buttonBball = document.querySelector("#bball-btn")
+    var resetButtonBball = document.querySelector("#bball-clear")
+
+    var bballPoints = document.getElementById("bball-pts");
+    var bballRebound = document.getElementById("bball-rebs");
+    var bballAssist = document.getElementById("bball-asst");
+    var bballBlock = document.getElementById("bball-blk");
+    var bballSteal = document.getElementById("bball-stl");
+    var bballTurnover = document.getElementById("bball-to");
+
+    var bballInputs = document.querySelectorAll(".bball-fs");
+    var bballVal = document.querySelectorAll(".bball-val");
 
     buttonBball.addEventListener('click', () => {
         console.log("buttonBball")
-
-        const bballPoints = document.getElementById("bball-pts");
-        const bballRebound = document.getElementById("bball-rebs");
-        const bballAssist = document.getElementById("bball-asst");
-        const bballBlock = document.getElementById("bball-blk");
-        const bballSteal = document.getElementById("bball-stl");
-        const bballTurnover = document.getElementById("bball-to");
 
         var bballPointsVal = Number(bballPoints.value);
         var bballReboundVal = Number(bballRebound.value) * 1.2;
@@ -40,12 +44,30 @@ window.onload = function() {
         document.querySelector("#bball-turnovers-val").innerHTML = `= ${bballTurnoverVal}`
     });
 
+    resetButtonBball.addEventListener('click', () => {
+
+        for(var i=0; i<bballInputs.length; i++){
+            bballInputs[i].value = '';
+        }
+
+        for(var j=0; j<bballVal.length; j++){
+            bballVal[j].innerHTML = '';
+        }
+        
+        bballFantasyScore.innerHTML = "";
+        
+    })
+
 
     // MLB PITCHER FANTASY SCORE
 
     const bsballpFantasyScore = document.querySelector("#bsballp-total-fs");
 
     var buttonBsballP = document.querySelector("#bsballp-btn")
+    var resetButtonBsballP = document.querySelector("#bsballp-clear")
+
+    var bsballpInputs = document.querySelectorAll(".bsballp-fs");
+    var bsballpVal = document.querySelectorAll(".bsballp-val");
 
     buttonBsballP.addEventListener('click', ()=> {
         console.log("buttonBsballP")
@@ -77,6 +99,20 @@ window.onload = function() {
         document.querySelector("#bsballp-out-val").innerHTML = `= ${bsballpOutVal}`
 
     })
+
+    resetButtonBsballP.addEventListener('click', ()=> {
+        
+        for(var i=0; i<bsballpInputs.length; i++){
+            bsballpInputs[i].value = '';
+        }
+
+        for(var j=0; j<bsballpVal.length; j++){
+            bsballpVal[j].innerHTML = '';
+        }
+
+        bsballpFantasyScore.innerHTML = '';
+    })
+
 
     // MLB HITTER FANTASY SCORE
 
