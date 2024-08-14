@@ -344,12 +344,12 @@ window.onload = function() {
         const mmaSubmissionAttempt = document.querySelector("#mma-subatt");
         const mmaKnockdown = document.querySelector("#mma-kd");
 
-        const mma1stRound = document.querySelector("#mma-1strd");
-        const mma2ndRound = document.querySelector("#mma-2ndrd");
-        const mma3rdRound = document.querySelector("#mma-3rdrd");
-        const mma4thRound = document.querySelector("#mma-4thrd");
-        const mma5thRound = document.querySelector("#mma-5thrd");
-        const mmaDecision = document.querySelector("#mma-dec");
+        // const mma1stRound = document.querySelector("#mma-1strd");
+        // const mma2ndRound = document.querySelector("#mma-2ndrd");
+        // const mma3rdRound = document.querySelector("#mma-3rdrd");
+        // const mma4thRound = document.querySelector("#mma-4thrd");
+        // const mma5thRound = document.querySelector("#mma-5thrd");
+        // const mmaDecision = document.querySelector("#mma-dec");
 
         var mmaSigStrVal = Number(mmaSignificantStrikes.value) * 0.6;
         var mmaTdVal = Number(mmaTakedown.value) * 6;
@@ -379,6 +379,45 @@ window.onload = function() {
         document.querySelector("#mma-tddef-val").innerHTML = `= ${mmaTdDefVal}`
         document.querySelector("#mma-subatt-val").innerHTML = `= ${mmaSubAttVal}`
         document.querySelector("#mma-kd-val").innerHTML = `= ${mmaKdVal}`                 
+
+    })
+
+    // BOXING FANTASY SCORE
+
+    const boxFantasyScore = document.querySelector("#box-total-fs");
+
+    var buttonBox = document.querySelector("#box-btn");
+
+    buttonBox.addEventListener("click", ()=> {
+
+        var boxFcbRadio = document.querySelectorAll('.box-fcb');
+
+        const boxPunchLanded = document.querySelector("#box-punch");
+        const boxKnockdown = document.querySelector("#box-kd");
+        const boxBeingKnocked = document.querySelector("#box-beingkd");
+
+        var boxPunchVal = Number(boxPunchLanded.value) * 0.5;
+        var boxKdVal = Number(boxKnockdown.value) * 12;
+        var boxBeingKdVal = Number(boxBeingKnocked.value) * -12;
+
+        var boxFcbVal = 0
+
+        for(var i=0; i<boxFcbRadio.length; i++){
+            if(boxFcbRadio[i].checked === true){
+                boxFcbVal = Number(boxFcbRadio[i].value)
+            }
+        }
+
+        var boxFantasy = boxPunchVal + 
+                         boxKdVal +
+                         boxBeingKdVal +
+                         boxFcbVal;
+
+        boxFantasyScore.innerHTML = boxFantasy;
+
+        document.querySelector("#box-punch-val").innerHTML = `= ${boxPunchVal}`
+        document.querySelector("#box-kd-val").innerHTML = `= ${boxKdVal}`
+        document.querySelector("#box-beingkd-val").innerHTML = `= ${boxBeingKdVal}`
 
     })
 }

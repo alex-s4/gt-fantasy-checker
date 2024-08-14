@@ -187,7 +187,7 @@
         <h2>MMA Fantasy Score</h2>
         <ul>
             <li>Significant Strikes: 0.6 pts <span id="mma-sigstr-val"></span></li> 
-            <input type="number" name="mma-matchplayed" id="mma-sigstr" class="mma-fs" />
+            <input type="number" name="mma-significantstrikes" id="mma-sigstr" class="mma-fs" />
             <li>Takedown: 6 pts <span id="mma-td-val"></span></li> 
             <input type="number" name="mma-takedown" id="mma-td" class="mma-fs">
             <li>Takedown Defense: 3 pts <span id="mma-tddef-val"></span></li> 
@@ -221,7 +221,37 @@
         <p>TOTAL: <span id="mma-total-fs"></span> Fantasy Score</p>
     </div>
 
+    <div>
+        <h2>Boxing Fantasy Score</h2>
+        <ul>
+            <li>Punch Landed: 0.5 pts <span id="box-punch-val"></span></li> 
+            <input type="number" name="box-punchlanded" id="box-punch" class="box-fs" />
+            <li>Knockdown on Opponent: 12 pts <span id="box-kd-val"></span></li> 
+            <input type="number" name="box-knockdown" id="box-kd" class="box-fs">
+            <li>Being Knocked Down by Opponent: -12 pts <span id="box-beingkd-val"></span></li> 
+            <input type="number" name="box-beingknocked" id="box-beingkd" class="box-fs">
+        </ul>
 
+        <h4>Fight Conclusion Bonuses</h4>
+
+        <input type="radio" name="box-fcb" id="box-1stto2ndrd" value="100" class="box-fcb">
+        <label for="box-1stto2ndrd">Win Within Rounds 1-2: 100 pts</label><br>
+
+        <input type="radio" name="box-fcb" id="box-3rdto6th" value="75" class="box-fcb">
+        <label for="box-3rdto6th">Win Within Rounds 3-6: 75 pts</label><br>
+
+        <input type="radio" name="box-fcb" id="box-7thto10th" value="50" class="box-fcb">
+        <label for="box-7thto10th">Win Within Rounds 7-10: 50 pts</label><br>
+
+        <input type="radio" name="box-fcb" id="box-11thto12th" value="25" class="box-fcb">
+        <label for="box-11thto12th">Win Within Rounds 11-12: 25 pts</label><br>
+
+        <input type="radio" name="box-fcb" id="box-dec" value="20" class="box-fcb">
+        <label for="box-dec">Decision Win: 20 pts</label><br>
+
+        <button id="box-btn">Go</button>
+        <p>TOTAL: <span id="box-total-fs"></span> Fantasy Score</p>
+    </div>
 
     
     <script type="module" src="./app.js"></script>
