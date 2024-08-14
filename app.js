@@ -119,6 +119,10 @@ window.onload = function() {
     const bsballhFantasyScore = document.querySelector("#bsballh-total-fs");
 
     var buttonBsballH = document.querySelector("#bsballh-btn")
+    var resetButtonBsballH = document.querySelector("#bsballh-clear")
+
+    var bsballhInputs = document.querySelectorAll(".bsballh-fs");
+    var bsballhVal = document.querySelectorAll(".bsballh-val");
 
     buttonBsballH.addEventListener('click', ()=> {
         console.log("buttonBsballH")
@@ -166,11 +170,28 @@ window.onload = function() {
         document.querySelector("#bsballh-sb-val").innerHTML = `= ${bsballhSBVal}`
     })
 
+    resetButtonBsballH.addEventListener('click', ()=> {
+        
+        for(var i=0; i<bsballhInputs.length; i++){
+            bsballhInputs[i].value = '';
+        }
+
+        for(var j=0; j<bsballhVal.length; j++){
+            bsballhVal[j].innerHTML = '';
+        }
+
+        bsballhFantasyScore.innerHTML = '';
+    })
+
     // NFL OFFENSIVE FANTASY SCORE
 
     const fballoFantasyScore = document.querySelector("#fballo-total-fs")
 
     var buttonFballO = document.querySelector("#fballo-btn");
+    var resetButtonFballO = document.querySelector("#fballo-clear")
+
+    var fballoInputs = document.querySelectorAll(".fballo-fs");
+    var fballoVal = document.querySelectorAll(".fballo-val");
 
     buttonFballO.addEventListener('click', ()=> {
         console.log("buttonFballO")
@@ -231,11 +252,28 @@ window.onload = function() {
 
     })
 
+    resetButtonFballO.addEventListener('click', ()=> {
+        
+        for(var i=0; i<fballoInputs.length; i++){
+            fballoInputs[i].value = '';
+        }
+
+        for(var j=0; j<fballoVal.length; j++){
+            fballoVal[j].innerHTML = '';
+        }
+
+        fballoFantasyScore.innerHTML = '';
+    })
+
     // NFL DST FANTASY SCORE
 
     const fballdFantasyScore = document.querySelector("#fballd-total-fs");
 
     var buttonFballD = document.querySelector("#fballd-btn");
+    var resetButtonFballD = document.querySelector("#fballd-clear")
+
+    var fballdInputs = document.querySelectorAll(".fballd-fs");
+    var fballdVal = document.querySelectorAll(".fballd-val");
 
     buttonFballD.addEventListener('click', ()=> {
         console.log("buttonFballD")
@@ -315,6 +353,19 @@ window.onload = function() {
         document.querySelector("#fballd-28to34pt-val").innerHTML = `= ${fballd28To34PtVal}`
         document.querySelector("#fballd-35morept-val").innerHTML = `= ${fballd35MorePtVal}`
 
+    })
+
+    resetButtonFballD.addEventListener('click', ()=> {
+        
+        for(var i=0; i<fballdInputs.length; i++){
+            fballdInputs[i].value = '';
+        }
+
+        for(var j=0; j<fballdVal.length; j++){
+            fballdVal[j].innerHTML = '';
+        }
+
+        fballdFantasyScore.innerHTML = '';
     })
 
     // TENNIS FANTASY SCORE

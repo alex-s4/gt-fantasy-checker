@@ -77,101 +77,142 @@
     <div>
         <h2>MLB Hitter Fantasy Score</h2>
         <ul>
-            <li>Single: 3 pts <span id="bsballh-sing-val"></span></li>
-            <input type="number" name="bsballh-single" id="bsballh-sing">
-            <li>Double: 5 pts <span id="bsballh-doub-val"></span></li>
-            <input type="number" name="bsballh-double" id="bsballh-doub">
-            <li>Triple: 8 pts <span id="bsballh-trip-val"></span></li>
-            <input type="number" name="bsballh-triple" id="bsballh-trip">
-            <li>Home Run: 10 pts <span id="bsballh-hr-val"></span></li>
-            <input type="number" name="bsballh-homerun" id="bsballh-hr">
-            <li>Run: 2 pts <span id="bsballh-r-val"></span></li>
-            <input type="number" name="bsballh-run" id="bsballh-r">
-            <li>Run Batted In: 2 pts <span id="bsballh-rbi-val"></span></li>
-            <input type="number" name="bsballh-runsbattedin" id="bsballh-rbi">
-            <li>Base on Balls: 2 pts <span id="bsballh-bob-val"></span></li>
-            <input type="number" name="bsballh-baseonballs" id="bsballh-bob">
-            <li>Hit By Pitch: 2 pts <span id="bsballh-hbp-val"></span></li>
-            <input type="number" name="bsballh-hitbypitch" id="bsballh-hbp">
-            <li>Stolen Base: 5 pts <span id="bsballh-sb-val"></span></li>
-            <input type="number" name="bsballh-stolenbase" id="bsballh-sb">
+            <li>Single: 3 pts 
+            <input type="number" name="bsballh-single" id="bsballh-sing" class="bsballh-fs input-num-global">
+            <span id="bsballh-sing-val" class="bsballh-val"></span></li>
+            <li>Double: 5 pts 
+            <input type="number" name="bsballh-double" id="bsballh-doub" class="bsballh-fs input-num-global">
+            <span id="bsballh-doub-val" class="bsballh-val"></span></li>
+            <li>Triple: 8 pts 
+            <input type="number" name="bsballh-triple" id="bsballh-trip" class="bsballh-fs input-num-global">
+            <span id="bsballh-trip-val" class="bsballh-val"></span></li>
+            <li>Home Run: 10 pts 
+            <input type="number" name="bsballh-homerun" id="bsballh-hr" class="bsballh-fs input-num-global">
+            <span id="bsballh-hr-val" class="bsballh-val"></span></li>
+            <li>Run: 2 pts 
+            <input type="number" name="bsballh-run" id="bsballh-r" class="bsballh-fs input-num-global">
+            <span id="bsballh-r-val" class="bsballh-val"></span></li>
+            <li>Run Batted In: 2 pts 
+            <input type="number" name="bsballh-runsbattedin" id="bsballh-rbi" class="bsballh-fs input-num-global">
+            <span id="bsballh-rbi-val" class="bsballh-val"></span></li>
+            <li>Base on Balls: 2 pts 
+            <input type="number" name="bsballh-baseonballs" id="bsballh-bob" class="bsballh-fs input-num-global">
+            <span id="bsballh-bob-val" class="bsballh-val"></span></li>
+            <li>Hit By Pitch: 2 pts 
+            <input type="number" name="bsballh-hitbypitch" id="bsballh-hbp" class="bsballh-fs input-num-global">
+            <span id="bsballh-hbp-val" class="bsballh-val"></span></li>
+            <li>Stolen Base: 5 pts 
+            <input type="number" name="bsballh-stolenbase" id="bsballh-sb" class="bsballh-fs input-num-global">
+            <span id="bsballh-sb-val" class="bsballh-val"></span></li>
         </ul>
-        <button id="bsballh-btn">Go</button>
         <p>TOTAL: <span id="bsballh-total-fs"></span> Fantasy Score</p>
+        <button id="bsballh-btn">Go</button>
+        <button id="bsballh-clear">Clear</button>
     </div>
 
     <div>
         <h2>NFL Offensive Fantasy Score</h2>
         <ul>
-            <li>Passing Yards: 0.04 pts per yard <span id="fballo-passyd-val"></span></li> 
-            <input type="number" name="fballo-passingyards" id="fballo-passyd">
-            <li>Passing TDs: 4 pts <span id="fballo-passtd-val"></span></li> 
-            <input type="number" name="fballo-passingtds" id="fballo-passtd">
-            <li>Interceptions: -1 pt <span id="fballo-int-val"></span></li> 
-            <input type="number" name="fballo-interceptions" id="fballo-int">
-            <li>Rushing Yards: 0.1 pts per yard <span id="fballo-rushyd-val"></span></li> 
-            <input type="number" name="fballo-rushingyards" id="fballo-rushyd">
-            <li>Rushing TDs: 6 pts <span id="fballo-rushtd-val"></span></li> 
-            <input type="number" name="fballo-rushingtds" id="fballo-rushtd">
-            <li>Receiving Yards: 0.1 pts per yard <span id="fballo-recyd-val"></span></li> 
-            <input type="number" name="fballo-receivingyards" id="fballo-recyd">
-            <li>Receiving TDs: 6 pts <span id="fballo-rectd-val"></span></li> 
-            <input type="number" name="fballo-receivingtds" id="fballo-rectd">
-            <li>Receptions: 1 pt <span id="fballo-rec-val"></span></li> 
-            <input type="number" name="fballo-receptions" id="fballo-rec">
-            <li>Fumbles Lost: -1 pt <span id="fballo-fl-val"></span></li> 
-            <input type="number" name="fballo-fumbleslost" id="fballo-fl">
-            <li>2 Point Conversions: 2 pts <span id="fballo-2ptc-val"></span></li> 
-            <input type="number" name="fballo-2pointconversions" id="fballo-2ptc">
-            <li>Offensive Fumble Recovery Touchdown: 6 pts <span id="fballo-ofrt-val"></span></li> 
-            <input type="number" name="fballo-offensivefumblerecoverytd" id="fballo-ofrt">
-            <li>Kick/Punt/Field Goal Return Touchdown: 6 pts <span id="fballo-kpfgrtd-val"></span></li> 
-            <input type="number" name="fballo-kickpuntfgreturntd" id="fballo-kpfgrtd">
+            <li>Passing Yards: 0.04 pts per yard 
+            <input type="number" name="fballo-passingyards" id="fballo-passyd" class="fballo-fs input-num-global">
+            <span id="fballo-passyd-val" class="fballo-val"></span></li> 
+            <li>Passing TDs: 4 pts  
+            <input type="number" name="fballo-passingtds" id="fballo-passtd" class="fballo-fs input-num-global">
+            <span id="fballo-passtd-val" class="fballo-val"></span></li>
+            <li>Interceptions: -1 pt  
+            <input type="number" name="fballo-interceptions" id="fballo-int" class="fballo-fs input-num-global">
+            <span id="fballo-int-val" class="fballo-val"></span></li>
+            <li>Rushing Yards: 0.1 pts per yard 
+            <input type="number" name="fballo-rushingyards" id="fballo-rushyd" class="fballo-fs input-num-global">
+            <span id="fballo-rushyd-val" class="fballo-val"></span></li> 
+            <li>Rushing TDs: 6 pts 
+            <input type="number" name="fballo-rushingtds" id="fballo-rushtd" class="fballo-fs input-num-global">
+            <span id="fballo-rushtd-val" class="fballo-val"></span></li> 
+            <li>Receiving Yards: 0.1 pts per yard 
+            <input type="number" name="fballo-receivingyards" id="fballo-recyd" class="fballo-fs input-num-global">
+            <span id="fballo-recyd-val" class="fballo-val"></span></li> 
+            <li>Receiving TDs: 6 pts 
+            <input type="number" name="fballo-receivingtds" id="fballo-rectd" class="fballo-fs input-num-global">
+            <span id="fballo-rectd-val" class="fballo-val"></span></li> 
+            <li>Receptions: 1 pt 
+            <input type="number" name="fballo-receptions" id="fballo-rec" class="fballo-fs input-num-global">
+            <span id="fballo-rec-val" class="fballo-val"></span></li> 
+            <li>Fumbles Lost: -1 pt 
+            <input type="number" name="fballo-fumbleslost" id="fballo-fl" class="fballo-fs input-num-global">
+            <span id="fballo-fl-val" class="fballo-val"></span></li> 
+            <li>2 Point Conversions: 2 pts 
+            <input type="number" name="fballo-2pointconversions" id="fballo-2ptc" class="fballo-fs input-num-global">
+            <span id="fballo-2ptc-val" class="fballo-val"></span></li> 
+            <li>Offensive Fumble Recovery Touchdown: 6 pts 
+            <input type="number" name="fballo-offensivefumblerecoverytd" id="fballo-ofrt" class="fballo-fs input-num-global">
+            <span id="fballo-ofrt-val" class="fballo-val"></span></li> 
+            <li>Kick/Punt/Field Goal Return Touchdown: 6 pts  
+            <input type="number" name="fballo-kickpuntfgreturntd" id="fballo-kpfgrtd" class="fballo-fs input-num-global">
+            <span id="fballo-kpfgrtd-val" class="fballo-val"></span></li>
         </ul>
-        <button id="fballo-btn">Go</button>
         <p>TOTAL: <span id="fballo-total-fs"></span> Fantasy Score</p>
+        <button id="fballo-btn">Go</button>
+        <button id="fballo-clear">Clear</button>
     </div>
 
     <div>
         <h2>NFL DST Fantasy Score</h2>
         <ul>
-            <li>Sack: (1 pt) <span id="fballd-sac-val"></span></li> 
-            <input type="number" name="" id="fballd-sac">
-            <li>Interception: (2 pts) <span id="fballd-int-val"></span></li> 
-            <input type="number" name="" id="fballd-int">
-            <li>Fumble Recovery: (2 pts) <span id="fballd-fumbrec-val"></span></li> 
-            <input type="number" name="" id="fballd-fumbrec">
-            <li>Punt/Kickoff/FG Return for TD: (6 pts) <span id="fballd-pkfgrtd-val"></span></li> 
-            <input type="number" name="" id="fballd-pkfgrtd">
-            <li>Interception Return TD: (6 pts) <span id="fballd-intrettd-val"></span></li> 
-            <input type="number" name="" id="fballd-intrettd">
-            <li>Fumble Recovery TD: (6 pts) <span id="fballd-fumbrectd-val"></span></li> 
-            <input type="number" name="" id="fballd-fumbrectd">
-            <li>Blocked Punt or FG Return TD: (6 pts) <span id="fballd-blkpunt-val"></span></li> 
-            <input type="number" name="" id="fballd-blkpunt">
-            <li>Safety: (2 pts) <span id="fballd-saf-val"></span></li> 
-            <input type="number" name="" id="fballd-saf">
-            <li>Blocked Kick: (2 pts) <span id="fballd-blkkick-val"></span></li> 
-            <input type="number" name="" id="fballd-blkkick">
-            <li>2 Point Conversions/Extra Point Returns: (2 pts) <span id="fballd-2ptconv-val"></span></li> 
-            <input type="number" name="" id="fballd-2ptconv">
-            <li>0 Point Allowed: (10 pts) <span id="fballd-0pt-val"></span></li> 
-            <input type="number" name="" id="fballd-0pt">
-            <li>1-6 Points Allowed: (7 pts) <span id="fballd-1to6pt-val"></span></li> 
-            <input type="number" name="" id="fballd-1to6pt">
-            <li>7-13 Points Allowed: (4 pts) <span id="fballd-7to13pt-val"></span></li> 
-            <input type="number" name="" id="fballd-7to13pt">
-            <li>14-20 Points Allowed: (1 pt) <span id="fballd-14to20pt-val"></span></li> 
-            <input type="number" name="" id="fballd-14to20pt">
-            <li>21-27 Points Allowed: (0 pt) <span id="fballd-21to27pt-val"></span></li> 
-            <input type="number" name="" id="fballd-21to27pt">
-            <li>28-34 Points Allowed: (-1 pts) <span id="fballd-28to34pt-val"></span></li> 
-            <input type="number" name="" id="fballd-28to34pt">
-            <li>35+ Point Allowed: (-4 pts) <span id="fballd-35morept-val"></span></li> 
-            <input type="number" name="" id="fballd-35morept"> 
+            <li>Sack: (1 pt) 
+            <input type="number" name="" id="fballd-sac" class="fballd-fs input-num-global">
+            <span id="fballd-sac-val" class="fballd-val"></span></li> 
+            <li>Interception: (2 pts) 
+            <input type="number" name="" id="fballd-int" class="fballd-fs input-num-global">
+            <span id="fballd-int-val" class="fballd-val"></span></li> 
+            <li>Fumble Recovery: (2 pts) 
+            <input type="number" name="" id="fballd-fumbrec" class="fballd-fs input-num-global">
+            <span id="fballd-fumbrec-val" class="fballd-val"></span></li> 
+            <li>Punt/Kickoff/FG Return for TD: (6 pts) 
+            <input type="number" name="" id="fballd-pkfgrtd" class="fballd-fs input-num-global">
+            <span id="fballd-pkfgrtd-val" class="fballd-val"></span></li> 
+            <li>Interception Return TD: (6 pts) 
+            <input type="number" name="" id="fballd-intrettd" class="fballd-fs input-num-global">
+            <span id="fballd-intrettd-val" class="fballd-val"></span></li> 
+            <li>Fumble Recovery TD: (6 pts) 
+            <input type="number" name="" id="fballd-fumbrectd" class="fballd-fs input-num-global">
+            <span id="fballd-fumbrectd-val" class="fballd-val"></span></li> 
+            <li>Blocked Punt or FG Return TD: (6 pts) 
+            <input type="number" name="" id="fballd-blkpunt" class="fballd-fs input-num-global">
+            <span id="fballd-blkpunt-val" class="fballd-val"></span></li> 
+            <li>Safety: (2 pts) 
+            <input type="number" name="" id="fballd-saf" class="fballd-fs input-num-global">
+            <span id="fballd-saf-val" class="fballd-val"></span></li> 
+            <li>Blocked Kick: (2 pts) 
+            <input type="number" name="" id="fballd-blkkick" class="fballd-fs input-num-global">
+            <span id="fballd-blkkick-val" class="fballd-val"></span></li> 
+            <li>2 Point Conversions/Extra Point Returns: (2 pts) 
+            <input type="number" name="" id="fballd-2ptconv" class="fballd-fs input-num-global">
+            <span id="fballd-2ptconv-val" class="fballd-val"></span></li> 
+            <li>0 Point Allowed: (10 pts) 
+            <input type="number" name="" id="fballd-0pt" class="fballd-fs input-num-global">
+            <span id="fballd-0pt-val" class="fballd-val"></span></li> 
+            <li>1-6 Points Allowed: (7 pts) 
+            <input type="number" name="" id="fballd-1to6pt" class="fballd-fs input-num-global">
+            <span id="fballd-1to6pt-val" class="fballd-val"></span></li> 
+            <li>7-13 Points Allowed: (4 pts)  
+            <input type="number" name="" id="fballd-7to13pt" class="fballd-fs input-num-global">
+            <span id="fballd-7to13pt-val" class="fballd-val"></span></li>
+            <li>14-20 Points Allowed: (1 pt) 
+            <input type="number" name="" id="fballd-14to20pt" class="fballd-fs input-num-global">
+            <span id="fballd-14to20pt-val" class="fballd-val"></span></li> 
+            <li>21-27 Points Allowed: (0 pt) 
+            <input type="number" name="" id="fballd-21to27pt" class="fballd-fs input-num-global">
+            <span id="fballd-21to27pt-val" class="fballd-val"></span></li> 
+            <li>28-34 Points Allowed: (-1 pts) 
+            <input type="number" name="" id="fballd-28to34pt" class="fballd-fs input-num-global">
+            <span id="fballd-28to34pt-val" class="fballd-val"></span></li> 
+            <li>35+ Point Allowed: (-4 pts) 
+            <input type="number" name="" id="fballd-35morept" class="fballd-fs input-num-global"> 
+            <span id="fballd-35morept-val" class="fballd-val"></span></li> 
         </ul>
-        <button id="fballd-btn">Go</button>
         <p>TOTAL: <span id="fballd-total-fs"></span> Fantasy Score</p>
+        <button id="fballd-btn">Go</button>
+        <button id="fballd-clear">Clear</button>
     </div>
 
     <div>
