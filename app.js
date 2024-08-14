@@ -420,4 +420,41 @@ window.onload = function() {
         document.querySelector("#box-beingkd-val").innerHTML = `= ${boxBeingKdVal}`
 
     })
+
+    // NASCAR FANTASY SCORE
+
+    const nascarFantasyScore = document.querySelector("#nascar-total-fs");
+
+    var buttonNascar = document.querySelector("#nascar-btn");
+
+    buttonNascar.addEventListener("click", ()=> {
+
+        var nascarFppRadio = document.querySelectorAll('.nascar-fpp');
+
+        const nascarPlaceDiff = document.querySelector("#nascar-pd");
+        const nascarFastestLaps = document.querySelector("#nascar-fl");
+        const nascarLapsLead = document.querySelector("#nascar-ll");
+
+        var nascarPdVal = Number(nascarPlaceDiff.value) * 1;
+        var nascarFlVal = Number(nascarFastestLaps.value) * 0.45;
+        var nascarLlVal = Number(nascarLapsLead.value) * 0.25;
+
+        var nascarFppVal = 0;
+
+        for(var i=0; i<nascarFppRadio.length; i++){
+            if(nascarFppRadio[i].checked === true){
+                nascarFppVal = Number(nascarFppRadio[i].value)
+            }
+        }
+
+        var nascarFantasy = nascarPdVal + nascarFlVal + nascarLlVal + nascarFppVal;
+
+        nascarFantasyScore.innerHTML = nascarFantasy
+
+        document.querySelector("#nascar-pd-val").innerHTML = `= ${nascarPdVal}`
+        document.querySelector("#nascar-fl-val").innerHTML = `= ${nascarFlVal}`
+        document.querySelector("#nascar-ll-val").innerHTML = `= ${nascarLlVal}`
+
+    })
+
 }
