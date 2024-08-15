@@ -43,3 +43,7 @@
 .input-num-global {
     width: 60px;
 }
+
+.textarea-global {
+    resize: none;
+}

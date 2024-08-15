@@ -6,6 +6,7 @@ window.onload = function() {
 
     var buttonBball = document.querySelector("#bball-btn")
     var resetButtonBball = document.querySelector("#bball-clear")
+    var copyButtonBball = document.querySelector("#bball-copy")
 
     var bballPoints = document.getElementById("bball-pts");
     var bballRebound = document.getElementById("bball-rebs");
@@ -21,8 +22,8 @@ window.onload = function() {
         console.log("buttonBball")
 
         var bballPointsVal = Number(bballPoints.value);
-        var bballReboundVal = Number(bballRebound.value) * 1.2;
-        var bballAssistVal = Number(bballAssist.value) * 1.5;
+        var bballReboundVal = Number((Number(bballRebound.value) * 1.2).toFixed(1));
+        var bballAssistVal = Number((Number(bballAssist.value) * 1.5).toFixed(1));
         var bballBlockVal = Number(bballBlock.value) * 3;
         var bballStealVal = Number(bballSteal.value) * 3;
         var bballTurnoverVal = Number(bballTurnover.value) * -1
@@ -42,6 +43,16 @@ window.onload = function() {
         document.querySelector("#bball-blocks-val").innerHTML = `= ${bballBlockVal}`
         document.querySelector("#bball-steals-val").innerHTML = `= ${bballStealVal}`
         document.querySelector("#bball-turnovers-val").innerHTML = `= ${bballTurnoverVal}`
+
+        var bballBreakdownPoints = `Points: 1 pt (${bballPoints.value}) = ${bballPointsVal}`;
+        var bballBreakdownRebound = `Rebound: 1.2 pts (${bballRebound.value}) = ${bballReboundVal}`;
+        var bballBreakdownAssist = `Assist: 1.5 pts (${bballAssist.value}) = ${bballAssistVal}`;
+        var bballBreakdownBlock = `Block: 3 pts (${bballBlock.value}) = ${bballBlockVal}`;
+        var bballBreakdownSteal = `Steal: 3 pts (${bballSteal.value}) = ${bballStealVal}`;
+        var bballBreakdownTurnover = `Turnover: -1 pt (${bballSteal.value}) = ${bballStealVal}`;
+
+        document.querySelector("#bball-breakdown").innerHTML = 
+        `${bballBreakdownPoints}\n${bballBreakdownRebound}\n${bballBreakdownAssist}\n${bballBreakdownBlock}\n${bballBreakdownSteal}\n${bballBreakdownTurnover}\n\nTOTAL: ${bballFantasy} FS`
     });
 
     resetButtonBball.addEventListener('click', () => {
@@ -55,9 +66,19 @@ window.onload = function() {
         }
         
         bballFantasyScore.innerHTML = "";
+        document.querySelector("#bball-breakdown").innerHTML = "";
         
     })
 
+    copyButtonBball.addEventListener('click', () => {
+
+        var copyBballBreakdown = document.querySelector("#bball-breakdown");
+
+        copyBballBreakdown.select();
+        copyBballBreakdown.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyBballBreakdown.value);
+    })
 
     // MLB PITCHER FANTASY SCORE
 
