@@ -668,7 +668,8 @@ window.onload = function() {
     const boxFantasyScore = document.querySelector("#box-total-fs");
 
     var buttonBox = document.querySelector("#box-btn");
-    var resetButtonBox = document.querySelector("#box-clear")
+    var resetButtonBox = document.querySelector("#box-clear");
+    var copyButtonBox = document.querySelector("#box-copy");
 
     var boxInputs = document.querySelectorAll(".box-fs");
     var boxVal = document.querySelectorAll(".box-val");
@@ -686,11 +687,29 @@ window.onload = function() {
         var boxKdVal = Number(boxKnockdown.value) * 12;
         var boxBeingKdVal = Number(boxBeingKnocked.value) * -12;
 
-        var boxFcbVal = 0
+        var boxFcbVal = 0;
+        var boxBreakdownFcb = '';
 
         for(var i=0; i<boxFcbRadio.length; i++){
             if(boxFcbRadio[i].checked === true){
                 boxFcbVal = Number(boxFcbRadio[i].value)
+            }
+            switch(boxFcbVal){
+                case 100:
+                    boxBreakdownFcb = "Win Within Rounds 1-2 = 100 pts";
+                    break;
+                case 75:
+                    boxBreakdownFcb = "Win Within Rounds 3-6 = 75 pts";
+                    break;
+                case 50:
+                    boxBreakdownFcb = "Win Within Rounds 7-10 = 50 pts";
+                    break;
+                case 25:
+                    boxBreakdownFcb = "Win Within Rounds 11-12 = 25 pts";
+                    break;
+                case 20:
+                    boxBreakdownFcb = "Decision Win = 20 pts";
+                    break;
             }
         }
 
@@ -705,6 +724,11 @@ window.onload = function() {
         document.querySelector("#box-kd-val").innerHTML = `= ${boxKdVal}`
         document.querySelector("#box-beingkd-val").innerHTML = `= ${boxBeingKdVal}`
 
+        var boxBreakdownPunchLanded = `Punch Landed: 0.5 pts (${boxPunchLanded.value}) = ${boxPunchVal}`;
+        var boxBreakdownKnockdown = `Knockdown on Opponent: 12 pts (${boxKnockdown.value}) = ${boxKdVal}`;
+        var boxBreakdownBeingKnocked = `Being Knocked Down by Opponent: -12 pts (${boxBeingKnocked.value}) = ${boxBeingKdVal}`;
+
+        document.querySelector("#box-breakdown").innerHTML = `${boxBreakdownPunchLanded}\n${boxBreakdownKnockdown}\n${boxBreakdownBeingKnocked}\n${boxBreakdownFcb}\n\nTOTAL: ${boxFantasy} FS`;
     })
 
     resetButtonBox.addEventListener("click", ()=> {
@@ -722,6 +746,17 @@ window.onload = function() {
         }
 
         boxFantasyScore.innerHTML = '';
+        document.querySelector("#box-breakdown").innerHTML = '';
+    })
+
+    copyButtonBox.addEventListener("click", ()=> {
+        
+        var copyBoxBreakdown = document.querySelector("#box-breakdown");
+
+        copyBoxBreakdown.select();
+        copyBoxBreakdown.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyBoxBreakdown.value);
     })
 
     // NASCAR FANTASY SCORE
