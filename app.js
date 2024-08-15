@@ -161,6 +161,7 @@ window.onload = function() {
 
     var buttonBsballH = document.querySelector("#bsballh-btn")
     var resetButtonBsballH = document.querySelector("#bsballh-clear")
+    var copyButtonBsballH = document.querySelector("#bsballh-copy")
 
     var bsballhInputs = document.querySelectorAll(".bsballh-fs");
     var bsballhVal = document.querySelectorAll(".bsballh-val");
@@ -209,6 +210,18 @@ window.onload = function() {
         document.querySelector("#bsballh-bob-val").innerHTML = `= ${bsballhBOBVal}`
         document.querySelector("#bsballh-hbp-val").innerHTML = `= ${bsballhHBPVal}`
         document.querySelector("#bsballh-sb-val").innerHTML = `= ${bsballhSBVal}`
+
+        var bsballhBreakdownSingle = `Single: 3 pts (${bsballhSingle.value}) = ${bsballhSingVal}`;
+        var bsballhBreakdownDouble = `Double: 5 pts (${bsballhDouble.value}) = ${bsballhDoubVal}`;
+        var bsballhBreakdownTriple = `Triple: 8 pts (${bsballhTriple.value}) = ${bsballhTripVal}`;
+        var bsballhBreakdownHomeRun = `Home Run: 10 pts (${bsballhHomeRun.value}) = ${bsballhHRVal}`;
+        var bsballhBreakdownRun = `Run: 2 pts (${bsballhRun.value}) = ${bsballhRVal}`;
+        var bsballhBreakdownRunBattedIn = `Run Batted In: 2 pts (${bsballhRunBattedIn.value}) = ${bsballhRBIVal}`;
+        var bsballhBreakdownBaseOnBalls = `Base On Balls: 2 pts (${bsballhBaseOnBalls.value}) = ${bsballhBOBVal}`;
+        var bsballhBreakdownHitByPitch = `Hit By Pitch: 2 pts (${bsballhHitByPitch.value}) = ${bsballhHBPVal}`;
+        var bsballhBreakdownStolenBase = `Stolen Base: 5 pts (${bsballhStolenBase.value}) = ${bsballhSBVal}`;
+
+        document.querySelector("#bsballh-breakdown").innerHTML = `${bsballhBreakdownSingle}\n${bsballhBreakdownDouble}\n${bsballhBreakdownTriple}\n${bsballhBreakdownHomeRun}\n${bsballhBreakdownRun}\n${bsballhBreakdownRunBattedIn}\n${bsballhBreakdownBaseOnBalls}\n${bsballhBreakdownHitByPitch}\n${bsballhBreakdownStolenBase}\n\nTOTAL: ${bsballhFantasy} FS`;
     })
 
     resetButtonBsballH.addEventListener('click', ()=> {
@@ -222,6 +235,18 @@ window.onload = function() {
         }
 
         bsballhFantasyScore.innerHTML = '';
+        document.querySelector("#bsballh-breakdown").innerHTML = "";
+
+    })
+
+    copyButtonBsballH.addEventListener('click', ()=> {
+        
+        var copyBsballHBreakdown = document.querySelector("#bsballh-breakdown");
+
+        copyBsballHBreakdown.select();
+        copyBsballHBreakdown.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyBsballHBreakdown.value);
     })
 
     // NFL OFFENSIVE FANTASY SCORE
@@ -229,7 +254,8 @@ window.onload = function() {
     const fballoFantasyScore = document.querySelector("#fballo-total-fs")
 
     var buttonFballO = document.querySelector("#fballo-btn");
-    var resetButtonFballO = document.querySelector("#fballo-clear")
+    var resetButtonFballO = document.querySelector("#fballo-clear");
+    var copyButtonFballO = document.querySelector("#fballo-copy")
 
     var fballoInputs = document.querySelectorAll(".fballo-fs");
     var fballoVal = document.querySelectorAll(".fballo-val");
@@ -250,12 +276,12 @@ window.onload = function() {
         const fballoOffensiveFumbleRecoveryTD = document.getElementById("fballo-ofrt");
         const fballoKickPuntFGReturnTD = document.getElementById("fballo-kpfgrtd");
 
-        var fballoPassYdVal = Number(fballoPassingYards.value) * 0.04;
+        var fballoPassYdVal = Number((Number(fballoPassingYards.value) * 0.04).toFixed(2));
         var fballoPassTdVal = Number(fballoPassingTDs.value) * 4;
         var fballoIntVal = Number(fballoInterceptions.value) * -1;
-        var fballoRushYdVal = Number(fballoRushingYards.value) * 0.1;
+        var fballoRushYdVal = Number((Number(fballoRushingYards.value) * 0.1).toFixed(1));
         var fballoRushTdVal = Number(fballoRushingTDs.value) * 6;
-        var fballoRecYdVal = Number(fballoReceivingYards.value) * 0.1;
+        var fballoRecYdVal = Number((Number(fballoReceivingYards.value) * 0.1).toFixed(1));
         var fballoRecTdVal = Number(fballoReceivingTDs.value) * 6;
         var fballoRecVal = Number(fballoReceptions.value);
         var fballoFlVal = Number(fballoFumblesLost.value) * -1;
@@ -263,7 +289,7 @@ window.onload = function() {
         var fballoOfrtVal = Number(fballoOffensiveFumbleRecoveryTD.value) * 6;
         var fballoKpfgrtdVal = Number(fballoKickPuntFGReturnTD.value) * 6;
 
-        var fballoFantasy = fballoPassYdVal +
+        var fballoFantasy = Number((fballoPassYdVal +
                             fballoPassTdVal +
                             fballoIntVal +
                             fballoRushYdVal +
@@ -274,7 +300,7 @@ window.onload = function() {
                             fballoFlVal +
                             fballo2PtcVal +
                             fballoOfrtVal +
-                            fballoKpfgrtdVal;
+                            fballoKpfgrtdVal).toFixed(2));
 
         fballoFantasyScore.innerHTML = fballoFantasy
 
@@ -291,6 +317,21 @@ window.onload = function() {
         document.querySelector("#fballo-ofrt-val").innerHTML = `= ${fballoOfrtVal}`
         document.querySelector("#fballo-kpfgrtd-val").innerHTML = `= ${fballoKpfgrtdVal}`
 
+        var fballoBreakdownPassingYards = `Passing Yards: 0.04 pts/yard (${fballoPassingYards.value}) = ${fballoPassYdVal}`;
+        var fballoBreakdownPassingTDs = `Passing TDs: 4 pts (${fballoPassingTDs.value}) = ${fballoPassTdVal}`;
+        var fballoBreakdownInterceptions = `Interceptions: -1 pt (${fballoInterceptions.value}) = ${fballoIntVal}`;
+        var fballoBreakdownRushingYards = `Rushing Yards: 0.1 pts/yard (${fballoRushingYards.value}) = ${fballoRushYdVal}`;
+        var fballoBreakdownRushingTDs = `Rushing TDs: 6 pts (${fballoRushingTDs.value}) = ${fballoRushTdVal}`;
+        var fballoBreakdownReceivingYards = `Receiving Yards: 0.1 pts/yard (${fballoReceivingYards.value}) = ${fballoRecYdVal}`;
+        var fballoBreakdownReceivingTDs = `Receiving TDs: 6 pts (${fballoReceivingTDs.value}) = ${fballoRecTdVal}`;
+        var fballoBreakdownReceptions = `Receptions: 1 pt (${fballoReceptions.value}) = ${fballoRecVal}`;
+        var fballoBreakdownFumblesLost = `Fumbles Lost: -1 pt (${fballoFumblesLost.value}) = ${fballoFlVal}`;
+        var fballoBreakdown2PointConv = `2 Point Conversions: 2 pts (${fballo2PointConversions.value}) = ${fballo2PtcVal}`;
+        var fballoBreakdownOffensiveFumbleRecoveryTD = `Offensive Fumble Recovery Touchdown: 6 pts (${fballoOffensiveFumbleRecoveryTD.value}) = ${fballoOfrtVal}`;
+        var fballoBreakdownKickPuntFGReturnTD = `Kick/Punt/Field Goal Return Touchdown: 6 pts (${fballoKickPuntFGReturnTD.value}) = ${fballoKpfgrtdVal}`;
+
+        document.querySelector("#fballo-breakdown").innerHTML = `${fballoBreakdownPassingYards}\n${fballoBreakdownPassingTDs}\n${fballoBreakdownInterceptions}\n${fballoBreakdownRushingYards}\n${fballoBreakdownRushingTDs}\n${fballoBreakdownReceivingYards}\n${fballoBreakdownReceivingTDs}\n${fballoBreakdownReceptions}\n${fballoBreakdownFumblesLost}\n${fballoBreakdown2PointConv}\n${fballoBreakdownOffensiveFumbleRecoveryTD}\n${fballoBreakdownKickPuntFGReturnTD}\n\nTOTAL: ${fballoFantasy} FS`
+
     })
 
     resetButtonFballO.addEventListener('click', ()=> {
@@ -304,6 +345,16 @@ window.onload = function() {
         }
 
         fballoFantasyScore.innerHTML = '';
+    })
+
+    copyButtonFballO.addEventListener('click', ()=> {
+        
+        var copyFballOBreakdown = document.querySelector("#fballo-breakdown");
+
+        copyFballOBreakdown.select();
+        copyFballOBreakdown.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyFballOBreakdown.value);
     })
 
     // NFL DST FANTASY SCORE
