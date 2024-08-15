@@ -293,12 +293,15 @@
     <div>
         <h2>Boxing Fantasy Score</h2>
         <ul>
-            <li>Punch Landed: 0.5 pts <span id="box-punch-val"></span></li> 
-            <input type="number" name="box-punchlanded" id="box-punch" class="box-fs" />
-            <li>Knockdown on Opponent: 12 pts <span id="box-kd-val"></span></li> 
-            <input type="number" name="box-knockdown" id="box-kd" class="box-fs">
-            <li>Being Knocked Down by Opponent: -12 pts <span id="box-beingkd-val"></span></li> 
-            <input type="number" name="box-beingknocked" id="box-beingkd" class="box-fs">
+            <li>Punch Landed: 0.5 pts 
+            <input type="number" name="box-punchlanded" id="box-punch" class="box-fs input-num-global" />
+            <span id="box-punch-val" class="box-val"></span></li> 
+            <li>Knockdown on Opponent: 12 pts 
+            <input type="number" name="box-knockdown" id="box-kd" class="box-fs input-num-global">
+            <span id="box-kd-val" class="box-val"></span></li> 
+            <li>Being Knocked Down by Opponent: -12 pts 
+            <input type="number" name="box-beingknocked" id="box-beingkd" class="box-fs input-num-global">
+            <span id="box-beingkd-val" class="box-val"></span></li> 
         </ul>
 
         <h4>Fight Conclusion Bonuses</h4>
@@ -317,21 +320,25 @@
 
         <input type="radio" name="box-fcb" id="box-dec" value="20" class="box-fcb">
         <label for="box-dec">Decision Win: 20 pts</label><br>
-
-        <button id="box-btn">Go</button>
+        
         <p>TOTAL: <span id="box-total-fs"></span> Fantasy Score</p>
+        <button id="box-btn">Go</button>
+        <button id="box-clear">Clear</button>
     </div>
 
 
     <div>
         <h2>NASCAR Fantasy Score</h2>
         <ul>
-            <li>Place Differential: +/- 1 pt <span id="nascar-pd-val"></span></li> 
-            <input type="number" name="nascar-placediff" id="nascar-pd" class="nascar-fs" />
-            <li>Fastest Laps: 0.45 pt per lap <span id="nascar-fl-val"></span></li> 
-            <input type="number" name="nascar-fastestlaps" id="nascar-fl" class="nascar-fs">
-            <li>Laps Lead: 0.25 pt per lap <span id="nascar-ll-val"></span></li> 
-            <input type="number" name="nascar-lapslead" id="nascar-ll" class="nascar-fs">
+            <li>Place Differential: +/- 1 pt 
+            <input type="number" name="nascar-placediff" id="nascar-pd" class="nascar-fs input-num-global" />
+            <span id="nascar-pd-val" class="nascar-val"></span></li> 
+            <li>Fastest Laps: 0.45 pt per lap 
+            <input type="number" name="nascar-fastestlaps" id="nascar-fl" class="nascar-fs input-num-global">
+            <span id="nascar-fl-val" class="nascar-val"></span></li> 
+            <li>Laps Lead: 0.25 pt per lap 
+            <input type="number" name="nascar-lapslead" id="nascar-ll" class="nascar-fs input-num-global">
+            <span id="nascar-ll-val" class="nascar-val"></span></li> 
         </ul>
 
         <h4>Finishing Place Points</h4>
@@ -460,6 +467,7 @@
         <label for="nascar-41thworse">41st Place or Worse: 0 pt</label><br>
 
         <button id="nascar-btn">Go</button>
+        <button id="nascar-clear">Clear</button>
         <p>TOTAL: <span id="nascar-total-fs"></span> Fantasy Score</p>
     </div>
 

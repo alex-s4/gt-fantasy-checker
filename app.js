@@ -514,6 +514,11 @@ window.onload = function() {
     const boxFantasyScore = document.querySelector("#box-total-fs");
 
     var buttonBox = document.querySelector("#box-btn");
+    var resetButtonBox = document.querySelector("#box-clear")
+
+    var boxInputs = document.querySelectorAll(".box-fs");
+    var boxVal = document.querySelectorAll(".box-val");
+    var boxRad = document.querySelectorAll(".box-fcb");
 
     buttonBox.addEventListener("click", ()=> {
 
@@ -548,11 +553,33 @@ window.onload = function() {
 
     })
 
+    resetButtonBox.addEventListener("click", ()=> {
+        
+        for(var i=0; i<boxInputs.length; i++){
+            boxInputs[i].value = '';
+        }
+
+        for(var j=0; j<boxVal.length; j++){
+            boxVal[j].innerHTML = '';
+        }
+
+        for(var k=0; k<boxRad.length; k++){
+            boxRad[k].checked = false;
+        }
+
+        boxFantasyScore.innerHTML = '';
+    })
+
     // NASCAR FANTASY SCORE
 
     const nascarFantasyScore = document.querySelector("#nascar-total-fs");
 
     var buttonNascar = document.querySelector("#nascar-btn");
+    var resetButtonNascar = document.querySelector("#nascar-clear")
+
+    var nascarInputs = document.querySelectorAll(".nascar-fs");
+    var nascarVal = document.querySelectorAll(".nascar-val");
+    var nascarRad = document.querySelectorAll(".nascar-fpp");
 
     buttonNascar.addEventListener("click", ()=> {
 
@@ -582,6 +609,23 @@ window.onload = function() {
         document.querySelector("#nascar-fl-val").innerHTML = `= ${nascarFlVal}`
         document.querySelector("#nascar-ll-val").innerHTML = `= ${nascarLlVal}`
 
+    })
+
+    resetButtonNascar.addEventListener("click", ()=> {
+        
+        for(var i=0; i<nascarInputs.length; i++){
+            nascarInputs[i].value = '';
+        }
+
+        for(var j=0; j<nascarVal.length; j++){
+            nascarVal[j].innerHTML = '';
+        }
+
+        for(var k=0; k<nascarRad.length; k++){
+            nascarRad[k].checked = false;
+        }
+
+        nascarFantasyScore.innerHTML = '';
     })
 
 }
