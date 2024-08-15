@@ -179,37 +179,61 @@
     <div class="fantasy-section">
         <h2>NFL DST Fantasy Score</h2>
         <ul>
-            <li>Sack: (1 pt) 
+            <li>Sack: 1 pt 
             <input type="number" name="" id="fballd-sac" class="fballd-fs input-num-global">
             <span id="fballd-sac-val" class="fballd-val"></span></li> 
-            <li>Interception: (2 pts) 
+            <li>Interception: 2 pts 
             <input type="number" name="" id="fballd-int" class="fballd-fs input-num-global">
             <span id="fballd-int-val" class="fballd-val"></span></li> 
-            <li>Fumble Recovery: (2 pts) 
+            <li>Fumble Recovery: 2 pts
             <input type="number" name="" id="fballd-fumbrec" class="fballd-fs input-num-global">
             <span id="fballd-fumbrec-val" class="fballd-val"></span></li> 
-            <li>Punt/Kickoff/FG Return for TD: (6 pts) 
+            <li>Punt/Kickoff/FG Return for TD: 6 pts 
             <input type="number" name="" id="fballd-pkfgrtd" class="fballd-fs input-num-global">
             <span id="fballd-pkfgrtd-val" class="fballd-val"></span></li> 
-            <li>Interception Return TD: (6 pts) 
+            <li>Interception Return TD: 6 pts 
             <input type="number" name="" id="fballd-intrettd" class="fballd-fs input-num-global">
             <span id="fballd-intrettd-val" class="fballd-val"></span></li> 
-            <li>Fumble Recovery TD: (6 pts) 
+            <li>Fumble Recovery TD: 6 pts 
             <input type="number" name="" id="fballd-fumbrectd" class="fballd-fs input-num-global">
             <span id="fballd-fumbrectd-val" class="fballd-val"></span></li> 
-            <li>Blocked Punt or FG Return TD: (6 pts) 
+            <li>Blocked Punt or FG Return TD: 6 pts 
             <input type="number" name="" id="fballd-blkpunt" class="fballd-fs input-num-global">
             <span id="fballd-blkpunt-val" class="fballd-val"></span></li> 
-            <li>Safety: (2 pts) 
+            <li>Safety: 2 pts 
             <input type="number" name="" id="fballd-saf" class="fballd-fs input-num-global">
             <span id="fballd-saf-val" class="fballd-val"></span></li> 
-            <li>Blocked Kick: (2 pts) 
+            <li>Blocked Kick: 2 pts 
             <input type="number" name="" id="fballd-blkkick" class="fballd-fs input-num-global">
             <span id="fballd-blkkick-val" class="fballd-val"></span></li> 
-            <li>2 Point Conversions/Extra Point Returns: (2 pts) 
+            <li>2 Point Conversions/Extra Point Returns: 2 pts 
             <input type="number" name="" id="fballd-2ptconv" class="fballd-fs input-num-global">
             <span id="fballd-2ptconv-val" class="fballd-val"></span></li> 
-            <li>0 Point Allowed: (10 pts) 
+        </ul>
+            <h4>Points Allowed:</h4>
+
+            <input type="radio" name="fballd-pa" id="fballd-0pt" value="10" class="fballd-pa">
+            <label for="fballd-0pt">0 Point Allowed = 10 pts</label><br>
+
+            <input type="radio" name="fballd-pa" id="fballd-1to6pt" value="7" class="fballd-pa">
+            <label for="fballd-1to6pt">1-6 Points Allowed = 7 pts</label><br>
+
+            <input type="radio" name="fballd-pa" id="fballd-7to13pt" value="4" class="fballd-pa">
+            <label for="fballd-7to13pt">7-13 Points Allowed = 4 pts</label><br>
+
+            <input type="radio" name="fballd-pa" id="fballd-14to20pt" value="1" class="fballd-pa">
+            <label for="fballd-14to20pt">14-20 Points Allowed = 1 pt</label><br>
+
+            <input type="radio" name="fballd-pa" id="fballd-21to27pt" value="0" class="fballd-pa">
+            <label for="fballd-21to27pt">21-27 Points Allowed = 0 pt</label><br>
+
+            <input type="radio" name="fballd-pa" id="fballd-28to34pt" value="-1" class="fballd-pa">
+            <label for="fballd-28to34pt">28-34 Points Allowed = -1 pt</label><br>
+
+            <input type="radio" name="fballd-pa" id="fballd-35morept" value="-4" class="fballd-pa">
+            <label for="fballd-35morept">35+ Point Allowed = -4 pt</label><br>
+
+            <!-- <li>0 Point Allowed: (10 pts) 
             <input type="number" name="" id="fballd-0pt" class="fballd-fs input-num-global">
             <span id="fballd-0pt-val" class="fballd-val"></span></li> 
             <li>1-6 Points Allowed: (7 pts) 
@@ -229,14 +253,15 @@
             <span id="fballd-28to34pt-val" class="fballd-val"></span></li> 
             <li>35+ Point Allowed: (-4 pts) 
             <input type="number" name="" id="fballd-35morept" class="fballd-fs input-num-global"> 
-            <span id="fballd-35morept-val" class="fballd-val"></span></li> 
-        </ul>
+            <span id="fballd-35morept-val" class="fballd-val"></span></li>  -->
+        
         <p>TOTAL: <span id="fballd-total-fs"></span> Fantasy Score</p>
 
         <button id="fballd-btn">Go</button>
         <button id="fballd-clear">Clear</button><br>
 
-
+        <textarea name="fballd-fs-breakdown" id="fballd-breakdown" class="textarea-global" rows="14" cols="55" disabled></textarea>
+        <button id="fballd-copy">Copy</button><br>
 
     </div>
 
@@ -275,7 +300,6 @@
         <button id="tennis-copy">Copy</button><br>
         
     </div>
-
 
     <div class="fantasy-section">
         <h2>MMA Fantasy Score</h2>
@@ -365,7 +389,6 @@
         <textarea name="box-fs-breakdown" id="box-breakdown" class="textarea-global" rows="6" cols="44" disabled></textarea>
         <button id="box-copy">Copy</button><br>
     </div>
-
 
     <div class="fantasy-section">
         <h2>NASCAR Fantasy Score</h2>
@@ -527,7 +550,6 @@
         <button id="nascar-copy">Copy</button><br>
     </div>
 
-    
     <script type="module" src="./app.js"></script>
 
 </body>

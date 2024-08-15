@@ -364,12 +364,15 @@ window.onload = function() {
 
     var buttonFballD = document.querySelector("#fballd-btn");
     var resetButtonFballD = document.querySelector("#fballd-clear");
+    var copyButtonFballD = document.querySelector("#fballd-copy");
 
     var fballdInputs = document.querySelectorAll(".fballd-fs");
     var fballdVal = document.querySelectorAll(".fballd-val");
+    var fballdRad = document.querySelectorAll(".fballd-pa");
 
     buttonFballD.addEventListener('click', ()=> {
-        console.log("buttonFballD")
+        
+        var fballdPaRadio = document.querySelectorAll(".fballd-pa");
 
         const fballdSack = document.getElementById("fballd-sac");
         const fballdInterception = document.getElementById("fballd-int");
@@ -381,13 +384,6 @@ window.onload = function() {
         const fballdSafety = document.getElementById("fballd-saf");
         const fballdBlockedKick = document.getElementById("fballd-blkkick");
         const fballd2PointConversion = document.getElementById("fballd-2ptconv");
-        const fballd0PtAllowed = document.getElementById("fballd-0pt");
-        const fballd1to6PtAllowed = document.getElementById("fballd-1to6pt");
-        const fballd7to13PtAllowed = document.getElementById("fballd-7to13pt");
-        const fballd14to20PtAllowed = document.getElementById("fballd-14to20pt");
-        const fballd21to27PtAllowed = document.getElementById("fballd-21to27pt");
-        const fballd28to34PtAllowed = document.getElementById("fballd-28to34pt");
-        const fballd35AbovePtAllowed = document.getElementById("fballd-35morept");
 
         var fballdSacVal = Number(fballdSack.value) * 1;
         var fballdIntVal = Number(fballdInterception.value) * 2;
@@ -399,13 +395,38 @@ window.onload = function() {
         var fballdSafVal = Number(fballdSafety.value) * 2;
         var fballdBlkKickVal = Number(fballdBlockedKick.value) * 2;
         var fballd2PtConvVal = Number(fballd2PointConversion.value) * 2;
-        var fballd0PtVal = Number(fballd0PtAllowed.value) * 10;
-        var fballd1To6PtVal = Number(fballd1to6PtAllowed.value) * 7;
-        var fballd7To13PtVal = Number(fballd7to13PtAllowed.value) * 4;
-        var fballd14To20PtVal = Number(fballd14to20PtAllowed.value) * 1;
-        var fballd21To27PtVal = Number(fballd21to27PtAllowed.value) * 0;
-        var fballd28To34PtVal = Number(fballd28to34PtAllowed.value) * -1;
-        var fballd35MorePtVal = Number(fballd35AbovePtAllowed.value) * -4;
+
+        var fballdFaVal = 0;
+        var fballdBreakdownFa = "";
+
+        for(var i=0; i<fballdPaRadio.length; i++){
+            if(fballdPaRadio[i].checked === true){
+                fballdFaVal = Number(fballdPaRadio[i].value)
+            }
+            switch(fballdFaVal){
+                case 10:
+                    fballdBreakdownFa = "0 Point Allowed = 10 pts";
+                    break;
+                case 7:
+                    fballdBreakdownFa = "1-6 Points Allowed = 7 pts";
+                    break;
+                case 4:
+                    fballdBreakdownFa = "7-13 Points Allowed = 4 pts";
+                    break;
+                case 1:
+                    fballdBreakdownFa = "14-20 Points Allowed = 1 pt";
+                    break;
+                case 0:
+                    fballdBreakdownFa = "21-27 Points Allowed = 0 pt";
+                    break;
+                case -1:
+                    fballdBreakdownFa = "28-34 Points Allowed = -1 pt";
+                    break;
+                case -4:
+                    fballdBreakdownFa = "35+ Points Allowed = -4 pt";
+                    break;
+            }
+        }
 
         var fballdFantasy = fballdSacVal +
                             fballdIntVal +
@@ -417,14 +438,7 @@ window.onload = function() {
                             fballdSafVal +
                             fballdBlkKickVal +
                             fballd2PtConvVal +
-                            fballd0PtVal +
-                            fballd1To6PtVal +
-                            fballd7To13PtVal +
-                            fballd14To20PtVal +
-                            fballd21To27PtVal +
-                            fballd28To34PtVal +
-                            fballd35MorePtVal;
-
+                            fballdFaVal;
 
         fballdFantasyScore.innerHTML = fballdFantasy;
 
@@ -438,13 +452,20 @@ window.onload = function() {
         document.querySelector("#fballd-saf-val").innerHTML = `= ${fballdSafVal}`
         document.querySelector("#fballd-blkkick-val").innerHTML = `= ${fballdBlkKickVal}`
         document.querySelector("#fballd-2ptconv-val").innerHTML = `= ${fballd2PtConvVal}`
-        document.querySelector("#fballd-0pt-val").innerHTML = `= ${fballd0PtVal}`
-        document.querySelector("#fballd-1to6pt-val").innerHTML = `= ${fballd1To6PtVal}`
-        document.querySelector("#fballd-7to13pt-val").innerHTML = `= ${fballd7To13PtVal}`
-        document.querySelector("#fballd-14to20pt-val").innerHTML = `= ${fballd14To20PtVal}`
-        document.querySelector("#fballd-21to27pt-val").innerHTML = `= ${fballd21To27PtVal}`
-        document.querySelector("#fballd-28to34pt-val").innerHTML = `= ${fballd28To34PtVal}`
-        document.querySelector("#fballd-35morept-val").innerHTML = `= ${fballd35MorePtVal}`
+
+        var fballdBreakdownSack = `Sack: 1 pt (${fballdSack.value}) = ${fballdSacVal}`;
+        var fballdBreakdownInterception = `Interception: 2 pts (${fballdInterception.value}) = ${fballdIntVal}`;
+        var fballdBreakdownFumbleRecovery = `Fumble Recovery: 2 pts (${fballdFumbleRecovery.value}) = ${fballdFumbRecVal}`;
+        var fballdBreakdownPuntKickoffFGReturnTD = `Punt/Kickoff/FG Return for TD: 6 pts (${fballdPuntKickoffFGReturnTD.value}) = ${fballdPkfgrtdVal}`;
+        var fballdBreakdownInterceptionReturnTD = `Interception Return TD: 6 pts (${fballdInterceptionReturnTD.value}) = ${fballdIntrettdVal}`;
+        var fballdBreakdownFumbleRecoveryTD = `Fumble Recovery TD: 6 pts (${fballdFumbleRecoveryTD.value}) = ${fballdFumbRecTdVal}`;
+        var fballdBreakdownBlockedPuntTD = `Blocked Punt or FG Return TD: 6 pts (${fballdBlockedPuntTD.value}) = ${fballdBlkPuntVal}`;
+        var fballdBreakdownSafety = `Safety: 2 pts (${fballdSafety.value}) = ${fballdSafVal}`;
+        var fballdBreakdownBlockedKick = `Blocked Kick: 2 pts (${fballdBlockedKick.value}) = ${fballdBlkKickVal}`;
+        var fballdBreakdownfballd2PointConversion = `2 Point Conversions/Extra Point Returns: 2 pts (${fballd2PointConversion.value}) = ${fballd2PtConvVal}`;
+
+
+        document.querySelector("#fballd-breakdown").innerHTML = `${fballdBreakdownSack}\n${fballdBreakdownInterception}\n${fballdBreakdownFumbleRecovery}\n${fballdBreakdownPuntKickoffFGReturnTD}\n${fballdBreakdownInterceptionReturnTD}\n${fballdBreakdownFumbleRecoveryTD}\n${fballdBreakdownBlockedPuntTD}\n${fballdBreakdownSafety}\n${fballdBreakdownBlockedKick}\n${fballdBreakdownfballd2PointConversion}\n${fballdBreakdownFa}\n\nTOTAL: ${fballdFantasy} FS`
 
     })
 
@@ -458,7 +479,22 @@ window.onload = function() {
             fballdVal[j].innerHTML = '';
         }
 
+        for(var k=0; k<fballdRad.length; k++){
+            fballdRad[k].checked = false;
+        }
+
         fballdFantasyScore.innerHTML = '';
+        document.querySelector("#fballd-breakdown").innerHTML = '';
+    })
+
+    copyButtonFballD.addEventListener('click', ()=> {
+        
+        var copyFballDBreakdown = document.querySelector("#fballd-breakdown");
+
+        copyFballDBreakdown.select();
+        copyFballDBreakdown.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyFballDBreakdown.value);
     })
 
     // TENNIS FANTASY SCORE
@@ -555,10 +591,9 @@ window.onload = function() {
 
     var mmaInputs = document.querySelectorAll(".mma-fs");
     var mmaVal = document.querySelectorAll(".mma-val");
-    var mmaRad = document.querySelectorAll(".mma-fcb")
+    var mmaRad = document.querySelectorAll(".mma-fcb");
 
     buttonMma.addEventListener("click", ()=> {
-        // console.log("buttonMma");
 
         var mmaFcbRadio = document.querySelectorAll('.mma-fcb');
 
@@ -568,20 +603,13 @@ window.onload = function() {
         const mmaSubmissionAttempt = document.querySelector("#mma-subatt");
         const mmaKnockdown = document.querySelector("#mma-kd");
 
-        // const mma1stRound = document.querySelector("#mma-1strd");
-        // const mma2ndRound = document.querySelector("#mma-2ndrd");
-        // const mma3rdRound = document.querySelector("#mma-3rdrd");
-        // const mma4thRound = document.querySelector("#mma-4thrd");
-        // const mma5thRound = document.querySelector("#mma-5thrd");
-        // const mmaDecision = document.querySelector("#mma-dec");
-
         var mmaSigStrVal = Number(mmaSignificantStrikes.value) * 0.6;
         var mmaTdVal = Number(mmaTakedown.value) * 6;
         var mmaTdDefVal = Number(mmaTakedownDefense.value) * 3;
         var mmaSubAttVal = Number(mmaSubmissionAttempt.value) * 5;
         var mmaKdVal = Number(mmaKnockdown.value) * 12;
 
-        var mmaFcbVal = 0
+        var mmaFcbVal = 0;
         var mmaBreakdownFCB = "";
 
         for(var i=0; i<mmaFcbRadio.length; i++){
