@@ -34,6 +34,14 @@
       align-items: center;
   }
 
+header {
+    margin-bottom: 18px;
+}
+
+li {
+    list-style-type: none;
+}
+
 .sports-selection p {
     border: 1px solid blue;
     display: inline-block;
@@ -46,4 +54,9 @@
 
 .textarea-global {
     resize: none;
+}
+
+.fantasy-section {
+    margin-bottom: 26px;
+    margin-left: 18px;
 }

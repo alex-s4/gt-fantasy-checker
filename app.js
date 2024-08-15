@@ -255,7 +255,7 @@ window.onload = function() {
 
     var buttonFballO = document.querySelector("#fballo-btn");
     var resetButtonFballO = document.querySelector("#fballo-clear");
-    var copyButtonFballO = document.querySelector("#fballo-copy")
+    var copyButtonFballO = document.querySelector("#fballo-copy");
 
     var fballoInputs = document.querySelectorAll(".fballo-fs");
     var fballoVal = document.querySelectorAll(".fballo-val");
@@ -345,6 +345,7 @@ window.onload = function() {
         }
 
         fballoFantasyScore.innerHTML = '';
+        document.querySelector("#fballo-breakdown").innerHTML = '';
     })
 
     copyButtonFballO.addEventListener('click', ()=> {
@@ -362,7 +363,7 @@ window.onload = function() {
     const fballdFantasyScore = document.querySelector("#fballd-total-fs");
 
     var buttonFballD = document.querySelector("#fballd-btn");
-    var resetButtonFballD = document.querySelector("#fballd-clear")
+    var resetButtonFballD = document.querySelector("#fballd-clear");
 
     var fballdInputs = document.querySelectorAll(".fballd-fs");
     var fballdVal = document.querySelectorAll(".fballd-val");
@@ -466,6 +467,7 @@ window.onload = function() {
 
     var buttonTennis = document.querySelector("#tennis-btn");
     var resetButtonTennis = document.querySelector("#tennis-clear")
+    var copyButtonTennis = document.querySelector("#tennis-copy");
 
     var tennisInputs = document.querySelectorAll(".tennis-fs");
     var tennisVal = document.querySelectorAll(".tennis-val");
@@ -507,6 +509,15 @@ window.onload = function() {
         document.querySelector("#tennis-ac-val").innerHTML = `= ${tennisAcVal}`
         document.querySelector("#tennis-dblft-val").innerHTML = `= ${tennisDblftVal}`
 
+        var tennisBreakdownMatchPlayed = `Match Played: 10 pts (${tennisMatchPlayed.value}) = ${tennisMpVal}`;
+        var tennisBreakdownGameWin = `Game Win: 1 pt (${tennisGameWin.value}) = ${tennisGwVal}`;
+        var tennisBreakdownGameLoss = `Game Loss: -1 pt (${tennisGameLoss.value}) = ${tennisGlVal}`;
+        var tennisBreakdownSetWon = `Set Won: 3 pts (${tennisSetWon.value}) = ${tennisSwVal}`;
+        var tennisBreakdownSetLoss = `Set Loss: -3 pts (${tennisSetLoss.value}) = ${tennisSlVal}`;
+        var tennisBreakdownAce = `Ace: 0.5 pt (${tennisAce.value}) = ${tennisAcVal}`;
+        var tennisBreakdownDoubleFault = `Double Fault: -0.5 pt (${tennisDoubleFault.value}) = ${tennisDblftVal}`;
+
+        document.querySelector("#tennis-breakdown").innerHTML = `${tennisBreakdownMatchPlayed}\n${tennisBreakdownGameWin}\n${tennisBreakdownGameLoss}\n${tennisBreakdownSetWon}\n${tennisBreakdownSetLoss}\n${tennisBreakdownAce}\n${tennisBreakdownDoubleFault}\n\nTOTAL: ${tennisFantasy} FS`;
     })
 
     resetButtonTennis.addEventListener('click', ()=> {
@@ -520,6 +531,17 @@ window.onload = function() {
         }
 
         tennisFantasyScore.innerHTML = '';
+        document.querySelector("#tennis-breakdown").innerHTML = '';
+    })
+
+    copyButtonTennis.addEventListener('click', ()=> {
+        
+        var copyTennisBreakdown = document.querySelector("#tennis-breakdown");
+
+        copyTennisBreakdown.select();
+        copyTennisBreakdown.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyTennisBreakdown.value);
     })
 
 

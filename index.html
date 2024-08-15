@@ -10,7 +10,7 @@
     <header>
         <h1>GameTime Fantasy Score Calculator <a href="https://emoji.gg/emoji/3181_lfg"><img src="https://cdn3.emoji.gg/emojis/3181_lfg.png" width="24px" height="24px" alt="lfg"></a></h1>
     </header>
-    <div class="sports-selection">
+    <!-- <div class="sports-selection">
         <p>NBA/WNBA</p>
         <p>MLB - PITCHER</p>
         <p>MLB - HITTER</p>
@@ -20,9 +20,9 @@
         <p>MMA</p>
         <p>BOXING</p>
         <p>NASCAR</p>
-    </div>
+    </div> -->
 
-        <div>
+        <div class="fantasy-section">
             <h2>NBA/WNBA Fantasy Score</h2>
             
             <ul>
@@ -56,7 +56,7 @@
         
         </div>
 
-    <div>
+    <div class="fantasy-section">
         <h2>MLB Pitcher Fantasy Score</h2>
         <ul>
             <li>Win: 6 pts
@@ -85,7 +85,7 @@
         <button id="bsballp-copy">Copy</button><br>
     </div>
 
-    <div>
+    <div class="fantasy-section">
         <h2>MLB Hitter Fantasy Score</h2>
         <ul>
             <li>Single: 3 pts 
@@ -126,7 +126,7 @@
 
     </div>
 
-    <div>
+    <div class="fantasy-section">
         <h2>NFL Offensive Fantasy Score</h2>
         <ul>
             <li>Passing Yards: 0.04 pts per yard 
@@ -176,7 +176,7 @@
 
     </div>
 
-    <div>
+    <div class="fantasy-section">
         <h2>NFL DST Fantasy Score</h2>
         <ul>
             <li>Sack: (1 pt) 
@@ -240,7 +240,7 @@
 
     </div>
 
-    <div>
+    <div class="fantasy-section">
         <h2>Tennis Fantasy Score</h2>
         <ul>
             <li>Match Played: 10 pts 
@@ -265,13 +265,19 @@
             <input type="number" name="tennis-doublefault" id="tennis-dblft" class="tennis-fs input-num-global">
             <span id="tennis-dblft-val" class="tennis-val"></span></li> 
         </ul>
-        <button id="tennis-btn">Go</button>
-        <button id="tennis-clear">Clear</button>
+
         <p>TOTAL: <span id="tennis-total-fs"></span> Fantasy Score</p>
+        
+        <button id="tennis-btn">Go</button>
+        <button id="tennis-clear">Clear</button><br>
+
+        <textarea name="tennis-fs-breakdown" id="tennis-breakdown" class="textarea-global" rows="9" cols="36" disabled></textarea>
+        <button id="tennis-copy">Copy</button><br>
+        
     </div>
 
 
-    <div>
+    <div class="fantasy-section">
         <h2>MMA Fantasy Score</h2>
         <ul>
             <li>Significant Strikes: 0.6 pts 
@@ -315,7 +321,7 @@
         <button id="mma-clear">Clear</button>
     </div>
 
-    <div>
+    <div class="fantasy-section">
         <h2>Boxing Fantasy Score</h2>
         <ul>
             <li>Punch Landed: 0.5 pts 
@@ -352,7 +358,7 @@
     </div>
 
 
-    <div>
+    <div class="fantasy-section">
         <h2>NASCAR Fantasy Score</h2>
         <ul>
             <li>Place Differential: +/- 1 pt 
