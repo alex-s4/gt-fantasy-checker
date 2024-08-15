@@ -551,6 +551,7 @@ window.onload = function() {
 
     var buttonMma = document.querySelector("#mma-btn");
     var resetButtonMma = document.querySelector("#mma-clear")
+    var copyButtonMma = document.querySelector("#mma-copy")
 
     var mmaInputs = document.querySelectorAll(".mma-fs");
     var mmaVal = document.querySelectorAll(".mma-val");
@@ -581,10 +582,31 @@ window.onload = function() {
         var mmaKdVal = Number(mmaKnockdown.value) * 12;
 
         var mmaFcbVal = 0
+        var mmaBreakdownFCB = "";
 
         for(var i=0; i<mmaFcbRadio.length; i++){
             if(mmaFcbRadio[i].checked === true){
                 mmaFcbVal = Number(mmaFcbRadio[i].value)
+            }
+            switch(mmaFcbVal){
+                case 100:
+                    mmaBreakdownFCB = "1st Round Win = 100 pts";
+                    break;
+                case 75:
+                    mmaBreakdownFCB = "2nd Round Win = 75 pts";
+                    break;
+                case 50:
+                    mmaBreakdownFCB = "3rd Round Win = 50 pts";
+                    break;
+                case 35:
+                    mmaBreakdownFCB = "4th Round Win = 35 pts";
+                    break;
+                case 25:
+                    mmaBreakdownFCB = "5th Round Win = 25 pts";
+                    break;
+                case 20:
+                    mmaBreakdownFCB = "Decision Win = 20 pts";
+                    break;
             }
         }
         
@@ -595,18 +617,25 @@ window.onload = function() {
                          mmaKdVal +
                          mmaFcbVal;
 
-        mmaFantasyScore.innerHTML = mmaFantasy
+        mmaFantasyScore.innerHTML = mmaFantasy;
 
-        document.querySelector("#mma-sigstr-val").innerHTML = `= ${mmaSigStrVal}`
-        document.querySelector("#mma-td-val").innerHTML = `= ${mmaTdVal}`
-        document.querySelector("#mma-tddef-val").innerHTML = `= ${mmaTdDefVal}`
-        document.querySelector("#mma-subatt-val").innerHTML = `= ${mmaSubAttVal}`
-        document.querySelector("#mma-kd-val").innerHTML = `= ${mmaKdVal}`                 
+        document.querySelector("#mma-sigstr-val").innerHTML = `= ${mmaSigStrVal}`;
+        document.querySelector("#mma-td-val").innerHTML = `= ${mmaTdVal}`;
+        document.querySelector("#mma-tddef-val").innerHTML = `= ${mmaTdDefVal}`;
+        document.querySelector("#mma-subatt-val").innerHTML = `= ${mmaSubAttVal}`;
+        document.querySelector("#mma-kd-val").innerHTML = `= ${mmaKdVal}`;
+        
+        var mmaBreakdownSigStrikes = `Significant Strikes: 0.6 pts (${mmaSignificantStrikes.value}) = ${mmaSigStrVal}`;
+        var mmaBreakdownTakedown = `Takedown: 6 pts (${mmaTakedown.value}) = ${mmaTdVal}`;
+        var mmaBreakdownTakedownDefense = `Takedown Defense: 3 pts (${mmaTakedownDefense.value}) = ${mmaTdDefVal}`;
+        var mmaBreakdownSubmissionAttempt = `Submission Attempt: 5 pts (${mmaSubmissionAttempt.value}) = ${mmaSubAttVal}`;
+        var mmaBreakdownKnockdown = `Knockdown: 12 pts (${mmaKnockdown.value}) = ${mmaKdVal}`;
+
+        document.querySelector("#mma-breakdown").innerHTML = `${mmaBreakdownSigStrikes}\n${mmaBreakdownTakedown}\n${mmaBreakdownTakedownDefense}\n${mmaBreakdownSubmissionAttempt}\n${mmaBreakdownKnockdown}\n${mmaBreakdownFCB}\n\nTOTAL: ${mmaFantasy} FS`
 
     })
 
     resetButtonMma.addEventListener("click", ()=> {
-
         
         for(var i=0; i<mmaInputs.length; i++){
             mmaInputs[i].value = '';
@@ -621,6 +650,17 @@ window.onload = function() {
         }
 
         mmaFantasyScore.innerHTML = '';
+        document.querySelector("#mma-breakdown").innerHTML = "";
+    })
+
+    copyButtonMma.addEventListener("click", ()=> {
+        
+        var copyMmaBreakdown = document.querySelector("#mma-breakdown");
+
+        copyMmaBreakdown.select();
+        copyMmaBreakdown.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyMmaBreakdown.value);
     })
 
     // BOXING FANTASY SCORE
