@@ -42,6 +42,14 @@ li {
     list-style-type: none;
 }
 
+.flex-container {
+    display: flex;
+}
+
+.container-nascar-placement {
+    margin-right: 14px;
+}
+
 .sports-selection p {
     border: 1px solid blue;
     display: inline-block;

@@ -764,7 +764,8 @@ window.onload = function() {
     const nascarFantasyScore = document.querySelector("#nascar-total-fs");
 
     var buttonNascar = document.querySelector("#nascar-btn");
-    var resetButtonNascar = document.querySelector("#nascar-clear")
+    var resetButtonNascar = document.querySelector("#nascar-clear");
+    var copyButtonNascar = document.querySelector("#nascar-copy");
 
     var nascarInputs = document.querySelectorAll(".nascar-fs");
     var nascarVal = document.querySelectorAll(".nascar-val");
@@ -783,12 +784,140 @@ window.onload = function() {
         var nascarLlVal = Number(nascarLapsLead.value) * 0.25;
 
         var nascarFppVal = 0;
+        var nascarBreakdownFpp = '';
 
         for(var i=0; i<nascarFppRadio.length; i++){
             if(nascarFppRadio[i].checked === true){
                 nascarFppVal = Number(nascarFppRadio[i].value)
             }
+            switch(nascarFppVal){
+                case 45:
+                    nascarBreakdownFpp = "1st Place: 45 pts";
+                    break;
+                case 42:
+                    nascarBreakdownFpp = "2nd Place: 42 pts";
+                    break;
+                case 41:
+                    nascarBreakdownFpp = "3rd Place: 41 pts";
+                    break;
+                case 40:
+                    nascarBreakdownFpp = "4th Place: 40 pts";
+                    break;
+                case 39:
+                    nascarBreakdownFpp = "5th Place: 39 pts";
+                    break;
+                case 38:
+                    nascarBreakdownFpp = "6th Place: 38 pts";
+                    break;
+                case 37:
+                    nascarBreakdownFpp = "7th Place: 37 pts";
+                    break;
+                case 36:
+                    nascarBreakdownFpp = "8th Place: 36 pts";
+                    break;
+                case 35:
+                    nascarBreakdownFpp = "9th Place: 35 pts";
+                    break;
+                case 34:
+                    nascarBreakdownFpp = "10th Place: 34 pts";
+                    break;
+                case 32:
+                    nascarBreakdownFpp = "11th Place: 32 pts";
+                    break;
+                case 31:
+                    nascarBreakdownFpp = "12th Place: 31 pts";
+                    break;
+                case 30:
+                    nascarBreakdownFpp = "13th Place: 30 pts";
+                    break;
+                case 29:
+                    nascarBreakdownFpp = "14th Place: 29 pts";
+                    break;
+                case 28:
+                    nascarBreakdownFpp = "15th Place: 28 pts";
+                    break;
+                case 27:
+                    nascarBreakdownFpp = "16th Place: 27 pts";
+                    break;
+                case 26:
+                    nascarBreakdownFpp = "17th Place: 26 pts";
+                    break;
+                case 25:
+                    nascarBreakdownFpp = "18th Place: 25 pts";
+                    break;
+                case 23:
+                    nascarBreakdownFpp = "19th Place: 23 pts";
+                    break;
+                case 21:
+                    nascarBreakdownFpp = "20th Place: 21 pts";
+                    break;
+                case 20:
+                    nascarBreakdownFpp = "21st Place: 20 pts";
+                    break;
+                case 19:
+                    nascarBreakdownFpp = "22nd Place: 19 pts";
+                    break;
+                case 18:
+                    nascarBreakdownFpp = "23rd Place: 18 pts";
+                    break;
+                case 17:
+                    nascarBreakdownFpp = "24th Place: 17 pts";
+                    break;
+                case 16:
+                    nascarBreakdownFpp = "25th Place: 16 pts";
+                    break;
+                case 15:
+                    nascarBreakdownFpp = "26th Place: 15 pts";
+                    break;
+                case 14:
+                    nascarBreakdownFpp = "27th Place: 14 pts";
+                    break;
+                case 13:
+                    nascarBreakdownFpp = "28th Place: 13 pts";
+                    break;
+                case 12:
+                    nascarBreakdownFpp = "29th Place: 12 pts";
+                    break;
+                case 11:
+                    nascarBreakdownFpp = "30th Place: 11 pts";
+                    break;
+                case 10:
+                    nascarBreakdownFpp = "31st Place: 10 pts";
+                    break;
+                case 9:
+                    nascarBreakdownFpp = "32nd Place: 9 pts";
+                    break;
+                case 8:
+                    nascarBreakdownFpp = "33rd Place: 8 pts";
+                    break;
+                case 7:
+                    nascarBreakdownFpp = "34th Place: 7 pts";
+                    break;
+                case 6:
+                    nascarBreakdownFpp = "35th Place: 6 pts";
+                    break;
+                case 5:
+                    nascarBreakdownFpp = "36th Place: 5 pts";
+                    break;
+                case 4:
+                    nascarBreakdownFpp = "37th Place: 4 pts";
+                    break;
+                case 3:
+                    nascarBreakdownFpp = "38th Place: 3 pts";
+                    break;
+                case 2:
+                    nascarBreakdownFpp = "39th Place: 2 pts";
+                    break;
+                case 1:
+                    nascarBreakdownFpp = "40th Place: 1 pt";
+                    break;
+                case 0:
+                    nascarBreakdownFpp = "41st Place or Worse: 0 pt";
+                    break;
+            }
         }
+
+        console.log(nascarBreakdownFpp);
 
         var nascarFantasy = nascarPdVal + nascarFlVal + nascarLlVal + nascarFppVal;
 
@@ -798,6 +927,11 @@ window.onload = function() {
         document.querySelector("#nascar-fl-val").innerHTML = `= ${nascarFlVal}`
         document.querySelector("#nascar-ll-val").innerHTML = `= ${nascarLlVal}`
 
+        var nascarBreakdownPlaceDiff = `Place Differential: +/- 1 pt (${nascarPlaceDiff.value}) = ${nascarPdVal}`;
+        var nascarBreakdownFastestLaps = `Fastest Laps: 0.45 pt/lap (${nascarFastestLaps.value}) = ${nascarFlVal}`;
+        var nascarBreakdownLapsLead = `Laps Lead: 0.25 pt/lap (${nascarLapsLead.value}) = ${nascarLlVal}`;
+
+        document.querySelector("#nascar-breakdown").innerHTML = `${nascarBreakdownPlaceDiff}\n${nascarBreakdownFastestLaps}\n${nascarBreakdownLapsLead}\n${nascarBreakdownFpp}\n\nTOTAL: ${nascarFantasy} FS`;
     })
 
     resetButtonNascar.addEventListener("click", ()=> {
@@ -815,6 +949,17 @@ window.onload = function() {
         }
 
         nascarFantasyScore.innerHTML = '';
+        document.querySelector("#nascar-breakdown").innerHTML = "";
+    })
+
+    copyButtonNascar.addEventListener("click", ()=> {
+        
+        var copyNascarBreakdown = document.querySelector("#nascar-breakdown");
+
+        copyNascarBreakdown.select();
+        copyNascarBreakdown.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyNascarBreakdown.value);
     })
 
 }
