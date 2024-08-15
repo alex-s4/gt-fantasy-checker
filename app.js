@@ -373,6 +373,10 @@ window.onload = function() {
     const tennisFantasyScore = document.querySelector("#tennis-total-fs");
 
     var buttonTennis = document.querySelector("#tennis-btn");
+    var resetButtonTennis = document.querySelector("#tennis-clear")
+
+    var tennisInputs = document.querySelectorAll(".tennis-fs");
+    var tennisVal = document.querySelectorAll(".tennis-val");
 
     buttonTennis.addEventListener('click', ()=> {
         console.log("buttonTennis")
@@ -413,12 +417,30 @@ window.onload = function() {
 
     })
 
+    resetButtonTennis.addEventListener('click', ()=> {
+        
+        for(var i=0; i<tennisInputs.length; i++){
+            tennisInputs[i].value = '';
+        }
+
+        for(var j=0; j<tennisVal.length; j++){
+            tennisVal[j].innerHTML = '';
+        }
+
+        tennisFantasyScore.innerHTML = '';
+    })
+
 
     // MMA FANTASY SCORE
 
     const mmaFantasyScore = document.querySelector("#mma-total-fs");
 
     var buttonMma = document.querySelector("#mma-btn");
+    var resetButtonMma = document.querySelector("#mma-clear")
+
+    var mmaInputs = document.querySelectorAll(".mma-fs");
+    var mmaVal = document.querySelectorAll(".mma-val");
+    var mmaRad = document.querySelectorAll(".mma-fcb")
 
     buttonMma.addEventListener("click", ()=> {
         // console.log("buttonMma");
@@ -467,6 +489,24 @@ window.onload = function() {
         document.querySelector("#mma-subatt-val").innerHTML = `= ${mmaSubAttVal}`
         document.querySelector("#mma-kd-val").innerHTML = `= ${mmaKdVal}`                 
 
+    })
+
+    resetButtonMma.addEventListener("click", ()=> {
+
+        
+        for(var i=0; i<mmaInputs.length; i++){
+            mmaInputs[i].value = '';
+        }
+
+        for(var j=0; j<mmaVal.length; j++){
+            mmaVal[j].innerHTML = '';
+        }
+
+        for(var k=0; k<mmaRad.length; k++){
+            mmaRad[k].checked = false;
+        }
+
+        mmaFantasyScore.innerHTML = '';
     })
 
     // BOXING FANTASY SCORE

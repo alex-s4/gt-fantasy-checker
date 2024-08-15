@@ -218,22 +218,30 @@
     <div>
         <h2>Tennis Fantasy Score</h2>
         <ul>
-            <li>Match Played: 10 pts <span id="tennis-mp-val"></span></li> 
-            <input type="number" name="tennis-matchplayed" id="tennis-mp" class="tennis-fs" />
-            <li>Game Win: 1 pt <span id="tennis-gw-val"></span></li> 
-            <input type="number" name="tennis-gamewin" id="tennis-gw" class="tennis-fs">
-            <li>Game Loss: -1 pt <span id="tennis-gl-val"></span></li> 
-            <input type="number" name="tennis-gameloss" id="tennis-gl" class="tennis-fs">
-            <li>Set Won: 3 pts <span id="tennis-sw-val"></span></li> 
-            <input type="number" name="tennis-setwon" id="tennis-sw" class="tennis-fs">
-            <li>Set Loss: -3 pts <span id="tennis-sl-val"></span></li> 
-            <input type="number" name="tennis-setloss" id="tennis-sl" class="tennis-fs">
-            <li>Ace: 0.5 pt <span id="tennis-ac-val"></span></li> 
-            <input type="number" name="tennis-ace" id="tennis-ac" class="tennis-fs">
-            <li>Double Fault: -0.5 pt <span id="tennis-dblft-val"></span></li> 
-            <input type="number" name="tennis-doublefault" id="tennis-dblft" class="tennis-fs">
+            <li>Match Played: 10 pts 
+            <input type="number" name="tennis-matchplayed" id="tennis-mp" class="tennis-fs input-num-global" />
+            <span id="tennis-mp-val" class="tennis-val"></span></li> 
+            <li>Game Win: 1 pt 
+            <input type="number" name="tennis-gamewin" id="tennis-gw" class="tennis-fs input-num-global">
+            <span id="tennis-gw-val" class="tennis-val"></span></li> 
+            <li>Game Loss: -1 pt 
+            <input type="number" name="tennis-gameloss" id="tennis-gl" class="tennis-fs input-num-global">
+            <span id="tennis-gl-val" class="tennis-val"></span></li> 
+            <li>Set Won: 3 pts 
+            <input type="number" name="tennis-setwon" id="tennis-sw" class="tennis-fs input-num-global">
+            <span id="tennis-sw-val" class="tennis-val"></span></li> 
+            <li>Set Loss: -3 pts 
+            <input type="number" name="tennis-setloss" id="tennis-sl" class="tennis-fs input-num-global">
+            <span id="tennis-sl-val" class="tennis-val"></span></li> 
+            <li>Ace: 0.5 pt 
+            <input type="number" name="tennis-ace" id="tennis-ac" class="tennis-fs input-num-global">
+            <span id="tennis-ac-val" class="tennis-val"></span></li> 
+            <li>Double Fault: -0.5 pt 
+            <input type="number" name="tennis-doublefault" id="tennis-dblft" class="tennis-fs input-num-global">
+            <span id="tennis-dblft-val" class="tennis-val"></span></li> 
         </ul>
         <button id="tennis-btn">Go</button>
+        <button id="tennis-clear">Clear</button>
         <p>TOTAL: <span id="tennis-total-fs"></span> Fantasy Score</p>
     </div>
 
@@ -241,16 +249,21 @@
     <div>
         <h2>MMA Fantasy Score</h2>
         <ul>
-            <li>Significant Strikes: 0.6 pts <span id="mma-sigstr-val"></span></li> 
-            <input type="number" name="mma-significantstrikes" id="mma-sigstr" class="mma-fs" />
-            <li>Takedown: 6 pts <span id="mma-td-val"></span></li> 
-            <input type="number" name="mma-takedown" id="mma-td" class="mma-fs">
-            <li>Takedown Defense: 3 pts <span id="mma-tddef-val"></span></li> 
-            <input type="number" name="mma-takedowndefense" id="mma-tddef" class="mma-fs">
-            <li>Submission Attempt: 5 pts <span id="mma-subatt-val"></span></li> 
-            <input type="number" name="mma-submissionattempt" id="mma-subatt" class="mma-fs">
-            <li>Knockdown: 12 pts <span id="mma-kd-val"></span></li> 
-            <input type="number" name="mma-knockdown" id="mma-kd" class="mma-fs">
+            <li>Significant Strikes: 0.6 pts 
+            <input type="number" name="mma-significantstrikes" id="mma-sigstr" class="mma-fs input-num-global" />
+            <span id="mma-sigstr-val" class="mma-val"></span></li> 
+            <li>Takedown: 6 pts 
+            <input type="number" name="mma-takedown" id="mma-td" class="mma-fs input-num-global">
+            <span id="mma-td-val" class="mma-val"></span></li> 
+            <li>Takedown Defense: 3 pts 
+            <input type="number" name="mma-takedowndefense" id="mma-tddef" class="mma-fs input-num-global">
+            <span id="mma-tddef-val" class="mma-val"></span></li> 
+            <li>Submission Attempt: 5 pts 
+            <input type="number" name="mma-submissionattempt" id="mma-subatt" class="mma-fs input-num-global">
+            <span id="mma-subatt-val" class="mma-val"></span></li> 
+            <li>Knockdown: 12 pts 
+            <input type="number" name="mma-knockdown" id="mma-kd" class="mma-fs input-num-global">
+            <span id="mma-kd-val" class="mma-val"></span></li> 
         </ul>
         <h4>Fight Conclusion Bonuses</h4>
 
@@ -272,8 +285,9 @@
         <input type="radio" name="mma-fcb" id="mma-dec" value="20" class="mma-fcb">
         <label for="mma-dec">Decision Win: 20 pts</label><br>
 
-        <button id="mma-btn">Go</button>
         <p>TOTAL: <span id="mma-total-fs"></span> Fantasy Score</p>
+        <button id="mma-btn">Go</button>
+        <button id="mma-clear">Clear</button>
     </div>
 
     <div>
