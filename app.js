@@ -86,6 +86,7 @@ window.onload = function() {
 
     var buttonBsballP = document.querySelector("#bsballp-btn")
     var resetButtonBsballP = document.querySelector("#bsballp-clear")
+    var copyButtonBsballP = document.querySelector("#bsballp-copy")
 
     var bsballpInputs = document.querySelectorAll(".bsballp-fs");
     var bsballpVal = document.querySelectorAll(".bsballp-val");
@@ -119,6 +120,14 @@ window.onload = function() {
         document.querySelector("#bsballp-k-val").innerHTML = `= ${bsballpKVal}`
         document.querySelector("#bsballp-out-val").innerHTML = `= ${bsballpOutVal}`
 
+        var bsballpBreakdownWin = `Win: 6 pts (${bsballpWin.value}) = ${bsballpWinVal}`;
+        var bsballpBreakdownQS = `Quality Start: 4 pts (${bsballpQS.value}) = ${bsballpQSVal}`;
+        var bsballpBreakdownER = `Earned Run: -3 pt (${bsballpER.value}) = ${bsballpERVal}`;
+        var bsballpBreakdownK = `Strikeout: 3 pt (${bsballpK.value}) = ${bsballpKVal}`;
+        var bsballpBreakdownOut = `Out: 1 pt (${bsballpOut.value}) = ${bsballpOutVal}`;
+
+        document.querySelector("#bsballp-breakdown").innerHTML = `${bsballpBreakdownWin}\n${bsballpBreakdownQS}\n${bsballpBreakdownER}\n${bsballpBreakdownK}\n${bsballpBreakdownOut}\n\nTOTAL: ${bsballpFantasy} FS`;
+
     })
 
     resetButtonBsballP.addEventListener('click', ()=> {
@@ -132,6 +141,17 @@ window.onload = function() {
         }
 
         bsballpFantasyScore.innerHTML = '';
+        document.querySelector("#bsballp-breakdown").innerHTML = "";
+    })
+
+    copyButtonBsballP.addEventListener('click', ()=> {
+        
+        var copyBsballPBreakdown = document.querySelector("#bsballp-breakdown");
+
+        copyBsballPBreakdown.select();
+        copyBsballPBreakdown.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyBsballPBreakdown.value);
     })
 
 
