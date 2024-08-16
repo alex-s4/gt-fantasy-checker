@@ -28,12 +28,12 @@ window.onload = function() {
         var bballStealVal = Number(bballSteal.value) * 3;
         var bballTurnoverVal = Number(bballTurnover.value) * -1
 
-        var bballFantasy = bballPointsVal + 
+        var bballFantasy = Number(Number(bballPointsVal + 
                         bballReboundVal + 
                         bballAssistVal + 
                         bballBlockVal + 
                         bballStealVal + 
-                        bballTurnoverVal
+                        bballTurnoverVal).toFixed(1))
 
         bballFantasyScore.innerHTML = bballFantasy;
 

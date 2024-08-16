@@ -42,7 +42,7 @@ body {
 }
 
 header {
-    margin-bottom: 18px;
+    margin: 18px;
 }
 
 li {
@@ -57,12 +57,6 @@ li {
     margin-right: 14px;
 }
 
-.sports-selection p {
-    border: 1px solid blue;
-    display: inline-block;
-    padding: 8px;
-}
-
 textarea {
     background-color: #121310;
     border: 1px solid rgb(57, 57, 69);
@@ -75,20 +69,52 @@ textarea {
     background-color: #121310;
     border: 1px solid rgb(57, 57, 69);
     border-radius: 4px;
+    height: 24px;
+    margin-left: 6px;
+    padding-left: 6px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 .textarea-global {
     resize: none;
 }
 
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-justify-center {
+    justify-content: center;
+}
+
+
 .fantasy-section {
     margin-bottom: 26px;
     margin-left: 18px;
     background-color: rgb(10,19,32);
-    display: inline-block;
+    /* display: inline-block; */
     border: rgb(35, 35, 40) 1px, solid;
     border-radius: 12px;
     padding: 12px;
+    width: max-content;
+    height: fit-content;
+}
+
+.fantasy-section h2 {
+    margin-bottom: 10px;
+}
+
+.fantasy-section li {
+    margin-bottom: 6px;
 }
 
 .btn-go {
@@ -114,4 +140,21 @@ textarea {
     border-style: none;
     border-radius: 0.375rem;
     padding: 4px 6px;
+}
+
+div.btn-cont {
+    margin-bottom: 12px;
+}
+
+.fs-total-result {
+    margin: 12px 0;
+    font-size: 18px;
+}
+
+footer {
+    margin: 36px;
+}
+
+footer p {
+    margin: 0 6px;
 }
