@@ -82,14 +82,16 @@ window.onload = function() {
     })
 
     collapseBball.addEventListener('click', () => {
+
+        console.log("bball")
         
         const contentBball = document.querySelector("#content-bball")
 
         console.log(contentBball.style.display)
 
-        if(contentBball.style.display == "" || contentBball.style.display == "block"){
+        if(contentBball.style.display == "block"){
             contentBball.style.display = "none"
-        } else if (contentBball.style.display == "none"){
+        } else if (contentBball.style.display == "none" || contentBball.style.display == ""){
             contentBball.style.display = "block"
         }
 
@@ -171,12 +173,14 @@ window.onload = function() {
     })
 
     collapseBsballP.addEventListener('click', ()=> {
+
+        console.log("bsballp")
         
         const contentBsballP = document.querySelector("#content-bsballp")
 
-        if(contentBsballP.style.display == "" || contentBsballP.style.display == "block"){
+        if(contentBsballP.style.display == "block"){
             contentBsballP.style.display = "none"
-        } else if (contentBsballP.style.display == "none"){
+        } else if (contentBsballP.style.display == "none" || contentBsballP.style.display == ""){
             contentBsballP.style.display = "block"
         }
 
@@ -280,12 +284,14 @@ window.onload = function() {
     })
 
     collapseBsballH.addEventListener('click', ()=> {
+
+        console.log("bsballh")
         
         const contentBsballH = document.querySelector("#content-bsballh")
 
-        if(contentBsballH.style.display == "" || contentBsballH.style.display == "block"){
+        if(contentBsballH.style.display == "block"){
             contentBsballH.style.display = "none"
-        } else if (contentBsballH.style.display == "none"){
+        } else if (contentBsballH.style.display == "none" || contentBsballH.style.display == ""){
             contentBsballH.style.display = "block"
         }
 
@@ -405,9 +411,9 @@ window.onload = function() {
         
         const contentFballO = document.querySelector("#content-fballo")
 
-        if(contentFballO.style.display == "" || contentFballO.style.display == "block"){
+        if(contentFballO.style.display == "block"){
             contentFballO.style.display = "none"
-        } else if (contentFballO.style.display == "none"){
+        } else if (contentFballO.style.display == "none" || contentFballO.style.display == ""){
             contentFballO.style.display = "block"
         }
 
@@ -558,9 +564,9 @@ window.onload = function() {
         
         const contentFballD = document.querySelector("#content-fballd")
 
-        if(contentFballD.style.display == "" || contentFballD.style.display == "block"){
+        if(contentFballD.style.display == "block"){
             contentFballD.style.display = "none"
-        } else if (contentFballD.style.display == "none"){
+        } else if (contentFballD.style.display == "none" || contentFballD.style.display == ""){
             contentFballD.style.display = "block"
         }
 
@@ -653,9 +659,9 @@ window.onload = function() {
 
         const contentTennis = document.querySelector("#content-tennis")
 
-        if(contentTennis.style.display == "" || contentTennis.style.display == "block"){
+        if(contentTennis.style.display == "block"){
             contentTennis.style.display = "none"
-        } else if (contentTennis.style.display == "none"){
+        } else if (contentTennis.style.display == "none" || contentTennis.style.display == ""){
             contentTennis.style.display = "block"
         }
 
@@ -778,9 +784,9 @@ window.onload = function() {
         
         const contentMma = document.querySelector("#content-mma")
 
-        if(contentMma.style.display == "" || contentMma.style.display == "block"){
+        if(contentMma.style.display == "block"){
             contentMma.style.display = "none"
-        } else if (contentMma.style.display == "none"){
+        } else if (contentMma.style.display == "none" || contentMma.style.display == ""){
             contentMma.style.display = "block"
         }
 
@@ -887,9 +893,9 @@ window.onload = function() {
         
         const contentBox = document.querySelector("#content-box")
 
-        if(contentBox.style.display == "" || contentBox.style.display == "block"){
+        if(contentBox.style.display == "block"){
             contentBox.style.display = "none"
-        } else if (contentBox.style.display == "none"){
+        } else if (contentBox.style.display == "none" || contentBox.style.display == ""){
             contentBox.style.display = "block"
         }
 
@@ -1103,9 +1109,9 @@ window.onload = function() {
         
         const contentNascar = document.querySelector("#content-nascar")
 
-        if(contentNascar.style.display == "" || contentNascar.style.display == "block"){
+        if(contentNascar.style.display == "block"){
             contentNascar.style.display = "none"
-        } else if (contentNascar.style.display == "none"){
+        } else if (contentNascar.style.display == "none" || contentNascar.style.display == ""){
             contentNascar.style.display = "block"
         }
 
