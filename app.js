@@ -4,9 +4,10 @@ window.onload = function() {
 
     const bballFantasyScore = document.querySelector("#bball-total-fs");
 
-    var buttonBball = document.querySelector("#bball-btn")
-    var resetButtonBball = document.querySelector("#bball-clear")
-    var copyButtonBball = document.querySelector("#bball-copy")
+    var buttonBball = document.querySelector("#bball-btn");
+    var resetButtonBball = document.querySelector("#bball-clear");
+    var copyButtonBball = document.querySelector("#bball-copy");
+    var collapseBball = document.querySelector("#bball-coll");
 
     var bballPoints = document.getElementById("bball-pts");
     var bballRebound = document.getElementById("bball-rebs");
@@ -80,6 +81,20 @@ window.onload = function() {
         navigator.clipboard.writeText(copyBballBreakdown.value);
     })
 
+    collapseBball.addEventListener('click', () => {
+        
+        const contentBball = document.querySelector("#content-bball")
+
+        console.log(contentBball.style.display)
+
+        if(contentBball.style.display == "" || contentBball.style.display == "block"){
+            contentBball.style.display = "none"
+        } else if (contentBball.style.display == "none"){
+            contentBball.style.display = "block"
+        }
+
+    })
+
     // MLB PITCHER FANTASY SCORE
 
     const bsballpFantasyScore = document.querySelector("#bsballp-total-fs");
@@ -87,6 +102,7 @@ window.onload = function() {
     var buttonBsballP = document.querySelector("#bsballp-btn")
     var resetButtonBsballP = document.querySelector("#bsballp-clear")
     var copyButtonBsballP = document.querySelector("#bsballp-copy")
+    var collapseBsballP = document.querySelector("#bsballp-coll");
 
     var bsballpInputs = document.querySelectorAll(".bsballp-fs");
     var bsballpVal = document.querySelectorAll(".bsballp-val");
@@ -154,6 +170,19 @@ window.onload = function() {
         navigator.clipboard.writeText(copyBsballPBreakdown.value);
     })
 
+    collapseBsballP.addEventListener('click', ()=> {
+        
+        const contentBsballP = document.querySelector("#content-bsballp")
+
+        if(contentBsballP.style.display == "" || contentBsballP.style.display == "block"){
+            contentBsballP.style.display = "none"
+        } else if (contentBsballP.style.display == "none"){
+            contentBsballP.style.display = "block"
+        }
+
+
+    })
+
 
     // MLB HITTER FANTASY SCORE
 
@@ -162,6 +191,7 @@ window.onload = function() {
     var buttonBsballH = document.querySelector("#bsballh-btn")
     var resetButtonBsballH = document.querySelector("#bsballh-clear")
     var copyButtonBsballH = document.querySelector("#bsballh-copy")
+    var collapseBsballH = document.querySelector("#bsballh-coll");
 
     var bsballhInputs = document.querySelectorAll(".bsballh-fs");
     var bsballhVal = document.querySelectorAll(".bsballh-val");
@@ -249,6 +279,18 @@ window.onload = function() {
         navigator.clipboard.writeText(copyBsballHBreakdown.value);
     })
 
+    collapseBsballH.addEventListener('click', ()=> {
+        
+        const contentBsballH = document.querySelector("#content-bsballh")
+
+        if(contentBsballH.style.display == "" || contentBsballH.style.display == "block"){
+            contentBsballH.style.display = "none"
+        } else if (contentBsballH.style.display == "none"){
+            contentBsballH.style.display = "block"
+        }
+
+    })
+
     // NFL OFFENSIVE FANTASY SCORE
 
     const fballoFantasyScore = document.querySelector("#fballo-total-fs")
@@ -256,6 +298,7 @@ window.onload = function() {
     var buttonFballO = document.querySelector("#fballo-btn");
     var resetButtonFballO = document.querySelector("#fballo-clear");
     var copyButtonFballO = document.querySelector("#fballo-copy");
+    var collapseFBallO = document.querySelector("#fballo-coll");
 
     var fballoInputs = document.querySelectorAll(".fballo-fs");
     var fballoVal = document.querySelectorAll(".fballo-val");
@@ -358,6 +401,19 @@ window.onload = function() {
         navigator.clipboard.writeText(copyFballOBreakdown.value);
     })
 
+    collapseFBallO.addEventListener('click', ()=> {
+        
+        const contentFballO = document.querySelector("#content-fballo")
+
+        if(contentFballO.style.display == "" || contentFballO.style.display == "block"){
+            contentFballO.style.display = "none"
+        } else if (contentFballO.style.display == "none"){
+            contentFballO.style.display = "block"
+        }
+
+
+    })
+
     // NFL DST FANTASY SCORE
 
     const fballdFantasyScore = document.querySelector("#fballd-total-fs");
@@ -365,6 +421,7 @@ window.onload = function() {
     var buttonFballD = document.querySelector("#fballd-btn");
     var resetButtonFballD = document.querySelector("#fballd-clear");
     var copyButtonFballD = document.querySelector("#fballd-copy");
+    var collapseFBallD = document.querySelector("#fballd-coll");
 
     var fballdInputs = document.querySelectorAll(".fballd-fs");
     var fballdVal = document.querySelectorAll(".fballd-val");
@@ -497,6 +554,18 @@ window.onload = function() {
         navigator.clipboard.writeText(copyFballDBreakdown.value);
     })
 
+    collapseFBallD.addEventListener('click', ()=> {
+        
+        const contentFballD = document.querySelector("#content-fballd")
+
+        if(contentFballD.style.display == "" || contentFballD.style.display == "block"){
+            contentFballD.style.display = "none"
+        } else if (contentFballD.style.display == "none"){
+            contentFballD.style.display = "block"
+        }
+
+    })
+
     // TENNIS FANTASY SCORE
 
     const tennisFantasyScore = document.querySelector("#tennis-total-fs");
@@ -504,12 +573,12 @@ window.onload = function() {
     var buttonTennis = document.querySelector("#tennis-btn");
     var resetButtonTennis = document.querySelector("#tennis-clear")
     var copyButtonTennis = document.querySelector("#tennis-copy");
+    var collapseTennis = document.querySelector("#tennis-coll");
 
     var tennisInputs = document.querySelectorAll(".tennis-fs");
     var tennisVal = document.querySelectorAll(".tennis-val");
 
     buttonTennis.addEventListener('click', ()=> {
-        console.log("buttonTennis")
 
         const tennisMatchPlayed = document.querySelector("#tennis-mp")
         const tennisGameWin = document.querySelector("#tennis-gw")
@@ -580,6 +649,19 @@ window.onload = function() {
         navigator.clipboard.writeText(copyTennisBreakdown.value);
     })
 
+    collapseTennis.addEventListener('click', ()=> {
+
+        const contentTennis = document.querySelector("#content-tennis")
+
+        if(contentTennis.style.display == "" || contentTennis.style.display == "block"){
+            contentTennis.style.display = "none"
+        } else if (contentTennis.style.display == "none"){
+            contentTennis.style.display = "block"
+        }
+
+
+    })
+
 
     // MMA FANTASY SCORE
 
@@ -588,6 +670,7 @@ window.onload = function() {
     var buttonMma = document.querySelector("#mma-btn");
     var resetButtonMma = document.querySelector("#mma-clear")
     var copyButtonMma = document.querySelector("#mma-copy")
+    var collapseMma = document.querySelector("#mma-coll");
 
     var mmaInputs = document.querySelectorAll(".mma-fs");
     var mmaVal = document.querySelectorAll(".mma-val");
@@ -691,6 +774,18 @@ window.onload = function() {
         navigator.clipboard.writeText(copyMmaBreakdown.value);
     })
 
+    collapseMma.addEventListener("click", ()=> {
+        
+        const contentMma = document.querySelector("#content-mma")
+
+        if(contentMma.style.display == "" || contentMma.style.display == "block"){
+            contentMma.style.display = "none"
+        } else if (contentMma.style.display == "none"){
+            contentMma.style.display = "block"
+        }
+
+    })
+
     // BOXING FANTASY SCORE
 
     const boxFantasyScore = document.querySelector("#box-total-fs");
@@ -698,6 +793,7 @@ window.onload = function() {
     var buttonBox = document.querySelector("#box-btn");
     var resetButtonBox = document.querySelector("#box-clear");
     var copyButtonBox = document.querySelector("#box-copy");
+    var collapseBox = document.querySelector("#box-coll");
 
     var boxInputs = document.querySelectorAll(".box-fs");
     var boxVal = document.querySelectorAll(".box-val");
@@ -787,6 +883,18 @@ window.onload = function() {
         navigator.clipboard.writeText(copyBoxBreakdown.value);
     })
 
+    collapseBox.addEventListener("click", ()=> {
+        
+        const contentBox = document.querySelector("#content-box")
+
+        if(contentBox.style.display == "" || contentBox.style.display == "block"){
+            contentBox.style.display = "none"
+        } else if (contentBox.style.display == "none"){
+            contentBox.style.display = "block"
+        }
+
+    })
+
     // NASCAR FANTASY SCORE
 
     const nascarFantasyScore = document.querySelector("#nascar-total-fs");
@@ -794,6 +902,7 @@ window.onload = function() {
     var buttonNascar = document.querySelector("#nascar-btn");
     var resetButtonNascar = document.querySelector("#nascar-clear");
     var copyButtonNascar = document.querySelector("#nascar-copy");
+    var collapseNascar = document.querySelector("#nascar-coll");
 
     var nascarInputs = document.querySelectorAll(".nascar-fs");
     var nascarVal = document.querySelectorAll(".nascar-val");
@@ -989,5 +1098,18 @@ window.onload = function() {
 
         navigator.clipboard.writeText(copyNascarBreakdown.value);
     })
+
+    collapseNascar.addEventListener("click", ()=> {
+        
+        const contentNascar = document.querySelector("#content-nascar")
+
+        if(contentNascar.style.display == "" || contentNascar.style.display == "block"){
+            contentNascar.style.display = "none"
+        } else if (contentNascar.style.display == "none"){
+            contentNascar.style.display = "block"
+        }
+
+    })
+
 
 }

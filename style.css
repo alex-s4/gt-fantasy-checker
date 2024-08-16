@@ -17,9 +17,6 @@
     align-items: center;
   }
   
-  .btn {
-      /* box-shadow: 2px 2px 1px black; */
-  }
   
   .btn:hover {
       cursor: pointer;
@@ -43,6 +40,22 @@ body {
 
 header {
     margin: 18px;
+}
+
+.row-1 > div {
+    width: 399px;
+}
+
+.row-2 > div {
+    width: 550px;
+}
+
+.row-3 > div {
+    width: 470px;
+}
+
+.row-4 > div {
+    width: 892px;
 }
 
 li {
@@ -92,8 +105,16 @@ input[type=number] {
     flex-direction: row;
 }
 
+.flex-align-center {
+    align-items: center;
+}
+
 .flex-justify-center {
     justify-content: center;
+}
+
+.flex-justify-space-bet {
+    justify-content: space-between;
 }
 
 
@@ -104,7 +125,7 @@ input[type=number] {
     /* display: inline-block; */
     border: rgb(35, 35, 40) 1px, solid;
     border-radius: 12px;
-    padding: 12px;
+    padding: 12px 18px;
     width: max-content;
     height: fit-content;
 }
