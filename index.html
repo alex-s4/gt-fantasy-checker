@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/cda43cd265.js" crossorigin="anonymous"></script>
     <title>GT FANTASY CHECKER</title>
 </head>
 <body>
+    <div id="root">
     <header>
         <h1>GameTime Fantasy Score Calculator <a href="https://emoji.gg/emoji/3181_lfg"><img src="https://cdn3.emoji.gg/emojis/3181_lfg.png" width="24px" height="24px" alt="lfg"></a></h1>
     </header>
@@ -21,7 +23,6 @@
         <p>BOXING</p>
         <p>NASCAR</p>
     </div> -->
-
         <div class="fantasy-section">
             <h2>NBA/WNBA Fantasy Score</h2>
             
@@ -48,11 +49,11 @@
 
             <p>TOTAL: <span id="bball-total-fs"></span> Fantasy Score</p>
 
-            <button id="bball-btn">Go</button>
-            <button id="bball-clear">Clear</button><br>
+            <button id="bball-btn" class="btn btn-go">Go</button>
+            <button id="bball-clear" class="btn btn-clear">Clear</button><br>
 
             <textarea name="bball-fs-breakdown" id="bball-breakdown" class="textarea-global" rows="8" cols="34" disabled></textarea>
-            <button id="bball-copy">Copy</button><br>
+            <button id="bball-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
         
         </div>
 
@@ -78,11 +79,11 @@
 
         <p>TOTAL: <span id="bsballp-total-fs"></span> Fantasy Score</p>
 
-        <button id="bsballp-btn">Go</button>
-        <button id="bsballp-clear">Clear</button><br>
+        <button id="bsballp-btn" class="btn btn-go">Go</button>
+        <button id="bsballp-clear" class="btn btn-clear">Clear</button><br>
 
         <textarea name="bsballp-fs-breakdown" id="bsballp-breakdown" class="textarea-global" rows="8" cols="34" disabled></textarea>
-        <button id="bsballp-copy">Copy</button><br>
+        <button id="bsballp-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
     </div>
 
     <div class="fantasy-section">
@@ -118,11 +119,11 @@
         </ul>
         <p>TOTAL: <span id="bsballh-total-fs"></span> Fantasy Score</p>
 
-        <button id="bsballh-btn">Go</button>
-        <button id="bsballh-clear">Clear</button><br>
+        <button id="bsballh-btn" class="btn btn-go">Go</button>
+        <button id="bsballh-clear" class="btn btn-clear">Clear</button><br>
 
         <textarea name="bsballh-fs-breakdown" id="bsballh-breakdown" class="textarea-global" rows="11" cols="34" disabled></textarea>
-        <button id="bsballh-copy">Copy</button><br>
+        <button id="bsballh-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
 
     </div>
 
@@ -168,11 +169,11 @@
         </ul>
         <p>TOTAL: <span id="fballo-total-fs"></span> Fantasy Score</p>
 
-        <button id="fballo-btn">Go</button>
-        <button id="fballo-clear">Clear</button><br>
+        <button id="fballo-btn" class="btn btn-go">Go</button>
+        <button id="fballo-clear" class="btn btn-clear">Clear</button><br>
 
         <textarea name="fballo-fs-breakdown" id="fballo-breakdown" class="textarea-global" rows="14" cols="55" disabled></textarea>
-        <button id="fballo-copy">Copy</button><br>
+        <button id="fballo-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
 
     </div>
 
@@ -236,11 +237,11 @@
         
         <p>TOTAL: <span id="fballd-total-fs"></span> Fantasy Score</p>
 
-        <button id="fballd-btn">Go</button>
-        <button id="fballd-clear">Clear</button><br>
+        <button id="fballd-btn" class="btn btn-go">Go</button>
+        <button id="fballd-clear"  class="btn btn-clear">Clear</button><br>
 
         <textarea name="fballd-fs-breakdown" id="fballd-breakdown" class="textarea-global" rows="14" cols="55" disabled></textarea>
-        <button id="fballd-copy">Copy</button><br>
+        <button id="fballd-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
 
     </div>
 
@@ -272,11 +273,11 @@
 
         <p>TOTAL: <span id="tennis-total-fs"></span> Fantasy Score</p>
         
-        <button id="tennis-btn">Go</button>
-        <button id="tennis-clear">Clear</button><br>
+        <button id="tennis-btn" class="btn btn-go">Go</button>
+        <button id="tennis-clear" class="btn btn-clear">Clear</button><br>
 
         <textarea name="tennis-fs-breakdown" id="tennis-breakdown" class="textarea-global" rows="9" cols="36" disabled></textarea>
-        <button id="tennis-copy">Copy</button><br>
+        <button id="tennis-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
         
     </div>
 
@@ -321,11 +322,11 @@
 
         <p>TOTAL: <span id="mma-total-fs"></span> Fantasy Score</p>
 
-        <button id="mma-btn">Go</button>
-        <button id="mma-clear">Clear</button><br>
+        <button id="mma-btn" class="btn btn-go">Go</button>
+        <button id="mma-clear" class="btn btn-clear">Clear</button><br>
         
         <textarea name="mma-fs-breakdown" id="mma-breakdown" class="textarea-global" rows="9" cols="36" disabled></textarea>
-        <button id="mma-copy">Copy</button><br>
+        <button id="mma-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
         
     </div>
 
@@ -362,11 +363,11 @@
         
         <p>TOTAL: <span id="box-total-fs"></span> Fantasy Score</p>
 
-        <button id="box-btn">Go</button>
-        <button id="box-clear">Clear</button><br>
+        <button id="box-btn" class="btn btn-go">Go</button>
+        <button id="box-clear" class="btn btn-clear">Clear</button><br>
 
         <textarea name="box-fs-breakdown" id="box-breakdown" class="textarea-global" rows="6" cols="44" disabled></textarea>
-        <button id="box-copy">Copy</button><br>
+        <button id="box-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
     </div>
 
     <div class="fantasy-section">
@@ -522,11 +523,12 @@
         
         <p>TOTAL: <span id="nascar-total-fs"></span> Fantasy Score</p>
 
-        <button id="nascar-btn">Go</button>
-        <button id="nascar-clear">Clear</button><br>
+        <button id="nascar-btn" class="btn btn-go">Go</button>
+        <button id="nascar-clear" class="btn btn-clear">Clear</button><br>
 
         <textarea name="nascar-fs-breakdown" id="nascar-breakdown" class="textarea-global" rows="6" cols="44" disabled></textarea>
-        <button id="nascar-copy">Copy</button><br>
+        <button id="nascar-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+    </div>
     </div>
 
     <script type="module" src="./app.js"></script>

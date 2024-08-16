@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Industry Demi';
+    color: whitesmoke;
   }
       
   /* Fixed width container class that will "auto-center" itself */
@@ -17,7 +18,7 @@
   }
   
   .btn {
-      box-shadow: 2px 2px 1px black;
+      /* box-shadow: 2px 2px 1px black; */
   }
   
   .btn:hover {
@@ -35,6 +36,10 @@
       display: flex;
       align-items: center;
   }
+
+body {
+    background-color: #050614;
+}
 
 header {
     margin-bottom: 18px;
@@ -58,8 +63,18 @@ li {
     padding: 8px;
 }
 
+textarea {
+    background-color: #121310;
+    border: 1px solid rgb(57, 57, 69);
+    border-radius: 10px;
+    padding: 8px;
+}
+
 .input-num-global {
     width: 60px;
+    background-color: #121310;
+    border: 1px solid rgb(57, 57, 69);
+    border-radius: 4px;
 }
 
 .textarea-global {
@@ -69,4 +84,34 @@ li {
 .fantasy-section {
     margin-bottom: 26px;
     margin-left: 18px;
+    background-color: rgb(10,19,32);
+    display: inline-block;
+    border: rgb(35, 35, 40) 1px, solid;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.btn-go {
+    background-color: rgb(128, 0, 255);
+    font-size: 18px;
+    border-style: none;
+    border-radius: 0.375rem;
+    padding: 4px 20px;
+}
+
+.btn-clear {
+    background-color: inherit;
+    font-size: 18px;
+    text-decoration: underline;
+    color: rgb(255, 246, 0);
+    border-style: none;
+    padding: 4px;
+}
+
+.btn-copy {
+    background-color: rgb(57, 57, 69);
+    font-size: 18px;
+    border-style: none;
+    border-radius: 0.375rem;
+    padding: 4px 6px;
 }
