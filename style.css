@@ -18,7 +18,7 @@
   }
   
   
-  .btn:hover {
+  .btn:hover, .fa-chevron-down {
       cursor: pointer;
   }
   
@@ -56,6 +56,10 @@ header {
 
 .row-4 > div {
     width: 892px;
+}
+
+.fantasy-section-content {
+    display: none;
 }
 
 li {
