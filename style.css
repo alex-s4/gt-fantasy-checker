@@ -113,6 +113,10 @@ input[type=number] {
     margin-bottom: 10px;
 }
 
+.fantasy-section h4 {
+    margin-bottom: 6px;
+}
+
 .fantasy-section li {
     margin-bottom: 6px;
 }

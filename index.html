@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/cda43cd265.js" crossorigin="anonymous"></script>
-    <title>GT FANTASY CHECKER</title>
+    <title>GT Fantasy Score Calculator</title>
 </head>
 <body>
     <div id="root">
         <header>
             <div class="flex-container flex-row flex-justify-center">
-                <h1>GameTime Fantasy Score Calculator <img src="https://cdn3.emoji.gg/emojis/3181_lfg.png" width="24px" height="24px" alt="lfg"></h1>
+                <h1>GT Fantasy Score Calculator <img src="https://cdn3.emoji.gg/emojis/3181_lfg.png" width="24px" height="24px" alt="lfg"></h1>
             </div>
         </header> 
         
@@ -375,8 +375,10 @@
                 
                 <p class="fs-total-result">TOTAL: <span id="box-total-fs"></span> Fantasy Score</p>
 
-                <button id="box-btn" class="btn btn-go">Go</button>
-                <button id="box-clear" class="btn btn-clear">Clear</button><br>
+                <div class="btn-cont">
+                    <button id="box-btn" class="btn btn-go">Go</button>
+                    <button id="box-clear" class="btn btn-clear">Clear</button><br>
+                </div>
 
                 <textarea name="box-fs-breakdown" id="box-breakdown" class="textarea-global" rows="6" cols="44" disabled></textarea>
                 <button id="box-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
@@ -537,8 +539,10 @@
                 
                 <p class="fs-total-result">TOTAL: <span id="nascar-total-fs"></span> Fantasy Score</p>
 
-                <button id="nascar-btn" class="btn btn-go">Go</button>
-                <button id="nascar-clear" class="btn btn-clear">Clear</button><br>
+                <div class="btn-cont">
+                    <button id="nascar-btn" class="btn btn-go">Go</button>
+                    <button id="nascar-clear" class="btn btn-clear">Clear</button><br>
+                </div>
 
                 <textarea name="nascar-fs-breakdown" id="nascar-breakdown" class="textarea-global" rows="6" cols="44" disabled></textarea>
                 <button id="nascar-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
