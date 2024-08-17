@@ -8,6 +8,7 @@ window.onload = function() {
     var resetButtonBball = document.querySelector("#bball-clear");
     var copyButtonBball = document.querySelector("#bball-copy");
     var collapseBball = document.querySelector("#bball-coll");
+    var headerBball = document.querySelector("#head-bball");
 
     var bballPoints = document.getElementById("bball-pts");
     var bballRebound = document.getElementById("bball-rebs");
@@ -81,7 +82,7 @@ window.onload = function() {
         navigator.clipboard.writeText(copyBballBreakdown.value);
     })
 
-    collapseBball.addEventListener('click', () => {
+    headerBball.addEventListener('click', () => {
 
         console.log("bball")
         
@@ -105,6 +106,7 @@ window.onload = function() {
     var resetButtonBsballP = document.querySelector("#bsballp-clear")
     var copyButtonBsballP = document.querySelector("#bsballp-copy")
     var collapseBsballP = document.querySelector("#bsballp-coll");
+    var headerBsballP = document.querySelector("#head-bsballp");
 
     var bsballpInputs = document.querySelectorAll(".bsballp-fs");
     var bsballpVal = document.querySelectorAll(".bsballp-val");
@@ -172,7 +174,7 @@ window.onload = function() {
         navigator.clipboard.writeText(copyBsballPBreakdown.value);
     })
 
-    collapseBsballP.addEventListener('click', ()=> {
+    headerBsballP.addEventListener('click', ()=> {
 
         console.log("bsballp")
         
@@ -196,6 +198,7 @@ window.onload = function() {
     var resetButtonBsballH = document.querySelector("#bsballh-clear")
     var copyButtonBsballH = document.querySelector("#bsballh-copy")
     var collapseBsballH = document.querySelector("#bsballh-coll");
+    var headerBsballH = document.querySelector("#head-bsballh");
 
     var bsballhInputs = document.querySelectorAll(".bsballh-fs");
     var bsballhVal = document.querySelectorAll(".bsballh-val");
@@ -283,7 +286,7 @@ window.onload = function() {
         navigator.clipboard.writeText(copyBsballHBreakdown.value);
     })
 
-    collapseBsballH.addEventListener('click', ()=> {
+    headerBsballH.addEventListener('click', ()=> {
 
         console.log("bsballh")
         
@@ -305,6 +308,7 @@ window.onload = function() {
     var resetButtonFballO = document.querySelector("#fballo-clear");
     var copyButtonFballO = document.querySelector("#fballo-copy");
     var collapseFBallO = document.querySelector("#fballo-coll");
+    var headerFBallO = document.querySelector("#head-fballo");
 
     var fballoInputs = document.querySelectorAll(".fballo-fs");
     var fballoVal = document.querySelectorAll(".fballo-val");
@@ -407,7 +411,7 @@ window.onload = function() {
         navigator.clipboard.writeText(copyFballOBreakdown.value);
     })
 
-    collapseFBallO.addEventListener('click', ()=> {
+    headerFBallO.addEventListener('click', ()=> {
         
         const contentFballO = document.querySelector("#content-fballo")
 
@@ -428,6 +432,7 @@ window.onload = function() {
     var resetButtonFballD = document.querySelector("#fballd-clear");
     var copyButtonFballD = document.querySelector("#fballd-copy");
     var collapseFBallD = document.querySelector("#fballd-coll");
+    var headerFBallD = document.querySelector("#head-fballd");
 
     var fballdInputs = document.querySelectorAll(".fballd-fs");
     var fballdVal = document.querySelectorAll(".fballd-val");
@@ -560,7 +565,7 @@ window.onload = function() {
         navigator.clipboard.writeText(copyFballDBreakdown.value);
     })
 
-    collapseFBallD.addEventListener('click', ()=> {
+    headerFBallD.addEventListener('click', ()=> {
         
         const contentFballD = document.querySelector("#content-fballd")
 
@@ -580,6 +585,7 @@ window.onload = function() {
     var resetButtonTennis = document.querySelector("#tennis-clear")
     var copyButtonTennis = document.querySelector("#tennis-copy");
     var collapseTennis = document.querySelector("#tennis-coll");
+    var headerTennis = document.querySelector("#head-tennis");
 
     var tennisInputs = document.querySelectorAll(".tennis-fs");
     var tennisVal = document.querySelectorAll(".tennis-val");
@@ -655,7 +661,7 @@ window.onload = function() {
         navigator.clipboard.writeText(copyTennisBreakdown.value);
     })
 
-    collapseTennis.addEventListener('click', ()=> {
+    headerTennis.addEventListener('click', ()=> {
 
         const contentTennis = document.querySelector("#content-tennis")
 
@@ -677,6 +683,7 @@ window.onload = function() {
     var resetButtonMma = document.querySelector("#mma-clear")
     var copyButtonMma = document.querySelector("#mma-copy")
     var collapseMma = document.querySelector("#mma-coll");
+    var headerMma = document.querySelector("#head-mma");
 
     var mmaInputs = document.querySelectorAll(".mma-fs");
     var mmaVal = document.querySelectorAll(".mma-val");
@@ -780,7 +787,7 @@ window.onload = function() {
         navigator.clipboard.writeText(copyMmaBreakdown.value);
     })
 
-    collapseMma.addEventListener("click", ()=> {
+    headerMma.addEventListener("click", ()=> {
         
         const contentMma = document.querySelector("#content-mma")
 
@@ -800,6 +807,7 @@ window.onload = function() {
     var resetButtonBox = document.querySelector("#box-clear");
     var copyButtonBox = document.querySelector("#box-copy");
     var collapseBox = document.querySelector("#box-coll");
+    var headerBox = document.querySelector("#head-box");
 
     var boxInputs = document.querySelectorAll(".box-fs");
     var boxVal = document.querySelectorAll(".box-val");
@@ -889,7 +897,7 @@ window.onload = function() {
         navigator.clipboard.writeText(copyBoxBreakdown.value);
     })
 
-    collapseBox.addEventListener("click", ()=> {
+    headerBox.addEventListener("click", ()=> {
         
         const contentBox = document.querySelector("#content-box")
 
@@ -909,6 +917,7 @@ window.onload = function() {
     var resetButtonNascar = document.querySelector("#nascar-clear");
     var copyButtonNascar = document.querySelector("#nascar-copy");
     var collapseNascar = document.querySelector("#nascar-coll");
+    var headerNascar = document.querySelector("#head-nascar");
 
     var nascarInputs = document.querySelectorAll(".nascar-fs");
     var nascarVal = document.querySelectorAll(".nascar-val");
@@ -1105,7 +1114,7 @@ window.onload = function() {
         navigator.clipboard.writeText(copyNascarBreakdown.value);
     })
 
-    collapseNascar.addEventListener("click", ()=> {
+    headerNascar.addEventListener("click", ()=> {
         
         const contentNascar = document.querySelector("#content-nascar")
 

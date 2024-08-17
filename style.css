@@ -18,7 +18,7 @@
   }
   
   
-  .btn:hover, .fa-chevron-down {
+  .btn:hover, .fantasy-section-head {
       cursor: pointer;
   }
   
@@ -60,6 +60,8 @@ header {
 
 .fantasy-section-content {
     display: none;
+    overflow: hidden;
+    transition: height 2s;
 }
 
 li {
