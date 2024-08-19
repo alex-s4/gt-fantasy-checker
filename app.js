@@ -9,6 +9,7 @@ window.onload = function() {
     var copyButtonBball = document.querySelector("#bball-copy");
     var collapseBball = document.querySelector("#bball-coll");
     var headerBball = document.querySelector("#head-bball");
+    var chkHzsBball = document.querySelector("#bball-hzs-checkbox");
 
     var bballPoints = document.getElementById("bball-pts");
     var bballRebound = document.getElementById("bball-rebs");
@@ -21,7 +22,6 @@ window.onload = function() {
     var bballVal = document.querySelectorAll(".bball-val");
 
     buttonBball.addEventListener('click', () => {
-        console.log("buttonBball")
 
         var bballPointsVal = Number(bballPoints.value);
         var bballReboundVal = Number((Number(bballRebound.value) * 1.2).toFixed(1));
@@ -46,6 +46,12 @@ window.onload = function() {
         document.querySelector("#bball-steals-val").innerHTML = `= ${bballStealVal}`
         document.querySelector("#bball-turnovers-val").innerHTML = `= ${bballTurnoverVal}`
 
+        for(var i=0; i<bballInputs.length; i++){
+            if(bballInputs[i].value == ""){
+                bballInputs[i].value = 0;
+            }
+        }
+
         var bballBreakdownPoints = `Points: 1 pt (${bballPoints.value}) = ${bballPointsVal}`;
         var bballBreakdownRebound = `Rebound: 1.2 pts (${bballRebound.value}) = ${bballReboundVal}`;
         var bballBreakdownAssist = `Assist: 1.5 pts (${bballAssist.value}) = ${bballAssistVal}`;
@@ -53,8 +59,30 @@ window.onload = function() {
         var bballBreakdownSteal = `Steal: 3 pts (${bballSteal.value}) = ${bballStealVal}`;
         var bballBreakdownTurnover = `Turnover: -1 pt (${bballTurnover.value}) = ${bballTurnoverVal}`;
 
+        var arrBballStats = [`Points: 1 pt (${bballPoints.value}) = ${bballPointsVal}`,
+                             `Rebound: 1.2 pts (${bballRebound.value}) = ${bballReboundVal}`,
+                             `Assist: 1.5 pts (${bballAssist.value}) = ${bballAssistVal}`,
+                             `Block: 3 pts (${bballBlock.value}) = ${bballBlockVal}`,
+                             `Steal: 3 pts (${bballSteal.value}) = ${bballStealVal}`,
+                             `Turnover: -1 pt (${bballTurnover.value}) = ${bballTurnoverVal}`]
+        
+        console.log(bballInputs[1].value)
+
         document.querySelector("#bball-breakdown").innerHTML = 
         `${bballBreakdownPoints}\n${bballBreakdownRebound}\n${bballBreakdownAssist}\n${bballBreakdownBlock}\n${bballBreakdownSteal}\n${bballBreakdownTurnover}\n\nTOTAL: ${bballFantasy} FS`
+
+        chkHzsBball.addEventListener('click', () => {
+
+            console.log("ayan ayan")
+    
+            if(chkHzsBball.checked == true){
+                
+                
+            } else if (chkHzsBball.checked == false){
+                document.querySelector("#bball-breakdown").innerHTML = 
+                `${bballBreakdownPoints}\n${bballBreakdownRebound}\n${bballBreakdownAssist}\n${bballBreakdownBlock}\n${bballBreakdownSteal}\n${bballBreakdownTurnover}\n\nTOTAL: ${bballFantasy} FS`
+            }
+        })
     });
 
     resetButtonBball.addEventListener('click', () => {
@@ -98,6 +126,8 @@ window.onload = function() {
 
     })
 
+    
+
     // MLB PITCHER FANTASY SCORE
 
     const bsballpFantasyScore = document.querySelector("#bsballp-total-fs");
@@ -139,6 +169,12 @@ window.onload = function() {
         document.querySelector("#bsballp-er-val").innerHTML = `= ${bsballpERVal}`
         document.querySelector("#bsballp-k-val").innerHTML = `= ${bsballpKVal}`
         document.querySelector("#bsballp-out-val").innerHTML = `= ${bsballpOutVal}`
+
+        for(var i=0; i<bsballpInputs.length; i++){
+            if(bsballpInputs[i].value == ""){
+                bsballpInputs[i].value = 0;
+            }
+        }
 
         var bsballpBreakdownWin = `Win: 6 pts (${bsballpWin.value}) = ${bsballpWinVal}`;
         var bsballpBreakdownQS = `Quality Start: 4 pts (${bsballpQS.value}) = ${bsballpQSVal}`;
@@ -225,6 +261,12 @@ window.onload = function() {
         var bsballhBOBVal = Number(bsballhBaseOnBalls.value) * 2;
         var bsballhHBPVal = Number(bsballhHitByPitch.value) * 2;
         var bsballhSBVal = Number(bsballhStolenBase.value) * 5;
+
+        for(var i=0; i<bsballhInputs.length; i++){
+            if(bsballhInputs[i].value == ""){
+                bsballhInputs[i].value = 0;
+            }
+        }
 
         var bsballhFantasy = bsballhSingVal + 
                              bsballhDoubVal +
@@ -341,6 +383,12 @@ window.onload = function() {
         var fballo2PtcVal = Number(fballo2PointConversions.value) * 2;
         var fballoOfrtVal = Number(fballoOffensiveFumbleRecoveryTD.value) * 6;
         var fballoKpfgrtdVal = Number(fballoKickPuntFGReturnTD.value) * 6;
+
+        for(var i=0; i<fballoInputs.length; i++){
+            if(fballoInputs[i].value == ""){
+                fballoInputs[i].value = 0;
+            }
+        }
 
         var fballoFantasy = Number((fballoPassYdVal +
                             fballoPassTdVal +
@@ -463,6 +511,12 @@ window.onload = function() {
         var fballdSafVal = Number(fballdSafety.value) * 2;
         var fballdBlkKickVal = Number(fballdBlockedKick.value) * 2;
         var fballd2PtConvVal = Number(fballd2PointConversion.value) * 2;
+
+        for(var i=0; i<fballdInputs.length; i++){
+            if(fballdInputs[i].value == ""){
+                fballdInputs[i].value = 0;
+            }
+        }
 
         var fballdFaVal = 0;
         var fballdBreakdownFa = "";
@@ -608,6 +662,12 @@ window.onload = function() {
         var tennisAcVal = Number(tennisAce.value) * 0.5;
         var tennisDblftVal = Number(tennisDoubleFault.value) * -0.5;
 
+        for(var i=0; i<tennisInputs.length; i++){
+            if(tennisInputs[i].value == ""){
+                tennisInputs[i].value = 0;
+            }
+        }
+
         var tennisFantasy = tennisMpVal +
                             tennisGwVal +
                             tennisGlVal +
@@ -704,6 +764,12 @@ window.onload = function() {
         var mmaTdDefVal = Number(mmaTakedownDefense.value) * 3;
         var mmaSubAttVal = Number(mmaSubmissionAttempt.value) * 5;
         var mmaKdVal = Number(mmaKnockdown.value) * 12;
+
+        for(var i=0; i<mmaInputs.length; i++){
+            if(mmaInputs[i].value == ""){
+                mmaInputs[i].value = 0;
+            }
+        }
 
         var mmaFcbVal = 0;
         var mmaBreakdownFCB = "";
@@ -825,6 +891,12 @@ window.onload = function() {
         var boxKdVal = Number(boxKnockdown.value) * 12;
         var boxBeingKdVal = Number(boxBeingKnocked.value) * -12;
 
+        for(var i=0; i<boxInputs.length; i++){
+            if(boxInputs[i].value == ""){
+                boxInputs[i].value = 0;
+            }
+        }
+
         var boxFcbVal = 0;
         var boxBreakdownFcb = '';
 
@@ -930,6 +1002,13 @@ window.onload = function() {
         const nascarPlaceDiff = document.querySelector("#nascar-pd");
         const nascarFastestLaps = document.querySelector("#nascar-fl");
         const nascarLapsLead = document.querySelector("#nascar-ll");
+
+        for(var i=0; i<nascarInputs.length; i++){
+            if(nascarInputs[i].value == ""){
+                nascarInputs[i].value = 0;
+            }
+        }
+
 
         var nascarPdVal = Number(nascarPlaceDiff.value) * 1;
         var nascarFlVal = Number(nascarFastestLaps.value) * 0.45;
@@ -1068,8 +1147,6 @@ window.onload = function() {
                     break;
             }
         }
-
-        console.log(nascarBreakdownFpp);
 
         var nascarFantasy = nascarPdVal + nascarFlVal + nascarLlVal + nascarFppVal;
 
