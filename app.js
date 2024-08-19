@@ -51,7 +51,7 @@ window.onload = function() {
         var bballBreakdownAssist = `Assist: 1.5 pts (${bballAssist.value}) = ${bballAssistVal}`;
         var bballBreakdownBlock = `Block: 3 pts (${bballBlock.value}) = ${bballBlockVal}`;
         var bballBreakdownSteal = `Steal: 3 pts (${bballSteal.value}) = ${bballStealVal}`;
-        var bballBreakdownTurnover = `Turnover: -1 pt (${bballSteal.value}) = ${bballStealVal}`;
+        var bballBreakdownTurnover = `Turnover: -1 pt (${bballTurnover.value}) = ${bballTurnoverVal}`;
 
         document.querySelector("#bball-breakdown").innerHTML = 
         `${bballBreakdownPoints}\n${bballBreakdownRebound}\n${bballBreakdownAssist}\n${bballBreakdownBlock}\n${bballBreakdownSteal}\n${bballBreakdownTurnover}\n\nTOTAL: ${bballFantasy} FS`
