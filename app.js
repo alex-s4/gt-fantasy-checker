@@ -21,6 +21,8 @@ window.onload = function() {
     var bballInputs = document.querySelectorAll(".bball-fs");
     var bballVal = document.querySelectorAll(".bball-val");
 
+    
+
     buttonBball.addEventListener('click', () => {
 
         var bballPointsVal = Number(bballPoints.value);
@@ -31,11 +33,11 @@ window.onload = function() {
         var bballTurnoverVal = Number(bballTurnover.value) * -1
 
         var bballFantasy = Number(Number(bballPointsVal + 
-                        bballReboundVal + 
-                        bballAssistVal + 
-                        bballBlockVal + 
-                        bballStealVal + 
-                        bballTurnoverVal).toFixed(1))
+            bballReboundVal + 
+            bballAssistVal + 
+            bballBlockVal + 
+            bballStealVal + 
+            bballTurnoverVal).toFixed(1))
 
         bballFantasyScore.innerHTML = bballFantasy;
 
@@ -52,12 +54,12 @@ window.onload = function() {
             }
         }
 
-        var bballBreakdownPoints = `Points: 1 pt (${bballPoints.value}) = ${bballPointsVal}`;
-        var bballBreakdownRebound = `Rebound: 1.2 pts (${bballRebound.value}) = ${bballReboundVal}`;
-        var bballBreakdownAssist = `Assist: 1.5 pts (${bballAssist.value}) = ${bballAssistVal}`;
-        var bballBreakdownBlock = `Block: 3 pts (${bballBlock.value}) = ${bballBlockVal}`;
-        var bballBreakdownSteal = `Steal: 3 pts (${bballSteal.value}) = ${bballStealVal}`;
-        var bballBreakdownTurnover = `Turnover: -1 pt (${bballTurnover.value}) = ${bballTurnoverVal}`;
+        // var bballBreakdownPoints = `Points: 1 pt (${bballPoints.value}) = ${bballPointsVal}`;
+        // var bballBreakdownRebound = `Rebound: 1.2 pts (${bballRebound.value}) = ${bballReboundVal}`;
+        // var bballBreakdownAssist = `Assist: 1.5 pts (${bballAssist.value}) = ${bballAssistVal}`;
+        // var bballBreakdownBlock = `Block: 3 pts (${bballBlock.value}) = ${bballBlockVal}`;
+        // var bballBreakdownSteal = `Steal: 3 pts (${bballSteal.value}) = ${bballStealVal}`;
+        // var bballBreakdownTurnover = `Turnover: -1 pt (${bballTurnover.value}) = ${bballTurnoverVal}`;
 
         var arrBballStats = [`Points: 1 pt (${bballPoints.value}) = ${bballPointsVal}`,
                              `Rebound: 1.2 pts (${bballRebound.value}) = ${bballReboundVal}`,
@@ -65,24 +67,30 @@ window.onload = function() {
                              `Block: 3 pts (${bballBlock.value}) = ${bballBlockVal}`,
                              `Steal: 3 pts (${bballSteal.value}) = ${bballStealVal}`,
                              `Turnover: -1 pt (${bballTurnover.value}) = ${bballTurnoverVal}`]
+
+        var bballDisp = "";
+
+        for (var i=0; i<arrBballStats.length; i++){
+            bballDisp += arrBballStats[i] + "\n"; 
+        }
+        bballDisp += "\nTOTAL FS = " + bballFantasy;
+        document.querySelector("#bball-breakdown").innerHTML = bballDisp;
         
-        console.log(bballInputs[1].value)
+        // HIDE ZERO VALUED STATS
 
-        document.querySelector("#bball-breakdown").innerHTML = 
-        `${bballBreakdownPoints}\n${bballBreakdownRebound}\n${bballBreakdownAssist}\n${bballBreakdownBlock}\n${bballBreakdownSteal}\n${bballBreakdownTurnover}\n\nTOTAL: ${bballFantasy} FS`
-
-        chkHzsBball.addEventListener('click', () => {
-
-            console.log("ayan ayan")
-    
-            if(chkHzsBball.checked == true){
-                
-                
-            } else if (chkHzsBball.checked == false){
-                document.querySelector("#bball-breakdown").innerHTML = 
-                `${bballBreakdownPoints}\n${bballBreakdownRebound}\n${bballBreakdownAssist}\n${bballBreakdownBlock}\n${bballBreakdownSteal}\n${bballBreakdownTurnover}\n\nTOTAL: ${bballFantasy} FS`
+        if (chkHzsBball.checked == true){
+            bballDisp = ""
+            for (var j=0; j<arrBballStats.length; j++){
+            
+                if (bballInputs[j].value != '0'){
+                    bballDisp += arrBballStats[j] + "\n";
+                }
             }
-        })
+            bballDisp += "\nTOTAL FS = " + bballFantasy;
+            document.querySelector("#bball-breakdown").innerHTML = bballDisp;
+        }
+        
+
     });
 
     resetButtonBball.addEventListener('click', () => {
@@ -125,6 +133,28 @@ window.onload = function() {
         }
 
     })
+
+    // chkHzsBball.addEventListener('click', () => {
+
+    //     var arrBballStats = [`Points: 1 pt (${bballPoints.value}) = ${bballPointsVal}`,
+    //         `Rebound: 1.2 pts (${bballRebound.value}) = ${bballReboundVal}`,
+    //         `Assist: 1.5 pts (${bballAssist.value}) = ${bballAssistVal}`,
+    //         `Block: 3 pts (${bballBlock.value}) = ${bballBlockVal}`,
+    //         `Steal: 3 pts (${bballSteal.value}) = ${bballStealVal}`,
+    //         `Turnover: -1 pt (${bballTurnover.value}) = ${bballTurnoverVal}`]
+
+    //     var bballDispC = "";
+
+    //     for(var i=0; i<arrBballStats.length; i++){
+    //         if(bballInputs[i].value != 0){
+    //             bballDispC += arrBballStats[i] + "\n";
+    //             bballDispC += "\nTOTAL FS = " + bballFantasy;
+    //         }
+    //     }
+    //     console.log(bballDispC);
+    //     // document.querySelector("#bball-breakdown").innerHTML = bballDispC;
+
+    // })
 
     
 
