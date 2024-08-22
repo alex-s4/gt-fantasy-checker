@@ -189,3 +189,7 @@ footer {
 footer p {
     margin: 0 6px;
 }
+
+.textarea-btn-cont {
+    display: none;
+}

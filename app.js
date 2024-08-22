@@ -1,3 +1,5 @@
+// MY CODE SUCKS!
+
 window.onload = function() {
     
     // NBA/WNBA FANTASY SCORE
@@ -54,13 +56,6 @@ window.onload = function() {
             }
         }
 
-        // var bballBreakdownPoints = `Points: 1 pt (${bballPoints.value}) = ${bballPointsVal}`;
-        // var bballBreakdownRebound = `Rebound: 1.2 pts (${bballRebound.value}) = ${bballReboundVal}`;
-        // var bballBreakdownAssist = `Assist: 1.5 pts (${bballAssist.value}) = ${bballAssistVal}`;
-        // var bballBreakdownBlock = `Block: 3 pts (${bballBlock.value}) = ${bballBlockVal}`;
-        // var bballBreakdownSteal = `Steal: 3 pts (${bballSteal.value}) = ${bballStealVal}`;
-        // var bballBreakdownTurnover = `Turnover: -1 pt (${bballTurnover.value}) = ${bballTurnoverVal}`;
-
         var arrBballStats = [`Points: 1 pt (${bballPoints.value}) = ${bballPointsVal}`,
                              `Rebound: 1.2 pts (${bballRebound.value}) = ${bballReboundVal}`,
                              `Assist: 1.5 pts (${bballAssist.value}) = ${bballAssistVal}`,
@@ -75,21 +70,35 @@ window.onload = function() {
         }
         bballDisp += "\nTOTAL FS = " + bballFantasy;
         document.querySelector("#bball-breakdown").innerHTML = bballDisp;
+        document.querySelector("#bball-textarea-btn-cont").style.display = "block";
+        chkHzsBball.checked = false;
         
         // HIDE ZERO VALUED STATS
 
-        if (chkHzsBball.checked == true){
-            bballDisp = ""
-            for (var j=0; j<arrBballStats.length; j++){
-            
-                if (bballInputs[j].value != '0'){
-                    bballDisp += arrBballStats[j] + "\n";
+        chkHzsBball.addEventListener('click', () => 
+        {
+
+            if (chkHzsBball.checked == true){
+                bballDisp = ""
+                for (var j=0; j<arrBballStats.length; j++){
+                
+                    if (bballInputs[j].value != '0'){
+                        bballDisp += arrBballStats[j] + "\n";
+                    }
                 }
+                bballDisp += "\nTOTAL FS = " + bballFantasy;
+                document.querySelector("#bball-breakdown").innerHTML = bballDisp;
+                
+            } else if (chkHzsBball.checked == false){
+                bballDisp = ""
+                for (var i=0; i<arrBballStats.length; i++){
+                    bballDisp += arrBballStats[i] + "\n"; 
+                }
+                bballDisp += "\nTOTAL FS = " + bballFantasy;
+                document.querySelector("#bball-breakdown").innerHTML = bballDisp;
             }
-            bballDisp += "\nTOTAL FS = " + bballFantasy;
-            document.querySelector("#bball-breakdown").innerHTML = bballDisp;
-        }
-        
+
+        })
 
     });
 
@@ -105,6 +114,7 @@ window.onload = function() {
         
         bballFantasyScore.innerHTML = "";
         document.querySelector("#bball-breakdown").innerHTML = "";
+        document.querySelector("#bball-textarea-btn-cont").style.display = "none";
         
     })
 
@@ -119,12 +129,8 @@ window.onload = function() {
     })
 
     headerBball.addEventListener('click', () => {
-
-        console.log("bball")
         
         const contentBball = document.querySelector("#content-bball")
-
-        console.log(contentBball.style.display)
 
         if(contentBball.style.display == "block"){
             contentBball.style.display = "none"
@@ -133,28 +139,6 @@ window.onload = function() {
         }
 
     })
-
-    // chkHzsBball.addEventListener('click', () => {
-
-    //     var arrBballStats = [`Points: 1 pt (${bballPoints.value}) = ${bballPointsVal}`,
-    //         `Rebound: 1.2 pts (${bballRebound.value}) = ${bballReboundVal}`,
-    //         `Assist: 1.5 pts (${bballAssist.value}) = ${bballAssistVal}`,
-    //         `Block: 3 pts (${bballBlock.value}) = ${bballBlockVal}`,
-    //         `Steal: 3 pts (${bballSteal.value}) = ${bballStealVal}`,
-    //         `Turnover: -1 pt (${bballTurnover.value}) = ${bballTurnoverVal}`]
-
-    //     var bballDispC = "";
-
-    //     for(var i=0; i<arrBballStats.length; i++){
-    //         if(bballInputs[i].value != 0){
-    //             bballDispC += arrBballStats[i] + "\n";
-    //             bballDispC += "\nTOTAL FS = " + bballFantasy;
-    //         }
-    //     }
-    //     console.log(bballDispC);
-    //     // document.querySelector("#bball-breakdown").innerHTML = bballDispC;
-
-    // })
 
     
 
@@ -167,18 +151,18 @@ window.onload = function() {
     var copyButtonBsballP = document.querySelector("#bsballp-copy")
     var collapseBsballP = document.querySelector("#bsballp-coll");
     var headerBsballP = document.querySelector("#head-bsballp");
+    var chkHzsBsballP = document.querySelector("#bsballp-hzs-checkbox");
 
     var bsballpInputs = document.querySelectorAll(".bsballp-fs");
     var bsballpVal = document.querySelectorAll(".bsballp-val");
 
-    buttonBsballP.addEventListener('click', ()=> {
-        console.log("buttonBsballP")
+    const bsballpWin = document.getElementById("bsballp-win");
+    const bsballpQS = document.getElementById("bsballp-qs");
+    const bsballpER = document.getElementById("bsballp-er");
+    const bsballpK = document.getElementById("bsballp-k");
+    const bsballpOut = document.getElementById("bsballp-out");
 
-        const bsballpWin = document.getElementById("bsballp-win");
-        const bsballpQS = document.getElementById("bsballp-qs");
-        const bsballpER = document.getElementById("bsballp-er");
-        const bsballpK = document.getElementById("bsballp-k");
-        const bsballpOut = document.getElementById("bsballp-out");
+    buttonBsballP.addEventListener('click', ()=> {
     
         var bsballpWinVal = Number(bsballpWin.value) * 6;
         var bsballpQSVal = Number(bsballpQS.value) * 4;
@@ -206,13 +190,48 @@ window.onload = function() {
             }
         }
 
-        var bsballpBreakdownWin = `Win: 6 pts (${bsballpWin.value}) = ${bsballpWinVal}`;
-        var bsballpBreakdownQS = `Quality Start: 4 pts (${bsballpQS.value}) = ${bsballpQSVal}`;
-        var bsballpBreakdownER = `Earned Run: -3 pt (${bsballpER.value}) = ${bsballpERVal}`;
-        var bsballpBreakdownK = `Strikeout: 3 pt (${bsballpK.value}) = ${bsballpKVal}`;
-        var bsballpBreakdownOut = `Out: 1 pt (${bsballpOut.value}) = ${bsballpOutVal}`;
+        var arrBsballpStats = [`Win: 6 pts (${bsballpWin.value}) = ${bsballpWinVal}`,
+                             `Quality Start: 4 pts (${bsballpQS.value}) = ${bsballpQSVal}`,
+                             `Earned Run: -3 pt (${bsballpER.value}) = ${bsballpERVal}`,
+                             `Strikeout: 3 pt (${bsballpK.value}) = ${bsballpKVal}`,
+                             `Out: 1 pt (${bsballpOut.value}) = ${bsballpOutVal}`]
+        
+        var bsballpDisp = "";  
 
-        document.querySelector("#bsballp-breakdown").innerHTML = `${bsballpBreakdownWin}\n${bsballpBreakdownQS}\n${bsballpBreakdownER}\n${bsballpBreakdownK}\n${bsballpBreakdownOut}\n\nTOTAL: ${bsballpFantasy} FS`;
+        for (var i=0; i<arrBsballpStats.length; i++){
+            bsballpDisp += arrBsballpStats[i] + "\n"; 
+            }
+
+        bsballpDisp += "\nTOTAL FS = " + bsballpFantasy;
+        document.querySelector("#bsballp-breakdown").innerHTML = bsballpDisp;
+        document.querySelector("#bsballp-textarea-btn-cont").style.display = "block";
+        chkHzsBsballP.checked = false;
+
+        // HIDE ZERO VALUED STATS
+
+        chkHzsBsballP.addEventListener('click', () => 
+            {
+                if (chkHzsBsballP.checked == true){
+                    bsballpDisp = ""
+                    for (var j=0; j<arrBsballpStats.length; j++){
+                    
+                        if (bsballpInputs[j].value != '0'){
+                            bsballpDisp += arrBsballpStats[j] + "\n";
+                        }
+                    }
+                    bsballpDisp += "\nTOTAL FS = " + bsballpFantasy;
+                    document.querySelector("#bsballp-breakdown").innerHTML = bsballpDisp;
+                    
+                } else if (chkHzsBsballP.checked == false){
+                    bsballpDisp = ""
+                    for (var i=0; i<arrBsballpStats.length; i++){
+                        bsballpDisp += arrBsballpStats[i] + "\n"; 
+                    }
+                    bsballpDisp += "\nTOTAL FS = " + bsballpFantasy;
+                    document.querySelector("#bsballp-breakdown").innerHTML = bsballpDisp;
+                }
+    
+            })
 
     })
 
@@ -228,6 +247,7 @@ window.onload = function() {
 
         bsballpFantasyScore.innerHTML = '';
         document.querySelector("#bsballp-breakdown").innerHTML = "";
+        document.querySelector("#bsballp-textarea-btn-cont").style.display = "none";
     })
 
     copyButtonBsballP.addEventListener('click', ()=> {
@@ -241,8 +261,6 @@ window.onload = function() {
     })
 
     headerBsballP.addEventListener('click', ()=> {
-
-        console.log("bsballp")
         
         const contentBsballP = document.querySelector("#content-bsballp")
 
@@ -265,22 +283,22 @@ window.onload = function() {
     var copyButtonBsballH = document.querySelector("#bsballh-copy")
     var collapseBsballH = document.querySelector("#bsballh-coll");
     var headerBsballH = document.querySelector("#head-bsballh");
+    var chkHzsBsballH = document.querySelector("#bsballh-hzs-checkbox");
 
     var bsballhInputs = document.querySelectorAll(".bsballh-fs");
     var bsballhVal = document.querySelectorAll(".bsballh-val");
 
-    buttonBsballH.addEventListener('click', ()=> {
-        console.log("buttonBsballH")
+    const bsballhSingle = document.getElementById("bsballh-sing");
+    const bsballhDouble = document.getElementById("bsballh-doub");
+    const bsballhTriple = document.getElementById("bsballh-trip");
+    const bsballhHomeRun = document.getElementById("bsballh-hr");
+    const bsballhRun = document.getElementById("bsballh-r");
+    const bsballhRunBattedIn = document.getElementById("bsballh-rbi");
+    const bsballhBaseOnBalls = document.getElementById("bsballh-bob");
+    const bsballhHitByPitch = document.getElementById("bsballh-hbp");
+    const bsballhStolenBase = document.getElementById("bsballh-sb");
 
-        const bsballhSingle = document.getElementById("bsballh-sing");
-        const bsballhDouble = document.getElementById("bsballh-doub");
-        const bsballhTriple = document.getElementById("bsballh-trip");
-        const bsballhHomeRun = document.getElementById("bsballh-hr");
-        const bsballhRun = document.getElementById("bsballh-r");
-        const bsballhRunBattedIn = document.getElementById("bsballh-rbi");
-        const bsballhBaseOnBalls = document.getElementById("bsballh-bob");
-        const bsballhHitByPitch = document.getElementById("bsballh-hbp");
-        const bsballhStolenBase = document.getElementById("bsballh-sb");
+    buttonBsballH.addEventListener('click', ()=> {
         
         var bsballhSingVal = Number(bsballhSingle.value) * 3;
         var bsballhDoubVal = Number(bsballhDouble.value) * 5;
@@ -320,17 +338,56 @@ window.onload = function() {
         document.querySelector("#bsballh-hbp-val").innerHTML = `= ${bsballhHBPVal}`
         document.querySelector("#bsballh-sb-val").innerHTML = `= ${bsballhSBVal}`
 
-        var bsballhBreakdownSingle = `Single: 3 pts (${bsballhSingle.value}) = ${bsballhSingVal}`;
-        var bsballhBreakdownDouble = `Double: 5 pts (${bsballhDouble.value}) = ${bsballhDoubVal}`;
-        var bsballhBreakdownTriple = `Triple: 8 pts (${bsballhTriple.value}) = ${bsballhTripVal}`;
-        var bsballhBreakdownHomeRun = `Home Run: 10 pts (${bsballhHomeRun.value}) = ${bsballhHRVal}`;
-        var bsballhBreakdownRun = `Run: 2 pts (${bsballhRun.value}) = ${bsballhRVal}`;
-        var bsballhBreakdownRunBattedIn = `Run Batted In: 2 pts (${bsballhRunBattedIn.value}) = ${bsballhRBIVal}`;
-        var bsballhBreakdownBaseOnBalls = `Base On Balls: 2 pts (${bsballhBaseOnBalls.value}) = ${bsballhBOBVal}`;
-        var bsballhBreakdownHitByPitch = `Hit By Pitch: 2 pts (${bsballhHitByPitch.value}) = ${bsballhHBPVal}`;
-        var bsballhBreakdownStolenBase = `Stolen Base: 5 pts (${bsballhStolenBase.value}) = ${bsballhSBVal}`;
+        var arrBsballhStats = [`Single: 3 pts (${bsballhSingle.value}) = ${bsballhSingVal}`,
+                            `Double: 5 pts (${bsballhDouble.value}) = ${bsballhDoubVal}`,
+                            `Triple: 8 pts (${bsballhTriple.value}) = ${bsballhTripVal}`,
+                            `Home Run: 10 pts (${bsballhHomeRun.value}) = ${bsballhHRVal}`,
+                            `Run: 2 pts (${bsballhRun.value}) = ${bsballhRVal}`,
+                            `Run Batted In: 2 pts (${bsballhRunBattedIn.value}) = ${bsballhRBIVal}`,
+                            `Base On Balls: 2 pts (${bsballhBaseOnBalls.value}) = ${bsballhBOBVal}`,
+                            `Hit By Pitch: 2 pts (${bsballhHitByPitch.value}) = ${bsballhHBPVal}`,
+                            `Stolen Base: 5 pts (${bsballhStolenBase.value}) = ${bsballhSBVal}`];
 
-        document.querySelector("#bsballh-breakdown").innerHTML = `${bsballhBreakdownSingle}\n${bsballhBreakdownDouble}\n${bsballhBreakdownTriple}\n${bsballhBreakdownHomeRun}\n${bsballhBreakdownRun}\n${bsballhBreakdownRunBattedIn}\n${bsballhBreakdownBaseOnBalls}\n${bsballhBreakdownHitByPitch}\n${bsballhBreakdownStolenBase}\n\nTOTAL: ${bsballhFantasy} FS`;
+
+
+        var bsballhDisp = "";  
+
+        for (var i=0; i<arrBsballhStats.length; i++){
+            bsballhDisp += arrBsballhStats[i] + "\n"; 
+        }
+
+        bsballhDisp += "\nTOTAL FS = " + bsballhFantasy;
+        document.querySelector("#bsballh-breakdown").innerHTML = bsballhDisp;
+        document.querySelector("#bsballh-textarea-btn-cont").style.display = "block";
+        chkHzsBsballH.checked = false;
+
+        // HIDE ZERO VALUED STATS
+
+        chkHzsBsballH.addEventListener('click', () => 
+            {
+                if (chkHzsBsballH.checked == true){
+                    bsballhDisp = ""
+                    for (var j=0; j<arrBsballhStats.length; j++){
+                    
+                        if (bsballhInputs[j].value != '0'){
+                            bsballhDisp += arrBsballhStats[j] + "\n";
+                        }
+                    }
+                    bsballhDisp += "\nTOTAL FS = " + bsballhFantasy;
+                    document.querySelector("#bsballh-breakdown").innerHTML = bsballhDisp;
+                    
+                } else if (chkHzsBsballH.checked == false){
+                    bsballhDisp = ""
+                    for (var i=0; i<arrBsballhStats.length; i++){
+                        bsballhDisp += arrBsballhStats[i] + "\n"; 
+                    }
+                    bsballhDisp += "\nTOTAL FS = " + bsballhFantasy;
+                    document.querySelector("#bsballh-breakdown").innerHTML = bsballhDisp;
+                }
+    
+            })
+
+        
     })
 
     resetButtonBsballH.addEventListener('click', ()=> {
@@ -345,6 +402,7 @@ window.onload = function() {
 
         bsballhFantasyScore.innerHTML = '';
         document.querySelector("#bsballh-breakdown").innerHTML = "";
+        document.querySelector("#bsballh-textarea-btn-cont").style.display = "none";
 
     })
 
@@ -381,25 +439,25 @@ window.onload = function() {
     var copyButtonFballO = document.querySelector("#fballo-copy");
     var collapseFBallO = document.querySelector("#fballo-coll");
     var headerFBallO = document.querySelector("#head-fballo");
+    var chkHzsFBallO = document.querySelector("#fballo-hzs-checkbox");
 
     var fballoInputs = document.querySelectorAll(".fballo-fs");
     var fballoVal = document.querySelectorAll(".fballo-val");
 
+    const fballoPassingYards = document.getElementById("fballo-passyd");
+    const fballoPassingTDs = document.getElementById("fballo-passtd");
+    const fballoInterceptions = document.getElementById("fballo-int");
+    const fballoRushingYards = document.getElementById("fballo-rushyd");
+    const fballoRushingTDs = document.getElementById("fballo-rushtd");
+    const fballoReceivingYards = document.getElementById("fballo-recyd");
+    const fballoReceivingTDs = document.getElementById("fballo-rectd");
+    const fballoReceptions = document.getElementById("fballo-rec");
+    const fballoFumblesLost = document.getElementById("fballo-fl");
+    const fballo2PointConversions = document.getElementById("fballo-2ptc");
+    const fballoOffensiveFumbleRecoveryTD = document.getElementById("fballo-ofrt");
+    const fballoKickPuntFGReturnTD = document.getElementById("fballo-kpfgrtd");
+
     buttonFballO.addEventListener('click', ()=> {
-        console.log("buttonFballO")
-        
-        const fballoPassingYards = document.getElementById("fballo-passyd");
-        const fballoPassingTDs = document.getElementById("fballo-passtd");
-        const fballoInterceptions = document.getElementById("fballo-int");
-        const fballoRushingYards = document.getElementById("fballo-rushyd");
-        const fballoRushingTDs = document.getElementById("fballo-rushtd");
-        const fballoReceivingYards = document.getElementById("fballo-recyd");
-        const fballoReceivingTDs = document.getElementById("fballo-rectd");
-        const fballoReceptions = document.getElementById("fballo-rec");
-        const fballoFumblesLost = document.getElementById("fballo-fl");
-        const fballo2PointConversions = document.getElementById("fballo-2ptc");
-        const fballoOffensiveFumbleRecoveryTD = document.getElementById("fballo-ofrt");
-        const fballoKickPuntFGReturnTD = document.getElementById("fballo-kpfgrtd");
 
         var fballoPassYdVal = Number((Number(fballoPassingYards.value) * 0.04).toFixed(2));
         var fballoPassTdVal = Number(fballoPassingTDs.value) * 4;
@@ -448,20 +506,55 @@ window.onload = function() {
         document.querySelector("#fballo-ofrt-val").innerHTML = `= ${fballoOfrtVal}`
         document.querySelector("#fballo-kpfgrtd-val").innerHTML = `= ${fballoKpfgrtdVal}`
 
-        var fballoBreakdownPassingYards = `Passing Yards: 0.04 pts/yard (${fballoPassingYards.value}) = ${fballoPassYdVal}`;
-        var fballoBreakdownPassingTDs = `Passing TDs: 4 pts (${fballoPassingTDs.value}) = ${fballoPassTdVal}`;
-        var fballoBreakdownInterceptions = `Interceptions: -1 pt (${fballoInterceptions.value}) = ${fballoIntVal}`;
-        var fballoBreakdownRushingYards = `Rushing Yards: 0.1 pts/yard (${fballoRushingYards.value}) = ${fballoRushYdVal}`;
-        var fballoBreakdownRushingTDs = `Rushing TDs: 6 pts (${fballoRushingTDs.value}) = ${fballoRushTdVal}`;
-        var fballoBreakdownReceivingYards = `Receiving Yards: 0.1 pts/yard (${fballoReceivingYards.value}) = ${fballoRecYdVal}`;
-        var fballoBreakdownReceivingTDs = `Receiving TDs: 6 pts (${fballoReceivingTDs.value}) = ${fballoRecTdVal}`;
-        var fballoBreakdownReceptions = `Receptions: 1 pt (${fballoReceptions.value}) = ${fballoRecVal}`;
-        var fballoBreakdownFumblesLost = `Fumbles Lost: -1 pt (${fballoFumblesLost.value}) = ${fballoFlVal}`;
-        var fballoBreakdown2PointConv = `2 Point Conversions: 2 pts (${fballo2PointConversions.value}) = ${fballo2PtcVal}`;
-        var fballoBreakdownOffensiveFumbleRecoveryTD = `Offensive Fumble Recovery Touchdown: 6 pts (${fballoOffensiveFumbleRecoveryTD.value}) = ${fballoOfrtVal}`;
-        var fballoBreakdownKickPuntFGReturnTD = `Kick/Punt/Field Goal Return Touchdown: 6 pts (${fballoKickPuntFGReturnTD.value}) = ${fballoKpfgrtdVal}`;
+        var arrFballoStats = [`Passing Yards: 0.04 pts/yard (${fballoPassingYards.value}) = ${fballoPassYdVal}`,
+            `Passing TDs: 4 pts (${fballoPassingTDs.value}) = ${fballoPassTdVal}`,
+            `Interceptions: -1 pt (${fballoInterceptions.value}) = ${fballoIntVal}`,
+            `Rushing Yards: 0.1 pts/yard (${fballoRushingYards.value}) = ${fballoRushYdVal}`,
+            `Rushing TDs: 6 pts (${fballoRushingTDs.value}) = ${fballoRushTdVal}`,
+            `Receiving Yards: 0.1 pts/yard (${fballoReceivingYards.value}) = ${fballoRecYdVal}`,
+            `Receiving TDs: 6 pts (${fballoReceivingTDs.value}) = ${fballoRecTdVal}`,
+            `Receptions: 1 pt (${fballoReceptions.value}) = ${fballoRecVal}`,
+            `Fumbles Lost: -1 pt (${fballoFumblesLost.value}) = ${fballoFlVal}`,
+            `2 Point Conversions: 2 pts (${fballo2PointConversions.value}) = ${fballo2PtcVal}`,
+            `Offensive Fumble Recovery Touchdown: 6 pts (${fballoOffensiveFumbleRecoveryTD.value}) = ${fballoOfrtVal}`,
+            `Kick/Punt/Field Goal Return Touchdown: 6 pts (${fballoKickPuntFGReturnTD.value}) = ${fballoKpfgrtdVal}`];
 
-        document.querySelector("#fballo-breakdown").innerHTML = `${fballoBreakdownPassingYards}\n${fballoBreakdownPassingTDs}\n${fballoBreakdownInterceptions}\n${fballoBreakdownRushingYards}\n${fballoBreakdownRushingTDs}\n${fballoBreakdownReceivingYards}\n${fballoBreakdownReceivingTDs}\n${fballoBreakdownReceptions}\n${fballoBreakdownFumblesLost}\n${fballoBreakdown2PointConv}\n${fballoBreakdownOffensiveFumbleRecoveryTD}\n${fballoBreakdownKickPuntFGReturnTD}\n\nTOTAL: ${fballoFantasy} FS`
+        var fballoDisp = "";  
+
+        for (var i=0; i<arrFballoStats.length; i++){
+            fballoDisp += arrFballoStats[i] + "\n"; 
+        }
+
+        fballoDisp += "\nTOTAL FS = " + fballoFantasy;
+        document.querySelector("#fballo-breakdown").innerHTML = fballoDisp;
+        document.querySelector("#fballo-textarea-btn-cont").style.display = "block";
+        chkHzsFBallO.checked = false;
+
+        // HIDE ZERO VALUED STATS
+
+        chkHzsFBallO.addEventListener('click', () => 
+            {
+                if (chkHzsFBallO.checked == true){
+                    fballoDisp = ""
+                    for (var j=0; j<arrFballoStats.length; j++){
+                    
+                        if (fballoInputs[j].value != '0'){
+                            fballoDisp += arrFballoStats[j] + "\n";
+                        }
+                    }
+                    fballoDisp += "\nTOTAL FS = " + fballoFantasy;
+                    document.querySelector("#fballo-breakdown").innerHTML = fballoDisp;
+                    
+                } else if (chkHzsFBallO.checked == false){
+                    fballoDisp = ""
+                    for (var i=0; i<arrFballoStats.length; i++){
+                        fballoDisp += arrFballoStats[i] + "\n"; 
+                    }
+                    fballoDisp += "\nTOTAL FS = " + fballoFantasy;
+                    document.querySelector("#fballo-breakdown").innerHTML = fballoDisp;
+                }
+    
+            })
 
     })
 
@@ -477,6 +570,7 @@ window.onload = function() {
 
         fballoFantasyScore.innerHTML = '';
         document.querySelector("#fballo-breakdown").innerHTML = '';
+        document.querySelector("#fballo-textarea-btn-cont").style.display = "none";
     })
 
     copyButtonFballO.addEventListener('click', ()=> {
@@ -511,25 +605,26 @@ window.onload = function() {
     var copyButtonFballD = document.querySelector("#fballd-copy");
     var collapseFBallD = document.querySelector("#fballd-coll");
     var headerFBallD = document.querySelector("#head-fballd");
+    var chkHzsFBallD = document.querySelector("#fballd-hzs-checkbox");
 
     var fballdInputs = document.querySelectorAll(".fballd-fs");
     var fballdVal = document.querySelectorAll(".fballd-val");
     var fballdRad = document.querySelectorAll(".fballd-pa");
 
-    buttonFballD.addEventListener('click', ()=> {
-        
-        var fballdPaRadio = document.querySelectorAll(".fballd-pa");
+    var fballdPaRadio = document.querySelectorAll(".fballd-pa");
 
-        const fballdSack = document.getElementById("fballd-sac");
-        const fballdInterception = document.getElementById("fballd-int");
-        const fballdFumbleRecovery = document.getElementById("fballd-fumbrec");
-        const fballdPuntKickoffFGReturnTD = document.getElementById("fballd-pkfgrtd");
-        const fballdInterceptionReturnTD = document.getElementById("fballd-intrettd");
-        const fballdFumbleRecoveryTD = document.getElementById("fballd-fumbrectd");
-        const fballdBlockedPuntTD = document.getElementById("fballd-blkpunt");
-        const fballdSafety = document.getElementById("fballd-saf");
-        const fballdBlockedKick = document.getElementById("fballd-blkkick");
-        const fballd2PointConversion = document.getElementById("fballd-2ptconv");
+    const fballdSack = document.getElementById("fballd-sac");
+    const fballdInterception = document.getElementById("fballd-int");
+    const fballdFumbleRecovery = document.getElementById("fballd-fumbrec");
+    const fballdPuntKickoffFGReturnTD = document.getElementById("fballd-pkfgrtd");
+    const fballdInterceptionReturnTD = document.getElementById("fballd-intrettd");
+    const fballdFumbleRecoveryTD = document.getElementById("fballd-fumbrectd");
+    const fballdBlockedPuntTD = document.getElementById("fballd-blkpunt");
+    const fballdSafety = document.getElementById("fballd-saf");
+    const fballdBlockedKick = document.getElementById("fballd-blkkick");
+    const fballd2PointConversion = document.getElementById("fballd-2ptconv");
+
+    buttonFballD.addEventListener('click', ()=> {
 
         var fballdSacVal = Number(fballdSack.value) * 1;
         var fballdIntVal = Number(fballdInterception.value) * 2;
@@ -548,13 +643,14 @@ window.onload = function() {
             }
         }
 
-        var fballdFaVal = 0;
+        var fballdFaVal;
         var fballdBreakdownFa = "";
 
         for(var i=0; i<fballdPaRadio.length; i++){
             if(fballdPaRadio[i].checked === true){
                 fballdFaVal = Number(fballdPaRadio[i].value)
             }
+
             switch(fballdFaVal){
                 case 10:
                     fballdBreakdownFa = "0 Point Allowed = 10 pts";
@@ -578,6 +674,10 @@ window.onload = function() {
                     fballdBreakdownFa = "35+ Points Allowed = -4 pt";
                     break;
             }
+        }
+
+        if(!fballdFaVal){
+            fballdFaVal = 0; // To avoid NaN
         }
 
         var fballdFantasy = fballdSacVal +
@@ -605,19 +705,53 @@ window.onload = function() {
         document.querySelector("#fballd-blkkick-val").innerHTML = `= ${fballdBlkKickVal}`
         document.querySelector("#fballd-2ptconv-val").innerHTML = `= ${fballd2PtConvVal}`
 
-        var fballdBreakdownSack = `Sack: 1 pt (${fballdSack.value}) = ${fballdSacVal}`;
-        var fballdBreakdownInterception = `Interception: 2 pts (${fballdInterception.value}) = ${fballdIntVal}`;
-        var fballdBreakdownFumbleRecovery = `Fumble Recovery: 2 pts (${fballdFumbleRecovery.value}) = ${fballdFumbRecVal}`;
-        var fballdBreakdownPuntKickoffFGReturnTD = `Punt/Kickoff/FG Return for TD: 6 pts (${fballdPuntKickoffFGReturnTD.value}) = ${fballdPkfgrtdVal}`;
-        var fballdBreakdownInterceptionReturnTD = `Interception Return TD: 6 pts (${fballdInterceptionReturnTD.value}) = ${fballdIntrettdVal}`;
-        var fballdBreakdownFumbleRecoveryTD = `Fumble Recovery TD: 6 pts (${fballdFumbleRecoveryTD.value}) = ${fballdFumbRecTdVal}`;
-        var fballdBreakdownBlockedPuntTD = `Blocked Punt or FG Return TD: 6 pts (${fballdBlockedPuntTD.value}) = ${fballdBlkPuntVal}`;
-        var fballdBreakdownSafety = `Safety: 2 pts (${fballdSafety.value}) = ${fballdSafVal}`;
-        var fballdBreakdownBlockedKick = `Blocked Kick: 2 pts (${fballdBlockedKick.value}) = ${fballdBlkKickVal}`;
-        var fballdBreakdownfballd2PointConversion = `2 Point Conversions/Extra Point Returns: 2 pts (${fballd2PointConversion.value}) = ${fballd2PtConvVal}`;
+        var arrFballdStats = [`Sack: 1 pt (${fballdSack.value}) = ${fballdSacVal}`,
+            `Interception: 2 pts (${fballdInterception.value}) = ${fballdIntVal}`,
+            `Fumble Recovery: 2 pts (${fballdFumbleRecovery.value}) = ${fballdFumbRecVal}`,
+            `Punt/Kickoff/FG Return for TD: 6 pts (${fballdPuntKickoffFGReturnTD.value}) = ${fballdPkfgrtdVal}`,
+            `Interception Return TD: 6 pts (${fballdInterceptionReturnTD.value}) = ${fballdIntrettdVal}`,
+            `Fumble Recovery TD: 6 pts (${fballdFumbleRecoveryTD.value}) = ${fballdFumbRecTdVal}`,
+            `Blocked Punt or FG Return TD: 6 pts (${fballdBlockedPuntTD.value}) = ${fballdBlkPuntVal}`,
+            `Safety: 2 pts (${fballdSafety.value}) = ${fballdSafVal}`,
+            `Blocked Kick: 2 pts (${fballdBlockedKick.value}) = ${fballdBlkKickVal}`,
+            `2 Point Conversions/Extra Point Returns: 2 pts (${fballd2PointConversion.value}) = ${fballd2PtConvVal}`];
 
+        var fballdDisp = "";  
 
-        document.querySelector("#fballd-breakdown").innerHTML = `${fballdBreakdownSack}\n${fballdBreakdownInterception}\n${fballdBreakdownFumbleRecovery}\n${fballdBreakdownPuntKickoffFGReturnTD}\n${fballdBreakdownInterceptionReturnTD}\n${fballdBreakdownFumbleRecoveryTD}\n${fballdBreakdownBlockedPuntTD}\n${fballdBreakdownSafety}\n${fballdBreakdownBlockedKick}\n${fballdBreakdownfballd2PointConversion}\n${fballdBreakdownFa}\n\nTOTAL: ${fballdFantasy} FS`
+        for (var i=0; i<arrFballdStats.length; i++){
+            fballdDisp += arrFballdStats[i] + "\n"; 
+        }
+
+        fballdDisp += fballdBreakdownFa + "\n\nTOTAL FS = " + fballdFantasy;
+        document.querySelector("#fballd-breakdown").innerHTML = fballdDisp;
+        document.querySelector("#fballd-textarea-btn-cont").style.display = "block";
+        chkHzsFBallD.checked = false;
+
+        // HIDE ZERO VALUED STATS
+
+        chkHzsFBallD.addEventListener('click', () => 
+            {
+                if (chkHzsFBallD.checked == true){
+                    fballdDisp = ""
+                    for (var j=0; j<arrFballdStats.length; j++){
+                    
+                        if (fballdInputs[j].value != '0'){
+                            fballdDisp += arrFballdStats[j] + "\n";
+                        }
+                    }
+                    fballdDisp += fballdBreakdownFa + "\n\nTOTAL FS = " + fballdFantasy;
+                    document.querySelector("#fballd-breakdown").innerHTML = fballdDisp;
+                    
+                } else if (chkHzsFBallD.checked == false){
+                    fballdDisp = ""
+                    for (var i=0; i<arrFballdStats.length; i++){
+                        fballdDisp += arrFballdStats[i] + "\n"; 
+                    }
+                    fballdDisp += fballdBreakdownFa + "\n\nTOTAL FS = " + fballdFantasy;
+                    document.querySelector("#fballd-breakdown").innerHTML = fballdDisp;
+                }
+    
+            })
 
     })
 
@@ -637,6 +771,8 @@ window.onload = function() {
 
         fballdFantasyScore.innerHTML = '';
         document.querySelector("#fballd-breakdown").innerHTML = '';
+        document.querySelector("#fballd-textarea-btn-cont").style.display = "none";
+
     })
 
     copyButtonFballD.addEventListener('click', ()=> {
@@ -670,19 +806,20 @@ window.onload = function() {
     var copyButtonTennis = document.querySelector("#tennis-copy");
     var collapseTennis = document.querySelector("#tennis-coll");
     var headerTennis = document.querySelector("#head-tennis");
+    var chkHzsTennis = document.querySelector("#tennis-hzs-checkbox");
 
     var tennisInputs = document.querySelectorAll(".tennis-fs");
     var tennisVal = document.querySelectorAll(".tennis-val");
 
-    buttonTennis.addEventListener('click', ()=> {
+    const tennisMatchPlayed = document.querySelector("#tennis-mp")
+    const tennisGameWin = document.querySelector("#tennis-gw")
+    const tennisGameLoss = document.querySelector("#tennis-gl")
+    const tennisSetWon = document.querySelector("#tennis-sw")
+    const tennisSetLoss = document.querySelector("#tennis-sl")
+    const tennisAce = document.querySelector("#tennis-ac")
+    const tennisDoubleFault = document.querySelector("#tennis-dblft")
 
-        const tennisMatchPlayed = document.querySelector("#tennis-mp")
-        const tennisGameWin = document.querySelector("#tennis-gw")
-        const tennisGameLoss = document.querySelector("#tennis-gl")
-        const tennisSetWon = document.querySelector("#tennis-sw")
-        const tennisSetLoss = document.querySelector("#tennis-sl")
-        const tennisAce = document.querySelector("#tennis-ac")
-        const tennisDoubleFault = document.querySelector("#tennis-dblft")
+    buttonTennis.addEventListener('click', ()=> {
 
         var tennisMpVal = Number(tennisMatchPlayed.value) * 10;
         var tennisGwVal = Number(tennisGameWin.value) * 1;
@@ -716,15 +853,50 @@ window.onload = function() {
         document.querySelector("#tennis-ac-val").innerHTML = `= ${tennisAcVal}`
         document.querySelector("#tennis-dblft-val").innerHTML = `= ${tennisDblftVal}`
 
-        var tennisBreakdownMatchPlayed = `Match Played: 10 pts (${tennisMatchPlayed.value}) = ${tennisMpVal}`;
-        var tennisBreakdownGameWin = `Game Win: 1 pt (${tennisGameWin.value}) = ${tennisGwVal}`;
-        var tennisBreakdownGameLoss = `Game Loss: -1 pt (${tennisGameLoss.value}) = ${tennisGlVal}`;
-        var tennisBreakdownSetWon = `Set Won: 3 pts (${tennisSetWon.value}) = ${tennisSwVal}`;
-        var tennisBreakdownSetLoss = `Set Loss: -3 pts (${tennisSetLoss.value}) = ${tennisSlVal}`;
-        var tennisBreakdownAce = `Ace: 0.5 pt (${tennisAce.value}) = ${tennisAcVal}`;
-        var tennisBreakdownDoubleFault = `Double Fault: -0.5 pt (${tennisDoubleFault.value}) = ${tennisDblftVal}`;
+        var arrTennisStats = [`Match Played: 10 pts (${tennisMatchPlayed.value}) = ${tennisMpVal}`,
+            `Game Win: 1 pt (${tennisGameWin.value}) = ${tennisGwVal}`,
+            `Game Loss: -1 pt (${tennisGameLoss.value}) = ${tennisGlVal}`,
+            `Set Won: 3 pts (${tennisSetWon.value}) = ${tennisSwVal}`,
+            `Set Loss: -3 pts (${tennisSetLoss.value}) = ${tennisSlVal}`,
+            `Ace: 0.5 pt (${tennisAce.value}) = ${tennisAcVal}`,
+            `Double Fault: -0.5 pt (${tennisDoubleFault.value}) = ${tennisDblftVal}`];
 
-        document.querySelector("#tennis-breakdown").innerHTML = `${tennisBreakdownMatchPlayed}\n${tennisBreakdownGameWin}\n${tennisBreakdownGameLoss}\n${tennisBreakdownSetWon}\n${tennisBreakdownSetLoss}\n${tennisBreakdownAce}\n${tennisBreakdownDoubleFault}\n\nTOTAL: ${tennisFantasy} FS`;
+        var tennisDisp = "";  
+
+        for (var i=0; i<arrTennisStats.length; i++){
+            tennisDisp += arrTennisStats[i] + "\n"; 
+        }
+
+        tennisDisp += "\nTOTAL FS = " + tennisFantasy;
+        document.querySelector("#tennis-breakdown").innerHTML = tennisDisp;
+        document.querySelector("#tennis-textarea-btn-cont").style.display = "block";
+        chkHzsTennis.checked = false;
+
+        // HIDE ZERO VALUED STATS
+
+        chkHzsTennis.addEventListener('click', () => 
+        {
+            if (chkHzsTennis.checked == true){
+                tennisDisp = ""
+                for (var j=0; j<arrTennisStats.length; j++){
+                    if (tennisInputs[j].value != '0'){
+                        tennisDisp += arrTennisStats[j] + "\n";
+                    }
+                }
+                tennisDisp += "\nTOTAL FS = " + tennisFantasy;
+                document.querySelector("#tennis-breakdown").innerHTML = tennisDisp;
+                
+            } else if (chkHzsTennis.checked == false){
+                tennisDisp = ""
+                for (var i=0; i<arrTennisStats.length; i++){
+                    tennisDisp += arrTennisStats[i] + "\n"; 
+                }
+                tennisDisp += "\nTOTAL FS = " + tennisFantasy;
+                document.querySelector("#tennis-breakdown").innerHTML = tennisDisp;
+            }
+
+        })
+
     })
 
     resetButtonTennis.addEventListener('click', ()=> {
@@ -739,6 +911,7 @@ window.onload = function() {
 
         tennisFantasyScore.innerHTML = '';
         document.querySelector("#tennis-breakdown").innerHTML = '';
+        document.querySelector("#tennis-textarea-btn-cont").style.display = 'none'
     })
 
     copyButtonTennis.addEventListener('click', ()=> {
@@ -774,6 +947,7 @@ window.onload = function() {
     var copyButtonMma = document.querySelector("#mma-copy")
     var collapseMma = document.querySelector("#mma-coll");
     var headerMma = document.querySelector("#head-mma");
+    var chkHzsMma = document.querySelector("#mma-hzs-checkbox");
 
     var mmaInputs = document.querySelectorAll(".mma-fs");
     var mmaVal = document.querySelectorAll(".mma-val");
@@ -844,14 +1018,49 @@ window.onload = function() {
         document.querySelector("#mma-tddef-val").innerHTML = `= ${mmaTdDefVal}`;
         document.querySelector("#mma-subatt-val").innerHTML = `= ${mmaSubAttVal}`;
         document.querySelector("#mma-kd-val").innerHTML = `= ${mmaKdVal}`;
-        
-        var mmaBreakdownSigStrikes = `Significant Strikes: 0.6 pts (${mmaSignificantStrikes.value}) = ${mmaSigStrVal}`;
-        var mmaBreakdownTakedown = `Takedown: 6 pts (${mmaTakedown.value}) = ${mmaTdVal}`;
-        var mmaBreakdownTakedownDefense = `Takedown Defense: 3 pts (${mmaTakedownDefense.value}) = ${mmaTdDefVal}`;
-        var mmaBreakdownSubmissionAttempt = `Submission Attempt: 5 pts (${mmaSubmissionAttempt.value}) = ${mmaSubAttVal}`;
-        var mmaBreakdownKnockdown = `Knockdown: 12 pts (${mmaKnockdown.value}) = ${mmaKdVal}`;
 
-        document.querySelector("#mma-breakdown").innerHTML = `${mmaBreakdownSigStrikes}\n${mmaBreakdownTakedown}\n${mmaBreakdownTakedownDefense}\n${mmaBreakdownSubmissionAttempt}\n${mmaBreakdownKnockdown}\n${mmaBreakdownFCB}\n\nTOTAL: ${mmaFantasy} FS`
+        var arrMmaStats = [`Significant Strikes: 0.6 pts (${mmaSignificantStrikes.value}) = ${mmaSigStrVal}`,
+            `Takedown: 6 pts (${mmaTakedown.value}) = ${mmaTdVal}`,
+            `Takedown Defense: 3 pts (${mmaTakedownDefense.value}) = ${mmaTdDefVal}`,
+            `Submission Attempt: 5 pts (${mmaSubmissionAttempt.value}) = ${mmaSubAttVal}`,
+            `Knockdown: 12 pts (${mmaKnockdown.value}) = ${mmaKdVal}`];
+
+        var mmaDisp = "";  
+
+        for (var i=0; i<arrMmaStats.length; i++){
+            mmaDisp += arrMmaStats[i] + "\n"; 
+        }
+
+        mmaDisp += mmaBreakdownFCB + "\n\nTOTAL FS = " + mmaFantasy;
+        document.querySelector("#mma-breakdown").innerHTML = mmaDisp;
+        document.querySelector("#mma-textarea-btn-cont").style.display = "block";
+        chkHzsMma.checked = false;
+
+        // HIDE ZERO VALUED STATS
+
+        chkHzsMma.addEventListener('click', () => 
+        {
+            if (chkHzsMma.checked == true){
+                mmaDisp = ""
+                for (var j=0; j<arrMmaStats.length; j++){
+                
+                    if (mmaInputs[j].value != '0'){
+                        mmaDisp += arrMmaStats[j] + "\n";
+                    }
+                }
+                mmaDisp += mmaBreakdownFCB + "\n\nTOTAL FS = " + mmaFantasy;
+                document.querySelector("#mma-breakdown").innerHTML = mmaDisp;
+                
+            } else if (chkHzsMma.checked == false){
+                mmaDisp = ""
+                for (var i=0; i<arrMmaStats.length; i++){
+                    mmaDisp += arrMmaStats[i] + "\n"; 
+                }
+                mmaDisp += mmaBreakdownFCB + "\n\nTOTAL FS = " + mmaFantasy;
+                document.querySelector("#mma-breakdown").innerHTML = mmaDisp;
+            }
+
+        })
 
     })
 
@@ -871,6 +1080,7 @@ window.onload = function() {
 
         mmaFantasyScore.innerHTML = '';
         document.querySelector("#mma-breakdown").innerHTML = "";
+        document.querySelector("#mma-textarea-btn-cont").style.display = "none";
     })
 
     copyButtonMma.addEventListener("click", ()=> {
@@ -904,18 +1114,19 @@ window.onload = function() {
     var copyButtonBox = document.querySelector("#box-copy");
     var collapseBox = document.querySelector("#box-coll");
     var headerBox = document.querySelector("#head-box");
+    var chkHzsBox = document.querySelector("#box-hzs-checkbox");
 
     var boxInputs = document.querySelectorAll(".box-fs");
     var boxVal = document.querySelectorAll(".box-val");
     var boxRad = document.querySelectorAll(".box-fcb");
 
+    var boxFcbRadio = document.querySelectorAll('.box-fcb');
+
+    const boxPunchLanded = document.querySelector("#box-punch");
+    const boxKnockdown = document.querySelector("#box-kd");
+    const boxBeingKnocked = document.querySelector("#box-beingkd");
+
     buttonBox.addEventListener("click", ()=> {
-
-        var boxFcbRadio = document.querySelectorAll('.box-fcb');
-
-        const boxPunchLanded = document.querySelector("#box-punch");
-        const boxKnockdown = document.querySelector("#box-kd");
-        const boxBeingKnocked = document.querySelector("#box-beingkd");
 
         var boxPunchVal = Number(boxPunchLanded.value) * 0.5;
         var boxKdVal = Number(boxKnockdown.value) * 12;
@@ -964,11 +1175,47 @@ window.onload = function() {
         document.querySelector("#box-kd-val").innerHTML = `= ${boxKdVal}`
         document.querySelector("#box-beingkd-val").innerHTML = `= ${boxBeingKdVal}`
 
-        var boxBreakdownPunchLanded = `Punch Landed: 0.5 pts (${boxPunchLanded.value}) = ${boxPunchVal}`;
-        var boxBreakdownKnockdown = `Knockdown on Opponent: 12 pts (${boxKnockdown.value}) = ${boxKdVal}`;
-        var boxBreakdownBeingKnocked = `Being Knocked Down by Opponent: -12 pts (${boxBeingKnocked.value}) = ${boxBeingKdVal}`;
+        var arrBoxStats = [`Punch Landed: 0.5 pts (${boxPunchLanded.value}) = ${boxPunchVal}`,
+                            `Knockdown on Opponent: 12 pts (${boxKnockdown.value}) = ${boxKdVal}`,
+                            `Being Knocked Down by Opponent: -12 pts (${boxBeingKnocked.value}) = ${boxBeingKdVal}`];
 
-        document.querySelector("#box-breakdown").innerHTML = `${boxBreakdownPunchLanded}\n${boxBreakdownKnockdown}\n${boxBreakdownBeingKnocked}\n${boxBreakdownFcb}\n\nTOTAL: ${boxFantasy} FS`;
+        var boxDisp = "";  
+
+        for (var i=0; i<arrBoxStats.length; i++){
+            boxDisp += arrBoxStats[i] + "\n"; 
+        }
+
+        boxDisp += boxBreakdownFcb + "\n\nTOTAL FS = " + boxFantasy;
+        document.querySelector("#box-breakdown").innerHTML = boxDisp;
+        document.querySelector("#box-textarea-btn-cont").style.display = "block";
+        chkHzsBox.checked = false;
+
+        // HIDE ZERO VALUED STATS
+
+        chkHzsBox.addEventListener('click', () => 
+            {
+                if (chkHzsBox.checked == true){
+                    boxDisp = ""
+                    for (var j=0; j<arrBoxStats.length; j++){
+                    
+                        if (boxInputs[j].value != '0'){
+                            boxDisp += arrBoxStats[j] + "\n";
+                        }
+                    }
+                    boxDisp += boxBreakdownFcb + "\n\nTOTAL FS = " + boxFantasy;
+                    document.querySelector("#box-breakdown").innerHTML = boxDisp;
+                    
+                } else if (chkHzsBox.checked == false){
+                    boxDisp = ""
+                    for (var i=0; i<arrBoxStats.length; i++){
+                        boxDisp += arrBoxStats[i] + "\n"; 
+                    }
+                    boxDisp += boxBreakdownFcb + "\n\nTOTAL FS = " + boxFantasy;
+                    document.querySelector("#box-breakdown").innerHTML = boxDisp;
+                }
+    
+            })
+
     })
 
     resetButtonBox.addEventListener("click", ()=> {
@@ -987,6 +1234,7 @@ window.onload = function() {
 
         boxFantasyScore.innerHTML = '';
         document.querySelector("#box-breakdown").innerHTML = '';
+        document.querySelector("#box-textarea-btn-cont").style.display = "none";
     })
 
     copyButtonBox.addEventListener("click", ()=> {
@@ -1020,6 +1268,7 @@ window.onload = function() {
     var copyButtonNascar = document.querySelector("#nascar-copy");
     var collapseNascar = document.querySelector("#nascar-coll");
     var headerNascar = document.querySelector("#head-nascar");
+    var chkHzsNascar = document.querySelector("#nascar-hzs-checkbox");
 
     var nascarInputs = document.querySelectorAll(".nascar-fs");
     var nascarVal = document.querySelectorAll(".nascar-val");
@@ -1044,7 +1293,7 @@ window.onload = function() {
         var nascarFlVal = Number(nascarFastestLaps.value) * 0.45;
         var nascarLlVal = Number(nascarLapsLead.value) * 0.25;
 
-        var nascarFppVal = 0;
+        var nascarFppVal;
         var nascarBreakdownFpp = '';
 
         for(var i=0; i<nascarFppRadio.length; i++){
@@ -1178,6 +1427,10 @@ window.onload = function() {
             }
         }
 
+        if(!nascarFppVal){
+            nascarFppVal = 0; // To avoid NaN
+        }
+
         var nascarFantasy = nascarPdVal + nascarFlVal + nascarLlVal + nascarFppVal;
 
         nascarFantasyScore.innerHTML = nascarFantasy
@@ -1186,11 +1439,52 @@ window.onload = function() {
         document.querySelector("#nascar-fl-val").innerHTML = `= ${nascarFlVal}`
         document.querySelector("#nascar-ll-val").innerHTML = `= ${nascarLlVal}`
 
-        var nascarBreakdownPlaceDiff = `Place Differential: +/- 1 pt (${nascarPlaceDiff.value}) = ${nascarPdVal}`;
-        var nascarBreakdownFastestLaps = `Fastest Laps: 0.45 pt/lap (${nascarFastestLaps.value}) = ${nascarFlVal}`;
-        var nascarBreakdownLapsLead = `Laps Lead: 0.25 pt/lap (${nascarLapsLead.value}) = ${nascarLlVal}`;
+        var arrNascarStats = [`Place Differential: +/- 1 pt (${nascarPlaceDiff.value}) = ${nascarPdVal}`,
+                              `Fastest Laps: 0.45 pt/lap (${nascarFastestLaps.value}) = ${nascarFlVal}`,
+                              `Laps Lead: 0.25 pt/lap (${nascarLapsLead.value}) = ${nascarLlVal}`];
 
-        document.querySelector("#nascar-breakdown").innerHTML = `${nascarBreakdownPlaceDiff}\n${nascarBreakdownFastestLaps}\n${nascarBreakdownLapsLead}\n${nascarBreakdownFpp}\n\nTOTAL: ${nascarFantasy} FS`;
+        var nascarDisp = "";  
+
+        for (var i=0; i<arrNascarStats.length; i++){
+            nascarDisp += arrNascarStats[i] + "\n"; 
+        }
+
+        nascarDisp += nascarBreakdownFpp + "\n\nTOTAL FS = " + nascarFantasy;
+        document.querySelector("#nascar-breakdown").innerHTML = nascarDisp;
+        document.querySelector("#nascar-textarea-btn-cont").style.display = "block";
+        chkHzsNascar.checked = false;
+
+        // HIDE ZERO VALUED STATS
+
+        chkHzsNascar.addEventListener('click', () => 
+            {
+                if (chkHzsNascar.checked == true){
+                    nascarDisp = ""
+                    for (var j=0; j<arrNascarStats.length; j++){
+                    
+                        if (nascarInputs[j].value != '0'){
+                            nascarDisp += arrNascarStats[j] + "\n";
+                        }
+                    }
+                    nascarDisp += nascarBreakdownFpp + "\n\nTOTAL FS = " + nascarFantasy;
+                    document.querySelector("#nascar-breakdown").innerHTML = nascarDisp;
+                    
+                } else if (chkHzsNascar.checked == false){
+                    nascarDisp = ""
+                    for (var i=0; i<arrNascarStats.length; i++){
+                        nascarDisp += arrNascarStats[i] + "\n"; 
+                    }
+                    nascarDisp += nascarBreakdownFpp + "\n\nTOTAL FS = " + nascarFantasy;
+                    document.querySelector("#nascar-breakdown").innerHTML = nascarDisp;
+                }
+    
+            })
+
+        // var nascarBreakdownPlaceDiff = `Place Differential: +/- 1 pt (${nascarPlaceDiff.value}) = ${nascarPdVal}`;
+        // var nascarBreakdownFastestLaps = `Fastest Laps: 0.45 pt/lap (${nascarFastestLaps.value}) = ${nascarFlVal}`;
+        // var nascarBreakdownLapsLead = `Laps Lead: 0.25 pt/lap (${nascarLapsLead.value}) = ${nascarLlVal}`;
+
+        // document.querySelector("#nascar-breakdown").innerHTML = `${nascarBreakdownPlaceDiff}\n${nascarBreakdownFastestLaps}\n${nascarBreakdownLapsLead}\n${nascarBreakdownFpp}\n\nTOTAL: ${nascarFantasy} FS`;
     })
 
     resetButtonNascar.addEventListener("click", ()=> {
@@ -1209,6 +1503,7 @@ window.onload = function() {
 
         nascarFantasyScore.innerHTML = '';
         document.querySelector("#nascar-breakdown").innerHTML = "";
+        document.querySelector("#nascar-textarea-btn-cont").style.display = "none";
     })
 
     copyButtonNascar.addEventListener("click", ()=> {

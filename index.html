@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://emoji.slack-edge.com/T8H1C5NQ0/gametimeops/5a036e54b83ebca7.gif" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/cda43cd265.js" crossorigin="anonymous"></script>
     <title>GT Fantasy Score Calculator</title>
@@ -55,8 +56,10 @@
                     </div>
 
                     <textarea name="bball-fs-breakdown" id="bball-breakdown" class="textarea-global" rows="8" cols="34" disabled></textarea><br>
-                    <!-- <input type="checkbox" name="bball-hzs" id="bball-hzs-checkbox" class="checkbox-hzs"><label for="bball-hzs-checkbox">Hide zero stats</label> -->
-                    <button id="bball-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                    <div id="bball-textarea-btn-cont" class="textarea-btn-cont">
+                        <input type="checkbox" name="bball-hzs" id="bball-hzs-checkbox" class="checkbox-hzs"><label for="bball-hzs-checkbox">Hide zero stats</label>
+                        <button id="bball-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                    </div>
                 </div>
             </div>
 
@@ -94,7 +97,10 @@
                     </div>
                     
                     <textarea name="bsballp-fs-breakdown" id="bsballp-breakdown" class="textarea-global" rows="8" cols="34" disabled></textarea>
-                    <button id="bsballp-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                    <div id="bsballp-textarea-btn-cont" class="textarea-btn-cont">
+                        <input type="checkbox" name="bsballp-hzs" id="bsballp-hzs-checkbox" class="checkbox-hzs"><label for="bsballp-hzs-checkbox">Hide zero stats</label>
+                        <button id="bsballp-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                    </div>
                 </div>
                 </div>
 
@@ -143,7 +149,10 @@
                 </div>
 
                 <textarea name="bsballh-fs-breakdown" id="bsballh-breakdown" class="textarea-global" rows="11" cols="34" disabled></textarea>
-                <button id="bsballh-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                <div id="bsballh-textarea-btn-cont" class="textarea-btn-cont">
+                    <input type="checkbox" name="bsballh-hzs" id="bsballh-hzs-checkbox" class="checkbox-hzs"><label for="bsballh-hzs-checkbox">Hide zero stats</label>
+                    <button id="bsballh-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                </div>
 
             </div>
             </div>
@@ -204,7 +213,10 @@
                 </div>
 
                 <textarea name="fballo-fs-breakdown" id="fballo-breakdown" class="textarea-global" rows="14" cols="55" disabled></textarea>
-                <button id="fballo-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                <div id="fballo-textarea-btn-cont" class="textarea-btn-cont">
+                    <input type="checkbox" name="fballo-hzs" id="fballo-hzs-checkbox" class="checkbox-hzs"><label for="fballo-hzs-checkbox">Hide zero stats</label>
+                    <button id="fballo-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                </div>
 
             </div>
             </div>
@@ -281,7 +293,10 @@
                 </div>
 
                 <textarea name="fballd-fs-breakdown" id="fballd-breakdown" class="textarea-global" rows="14" cols="55" disabled></textarea>
-                <button id="fballd-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                <div id="fballd-textarea-btn-cont" class="textarea-btn-cont">
+                    <input type="checkbox" name="fballd-hzs" id="fballd-hzs-checkbox" class="checkbox-hzs"><label for="fballd-hzs-checkbox">Hide zero stats</label>
+                    <button id="fballd-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                </div>
             </div>
             </div>
         </div>
@@ -327,7 +342,10 @@
                 </div>
 
                 <textarea name="tennis-fs-breakdown" id="tennis-breakdown" class="textarea-global" rows="9" cols="36" disabled></textarea>
-                <button id="tennis-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                <div id="tennis-textarea-btn-cont" class="textarea-btn-cont">
+                    <input type="checkbox" name="tennis-hzs" id="tennis-hzs-checkbox" class="checkbox-hzs"><label for="tennis-hzs-checkbox">Hide zero stats</label>
+                    <button id="tennis-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                </div>
             </div>
 
             </div>
@@ -385,7 +403,10 @@
                 </div>
                 
                 <textarea name="mma-fs-breakdown" id="mma-breakdown" class="textarea-global" rows="9" cols="36" disabled></textarea><br>
-                <button id="mma-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                <div id="mma-textarea-btn-cont" class="textarea-btn-cont">
+                    <input type="checkbox" name="mma-hzs" id="mma-hzs-checkbox" class="checkbox-hzs"><label for="mma-hzs-checkbox">Hide zero stats</label>
+                    <button id="mma-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                </div>
             </div>
             </div>
 
@@ -434,7 +455,10 @@
                 </div>
                 
                 <textarea name="box-fs-breakdown" id="box-breakdown" class="textarea-global" rows="6" cols="44" disabled></textarea>
-                <button id="box-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                <div id="box-textarea-btn-cont" class="textarea-btn-cont">
+                    <input type="checkbox" name="box-hzs" id="box-hzs-checkbox" class="checkbox-hzs"><label for="box-hzs-checkbox">Hide zero stats</label>
+                    <button id="box-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button>
+                </div>
             </div>
             </div>
 
@@ -504,7 +528,7 @@
                             <label for="nascar-12th">12th Place: 31 pts</label><br>
 
                             <input type="radio" name="nascar-fpp" id="nascar-13th" value="30" class="nascar-fpp">
-                            <label for="nascar-13rd">13th Place: 30 pts</label><br>
+                            <label for="nascar-13th">13th Place: 30 pts</label><br>
 
                             <input type="radio" name="nascar-fpp" id="nascar-14th" value="29" class="nascar-fpp">
                             <label for="nascar-14th">14th Place: 29 pts</label><br>
@@ -607,7 +631,10 @@
                     </div>
 
                     <textarea name="nascar-fs-breakdown" id="nascar-breakdown" class="textarea-global" rows="6" cols="44" disabled></textarea>
-                    <button id="nascar-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                    <div id="nascar-textarea-btn-cont" class="textarea-btn-cont">
+                        <input type="checkbox" name="nascar-hzs" id="nascar-hzs-checkbox" class="checkbox-hzs"><label for="nascar-hzs-checkbox">Hide zero stats</label>
+                        <button id="nascar-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                    </div>
                 </div>
 
             </div>
