@@ -48,7 +48,7 @@ body {
 
 .main-brand-text {
     font-family: "Galada", cursive;
-    margin: 0 3rem;
+    margin: 0 5rem 0 3rem;
     font-size: 2.3rem;
 }
 
@@ -69,10 +69,19 @@ body {
     margin-right: 36px;
 }
 
+.nav-item i {
+    margin-left: 14px;
+    
+}
+
 header {
     background: linear-gradient(90deg, #050614 50%, rgba(128,0,255,1) 100%);
     padding: 1rem 0;
     margin-bottom: 0.75rem;
+}
+
+main {
+    margin-bottom: 58px;
 }
 
 .row-1 > div {
@@ -245,7 +254,12 @@ div.btn-cont {
 }
 
 footer {
-    margin: 36px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 16px;
+    width: 100%;
+    background-color: #0e1030;
 }
 
 footer p {
