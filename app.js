@@ -1,6 +1,7 @@
 // MY CODE SUCKS!
 
 window.onload = function() {
+
     
     // NBA/WNBA FANTASY SCORE
 
