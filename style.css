@@ -1,5 +1,6 @@
 @import url(./assets/font/IndustryDemi/stylesheet.css);
 @import url('https://fonts.cdnfonts.com/css/tt-norms-pro');
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
 
 /* CSS reset */
 * {
@@ -19,7 +20,7 @@
   }
   
   
-  .btn:hover, .fantasy-section-head {
+  .btn:hover, .fantasy-section-head:hover, .main-brand-text:hover {
       cursor: pointer;
   }
   
@@ -39,18 +40,40 @@ body {
     background-color: #050614;
 }
 
-.main-nav {
+.main-page-text {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.75rem;
     
 }
 
 .main-brand-text {
+    font-family: "Galada", cursive;
+    margin: 0 3rem;
     font-size: 2.3rem;
 }
 
+.main-brand-text span {
+    font-family: "Galada", cursive;
+}
+
+.text-purple {
+    color: #8000ff;
+}
+
+.text-green {
+    color: #6eff00;
+}
+
+.nav-item {
+    font-size: 18px;
+    margin-right: 36px;
+}
+
 header {
-    background: linear-gradient(90deg, #050614 50%, rgba(128,0,255,1) 75%, #050614 100%);
-    padding: 1.8rem 0;
-    margin-bottom: 3rem;
+    /* background: linear-gradient(90deg, #050614 50%, rgba(128,0,255,1) 75%, #050614 100%); */
+    padding: 1rem 0;
+    margin-bottom: 0.75rem;
 }
 
 .row-1 > div {
