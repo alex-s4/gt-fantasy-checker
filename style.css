@@ -70,7 +70,7 @@ body {
 }
 
 header {
-    /* background: linear-gradient(90deg, #050614 50%, rgba(128,0,255,1) 75%, #050614 100%); */
+    background: linear-gradient(90deg, #050614 50%, rgba(128,0,255,1) 100%);
     padding: 1rem 0;
     margin-bottom: 0.75rem;
 }
