@@ -902,7 +902,9 @@ window.onload = function() {
     resetButtonTennis.addEventListener('click', ()=> {
         
         for(var i=0; i<tennisInputs.length; i++){
-            tennisInputs[i].value = '';
+            if(i != 0){ // do not clear value for match played
+                tennisInputs[i].value = '';
+            }
         }
 
         for(var j=0; j<tennisVal.length; j++){
