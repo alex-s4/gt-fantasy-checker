@@ -76,12 +76,12 @@ body {
 
 header {
     background: linear-gradient(90deg, #050614 50%, rgba(128,0,255,1) 100%);
-    padding: 1rem 0;
+    padding: 0.55rem 0;
     margin-bottom: 0.75rem;
 }
 
 main {
-    margin-bottom: 58px;
+    padding-bottom: 58px;
 }
 
 .row-1 > div {
@@ -259,7 +259,8 @@ footer {
     bottom: 0;
     padding: 16px;
     width: 100%;
-    background-color: #0e1030;
+    background-color: rgb(10,19,32);
+    border: rgb(35, 35, 40) 1px, solid;
 }
 
 footer p {
