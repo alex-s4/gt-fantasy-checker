@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="https://emoji.slack-edge.com/T8H1C5NQ0/gametimeops/5a036e54b83ebca7.gif" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/cda43cd265.js" crossorigin="anonymous"></script>
-    <title>GT Fantasy Score Calculator</title>
+    <title>GT TOI/Fight Time Calculator</title>
 </head>
 <body>
     <div id="root">
@@ -26,7 +26,46 @@
         </header> 
         
         <main>
-        <h2 class="main-page-text">TOI/Fight Time Calculator</h2>
+            <h2 class="main-page-text">TOI/Fight Time Calculator</h2>
+
+            <div class="toi-section">
+
+                <div class="fantasy-section-head flex-container flex-align-center flex-justify-space-bet" id="head-bball">
+                    <h2><img alt="NHL" src="https://static.prizepicks.com/images/leagues/production/45.svg" class="league-icon ">&nbsp;NHL Time On Ice Converter</h2>
+                        <i class="fa-solid fa-chevron-down collapsible-btn" id="bball-coll"></i>
+                </div>
+                
+                <div class="toi-section-content" id="content-bball">
+
+                    <ul>
+                        <li>Period 1&nbsp; 
+                        <input type="number" name="toi-p1-mm" id="p1-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-p1-ss" id="p1-secs" class="input-time-global" placeholder="ss" max="59" />
+                        <span id="toi-p1-val" class="toi-val"></span></li> 
+                        <li>Period 2
+                        <input type="number" name="toi-p2-mm" id="p2-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-p2-ss" id="p2-secs" class="input-time-global" placeholder="ss" max="59" />
+                        <span id="toi-p2-val" class="toi-val"></span></li> 
+                        <li>Period 3
+                        <input type="number" name="toi-p3-mm" id="p3-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-p3-ss" id="p3-secs" class="input-time-global" placeholder="ss" max="59" />
+                        <span id="toi-p3-val" class="toi-val"></span></li> 
+                    </ul>
+
+                    <p class="fs-total-result">TOTAL: <input type="number" name="toi-tot-mm" id="tot-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-tot-ss" id="tot-secs" class="input-time-global" placeholder="ss" max="59" /></p>
+
+                    <div class="toi-cont">
+                        <button id="bball-btn" class="btn btn-go">Go</button>
+                        <button id="bball-clear" class="btn btn-clear">Clear</button><br>
+                    </div>
+
+                    <textarea name="bball-fs-breakdown" id="bball-breakdown" class="textarea-global" rows="8" cols="34" disabled></textarea><br>
+                    <div id="bball-textarea-btn-cont" class="textarea-btn-cont">
+                        <div class="flex-container flex-align-center">
+                            <input type="checkbox" name="bball-hzs" id="bball-hzs-checkbox" class="checkbox-hzs">
+                            <label for="bball-hzs-checkbox">Hide zero stats</label>
+                        </div>
+                        <button id="bball-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                    </div>
+                </div>
+            </div>
 
         
         </main>

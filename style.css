@@ -102,9 +102,11 @@ main {
 
 .fantasy-section-content {
     display: none;
-    overflow: hidden;
-    transition: height 2s;
 }
+
+/* .toi-section.content {
+
+} */
 
 .league-icon {
     margin-right: 12px;
@@ -155,6 +157,17 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+.input-time-global {
+    margin-left: 8px;
+    width: 37px;
+    background-color: #121310;
+    border: 1px solid rgb(57, 57, 69);
+    border-radius: 4px;
+    padding: 0 6px;
+    height: 24px;
+    
+}
+
 .textarea-global {
     resize: none;
 }
@@ -176,7 +189,7 @@ input[type=number] {
 }
 
 
-.fantasy-section {
+.fantasy-section, .toi-section {
     margin-bottom: 26px;
     margin-left: 18px;
     background-color: rgb(10,19,32);
@@ -188,8 +201,8 @@ input[type=number] {
     height: fit-content;
 }
 
-.fantasy-section h2 {
-    margin-bottom: 10px;
+.fantasy-section h2, .toi-section h2 {
+    padding-bottom: 10px;
 }
 
 .fantasy-section h4 {
