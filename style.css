@@ -158,7 +158,7 @@ input[type=number] {
 }
 
 .input-time-global {
-    margin-left: 8px;
+    margin: 0 8px;
     width: 37px;
     background-color: #121310;
     border: 1px solid rgb(57, 57, 69);
