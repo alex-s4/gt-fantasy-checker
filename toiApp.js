@@ -20,19 +20,31 @@ window.onload = function() {
         // Sum of all 'ss' value without the minute formatting
         var totalSecondsActualValue = Number(timeOnIce.firstPeriodSeconds.value) + Number(timeOnIce.secondPeriodSeconds.value) + Number(timeOnIce.thirdPeriodSeconds.value);
 
-        // Total minutes accumulated from sum of all 'ss'
+        // Total minutes accumulated from sum of all 'ss' - every total ss that reaches 60 is 1
         var minuteFromTotalSeconds = Math.floor(totalSecondsActualValue / 60);
         
+        // Total Mintes computation
         var totalPeriodMinutesValue = Number(timeOnIce.firstPeriodMinutes.value) + Number(timeOnIce.secondPeriodMinutes.value) + Number(timeOnIce.thirdPeriodMinutes.value) + minuteFromTotalSeconds;
+        // Total Seconds computation - every total ss that reaches 
         var totalPeriodSecondsValue = totalSecondsActualValue % 60
         var totalSecondsInDec = Math.round(totalPeriodSecondsValue*100/60);
 
-        console.log(`TOTAL: ${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`)
+        
+        if(timeOnIce.totalPeriodMinutes.value == "" && timeOnIce.totalPeriodSeconds.value == ""){
+            // Code only execute if Period fields has input
+            
+            timeOnIce.totalPeriodMinutes.value = totalPeriodMinutesValue;
+            timeOnIce.totalPeriodSeconds.value = totalPeriodSecondsValue;
+            timeOnIce.decValue.innerHTML = ` = ${totalPeriodMinutesValue}.${totalSecondsInDec}`;
 
+        } else if (timeOnIce.totalPeriodMinutes.value != "" && timeOnIce.totalPeriodSeconds.value != ""){
+            // Code only execute if Total fields has input
 
-        timeOnIce.totalPeriodMinutes.value = totalPeriodMinutesValue;
-        timeOnIce.totalPeriodSeconds.value = totalPeriodSecondsValue;
-        timeOnIce.decValue.innerHTML = ` = ${totalPeriodMinutesValue}.${totalSecondsInDec}`;
+            timeOnIce.decValue.innerHTML = ` = ${timeOnIce.totalPeriodMinutes.value}.${Math.round(timeOnIce.totalPeriodSeconds.value * 100 / 60)}`;
+
+        }
+
+        
 
     })
 }
