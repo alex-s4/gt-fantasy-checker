@@ -1,7 +1,8 @@
 window.onload = function() {
-
     
     const nhlToiBtn = document.querySelector("#nhl-toi-btn");
+    const toiPeriodRadio = document.querySelector("#toi-periods");
+    const toiTotalRadio = document.querySelector("#toi-total");
     
     var timeOnIce = {
         firstPeriodMinutes: document.querySelector("#p1-mins"),
@@ -12,8 +13,40 @@ window.onload = function() {
         thirdPeriodSeconds: document.querySelector("#p3-secs"),
         totalPeriodMinutes: document.querySelector("#tot-mins"),
         totalPeriodSeconds: document.querySelector("#tot-secs"),
-        decValue: document.querySelector("#toi-in-dec")
+        decValue: document.querySelector("#toi-in-dec"),
+        periodInputs: document.querySelectorAll(".input-toi-period"),
+        radioInputs: document.querySelectorAll(".toi-radio-btn")
     }
+
+    // if(!toiPeriodRadio.checked && !toiTotalRadio.checked){
+    //     for(var j=0; j < timeOnIce.periodInputs.length; j++){
+    //         timeOnIce.periodInputs[j].disabled = true;
+    //         document.querySelector("#tot-mins").disabled = true;
+    //         document.querySelector("#tot-secs").disabled = true;
+    //     }
+
+    // }
+
+    // for(var i=0; i < timeOnIce.radioInputs.length; i++){
+    //     timeOnIce.radioInputs[i].addEventListener('input', ()=>{
+    //         if(toiPeriodRadio.checked){
+    //             for(var j=0; j < timeOnIce.periodInputs.length; j++){
+    //                 timeOnIce.periodInputs[j].disabled = false;
+    //             }
+    //             document.querySelector("#tot-mins").disabled = true;
+    //             document.querySelector("#tot-secs").disabled = true;
+    //             document.querySelector("#tot-mins").value = "";
+    //             document.querySelector("#tot-secs").value = "";
+    //         }else if(toiTotalRadio.checked){
+    //             for(var j=0; j < timeOnIce.periodInputs.length; j++){
+    //                 timeOnIce.periodInputs[j].disabled = true;
+    //                 timeOnIce.periodInputs[j].value = "";
+    //             }
+    //             document.querySelector("#tot-mins").disabled = false;
+    //             document.querySelector("#tot-secs").disabled = false;
+    //         }
+    //     })
+    // }
     
     nhlToiBtn.addEventListener('click', ()=>{
 
