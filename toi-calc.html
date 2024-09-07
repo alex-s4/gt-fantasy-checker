@@ -37,19 +37,26 @@
                 
                 <div class="toi-section-content" id="content-bball">
 
-                    <ul>
-                        <li>Period 1&nbsp; 
-                        <input type="number" name="toi-p1-mm" id="p1-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-p1-ss" id="p1-secs" class="input-time-global" placeholder="ss" max="59" />
-                        <span id="toi-p1-val" class="toi-val"></span></li> 
-                        <li>Period 2
-                        <input type="number" name="toi-p2-mm" id="p2-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-p2-ss" id="p2-secs" class="input-time-global" placeholder="ss" max="59" />
-                        <span id="toi-p2-val" class="toi-val"></span></li> 
-                        <li>Period 3
-                        <input type="number" name="toi-p3-mm" id="p3-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-p3-ss" id="p3-secs" class="input-time-global" placeholder="ss" max="59" />
-                        <span id="toi-p3-val" class="toi-val"></span></li> 
-                    </ul>
+                    <div class="flex-container flex-start">
+                        <input type="radio" name="toi-calculator" id="toi-periods" class="toi-radio-btn" />
 
-                    <p class="fs-total-result">TOTAL: <input type="number" name="toi-tot-mm" id="tot-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-tot-ss" id="tot-secs" class="input-time-global" placeholder="ss" max="59" /><span id="toi-in-dec"></span></p>
+                        <ul>
+                            <li>Period 1&nbsp; 
+                            <input type="number" name="toi-p1-mm" id="p1-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-p1-ss" id="p1-secs" class="input-time-global" placeholder="ss" max="59" />
+                            <span id="toi-p1-val" class="toi-val"></span></li> 
+                            <li>Period 2
+                            <input type="number" name="toi-p2-mm" id="p2-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-p2-ss" id="p2-secs" class="input-time-global" placeholder="ss" max="59" />
+                            <span id="toi-p2-val" class="toi-val"></span></li> 
+                            <li>Period 3
+                            <input type="number" name="toi-p3-mm" id="p3-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-p3-ss" id="p3-secs" class="input-time-global" placeholder="ss" max="59" />
+                            <span id="toi-p3-val" class="toi-val"></span></li> 
+                        </ul>
+                    </div>
+
+                    <div class="flex-container">
+                        <input type="radio" name="toi-calculator" id="toi-total" class="toi-radio-btn" />
+                        <p class="fs-total-result">TOTAL: <input type="number" name="toi-tot-mm" id="tot-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-tot-ss" id="tot-secs" class="input-time-global" placeholder="ss" max="59" /><span id="toi-in-dec"></span></p>
+                    </div>
 
                     <div class="toi-cont">
                         <button id="nhl-toi-btn" class="btn btn-go">Go</button>

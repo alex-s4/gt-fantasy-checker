@@ -126,6 +126,10 @@ li {
     display: flex;
 }
 
+.flex-start {
+    align-items: flex-start;
+}
+
 .container-nascar-placement {
     margin-right: 14px;
 }
@@ -282,4 +286,12 @@ footer p {
 
 .textarea-btn-cont {
     display: none;
+}
+
+#toi-periods {
+    margin-top: 6px;
+}
+
+.toi-radio-btn {
+    margin-right: 12px;
 }
