@@ -16,7 +16,8 @@ window.onload = function() {
         decValue: document.querySelector("#toi-in-dec"),
         decTotValue: document.querySelector("#toi-in-dec-tot"),
         periodInputs: document.querySelectorAll(".input-toi-period"),
-        radioInputs: document.querySelectorAll(".toi-radio-btn")
+        radioInputs: document.querySelectorAll(".toi-radio-btn"),
+        toiBreakdown: document.querySelector("#nhl-toi-breakdown")
     }
 
 
@@ -74,14 +75,14 @@ window.onload = function() {
         if(timeOnIce.totalPeriodMinutes.value == "" && timeOnIce.totalPeriodSeconds.value == ""){
             // Code only execute if Period fields has input
             
-            // timeOnIce.totalPeriodMinutes.value = totalPeriodMinutesValue;
-            // timeOnIce.totalPeriodSeconds.value = totalPeriodSecondsValue;
             timeOnIce.decValue.innerHTML = `${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`;
+            timeOnIce.toiBreakdown.value = `Period 1 - ${timeOnIce.firstPeriodMinutes.value}:${timeOnIce.firstPeriodSeconds.value}\nPeriod 2 - ${timeOnIce.secondPeriodMinutes.value}:${timeOnIce.secondPeriodSeconds.value}\nPeriod 3 - ${timeOnIce.thirdPeriodMinutes.value}:${timeOnIce.thirdPeriodSeconds.value}\n\nTOTAL: ${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`
 
         } else if (timeOnIce.totalPeriodMinutes.value != "" && timeOnIce.totalPeriodSeconds.value != ""){
             // Code only execute if Total fields has input
 
             timeOnIce.decTotValue.innerHTML = ` = ${timeOnIce.totalPeriodMinutes.value}.${Math.round(timeOnIce.totalPeriodSeconds.value * 100 / 60)}`;
+            timeOnIce.toiBreakdown.value = `Total: ${timeOnIce.totalPeriodMinutes.value}:${timeOnIce.totalPeriodSeconds.value} = ${timeOnIce.totalPeriodMinutes.value}.${Math.round(timeOnIce.totalPeriodSeconds.value * 100 / 60)}`
 
         }
 
