@@ -14,39 +14,47 @@ window.onload = function() {
         totalPeriodMinutes: document.querySelector("#tot-mins"),
         totalPeriodSeconds: document.querySelector("#tot-secs"),
         decValue: document.querySelector("#toi-in-dec"),
+        decTotValue: document.querySelector("#toi-in-dec-tot"),
         periodInputs: document.querySelectorAll(".input-toi-period"),
         radioInputs: document.querySelectorAll(".toi-radio-btn")
     }
 
-    // if(!toiPeriodRadio.checked && !toiTotalRadio.checked){
-    //     for(var j=0; j < timeOnIce.periodInputs.length; j++){
-    //         timeOnIce.periodInputs[j].disabled = true;
-    //         document.querySelector("#tot-mins").disabled = true;
-    //         document.querySelector("#tot-secs").disabled = true;
-    //     }
 
-    // }
+    if(!toiPeriodRadio.checked && !toiTotalRadio.checked){
+        for(var j=0; j < timeOnIce.periodInputs.length; j++){
+            timeOnIce.periodInputs[j].disabled = true;
+            document.querySelector("#tot-mins").disabled = true;
+            document.querySelector("#tot-secs").disabled = true;
+        } 
+    } else if (!toiTotalRadio.checked){
+        document.querySelector("#tot-mins").disabled = true;
+        document.querySelector("#tot-secs").disabled = true;
+        // document.querySelector("#tot-mins").value = "";
+        // document.querySelector("#tot-secs").value = "";
+    }
 
-    // for(var i=0; i < timeOnIce.radioInputs.length; i++){
-    //     timeOnIce.radioInputs[i].addEventListener('input', ()=>{
-    //         if(toiPeriodRadio.checked){
-    //             for(var j=0; j < timeOnIce.periodInputs.length; j++){
-    //                 timeOnIce.periodInputs[j].disabled = false;
-    //             }
-    //             document.querySelector("#tot-mins").disabled = true;
-    //             document.querySelector("#tot-secs").disabled = true;
-    //             document.querySelector("#tot-mins").value = "";
-    //             document.querySelector("#tot-secs").value = "";
-    //         }else if(toiTotalRadio.checked){
-    //             for(var j=0; j < timeOnIce.periodInputs.length; j++){
-    //                 timeOnIce.periodInputs[j].disabled = true;
-    //                 timeOnIce.periodInputs[j].value = "";
-    //             }
-    //             document.querySelector("#tot-mins").disabled = false;
-    //             document.querySelector("#tot-secs").disabled = false;
-    //         }
-    //     })
-    // }
+    for(var i=0; i < timeOnIce.radioInputs.length; i++){
+        timeOnIce.radioInputs[i].addEventListener('input', ()=>{
+            if(toiPeriodRadio.checked){
+                for(var j=0; j < timeOnIce.periodInputs.length; j++){
+                    timeOnIce.periodInputs[j].disabled = false;
+                }
+                document.querySelector("#tot-mins").disabled = true;
+                document.querySelector("#tot-secs").disabled = true;
+                document.querySelector("#tot-mins").value = "";
+                document.querySelector("#tot-secs").value = "";
+                timeOnIce.decTotValue.innerHTML = "";
+            }else if(toiTotalRadio.checked){
+                for(var j=0; j < timeOnIce.periodInputs.length; j++){
+                    timeOnIce.periodInputs[j].disabled = true;
+                    timeOnIce.periodInputs[j].value = "";
+                }
+                document.querySelector("#tot-mins").disabled = false;
+                document.querySelector("#tot-secs").disabled = false;
+                timeOnIce.decValue.innerHTML = "";
+            }
+        })
+    }
     
     nhlToiBtn.addEventListener('click', ()=>{
 
@@ -66,14 +74,14 @@ window.onload = function() {
         if(timeOnIce.totalPeriodMinutes.value == "" && timeOnIce.totalPeriodSeconds.value == ""){
             // Code only execute if Period fields has input
             
-            timeOnIce.totalPeriodMinutes.value = totalPeriodMinutesValue;
-            timeOnIce.totalPeriodSeconds.value = totalPeriodSecondsValue;
-            timeOnIce.decValue.innerHTML = ` = ${totalPeriodMinutesValue}.${totalSecondsInDec}`;
+            // timeOnIce.totalPeriodMinutes.value = totalPeriodMinutesValue;
+            // timeOnIce.totalPeriodSeconds.value = totalPeriodSecondsValue;
+            timeOnIce.decValue.innerHTML = `${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`;
 
         } else if (timeOnIce.totalPeriodMinutes.value != "" && timeOnIce.totalPeriodSeconds.value != ""){
             // Code only execute if Total fields has input
 
-            timeOnIce.decValue.innerHTML = ` = ${timeOnIce.totalPeriodMinutes.value}.${Math.round(timeOnIce.totalPeriodSeconds.value * 100 / 60)}`;
+            timeOnIce.decTotValue.innerHTML = ` = ${timeOnIce.totalPeriodMinutes.value}.${Math.round(timeOnIce.totalPeriodSeconds.value * 100 / 60)}`;
 
         }
 

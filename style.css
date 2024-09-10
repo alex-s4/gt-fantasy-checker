@@ -295,3 +295,15 @@ footer p {
 .toi-radio-btn {
     margin-right: 12px;
 }
+
+.toi-period-inputs {
+    margin-bottom: 18px;
+}
+
+.toi-label-radio {
+    margin-bottom: 12px;
+}
+
+.toi-period-section, .toi-total-section {
+    margin-bottom: 18px;
+}
