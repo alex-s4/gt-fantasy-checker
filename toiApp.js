@@ -1,6 +1,7 @@
 window.onload = function() {
     
     const nhlToiBtn = document.querySelector("#nhl-toi-btn");
+    const nhlToiCopyBtn = document.querySelector("#toi-copy");
     const toiPeriodRadio = document.querySelector("#toi-periods");
     const toiTotalRadio = document.querySelector("#toi-total");
     
@@ -57,6 +58,7 @@ window.onload = function() {
         })
     }
     
+    /*---------- GO Button for TOI -------------------*/ 
     nhlToiBtn.addEventListener('click', ()=>{
 
         // Sum of all 'ss' value without the minute formatting
@@ -86,7 +88,20 @@ window.onload = function() {
 
         }
 
-        
+        document.querySelector("#toi-textarea-btn-cont").style.display = "block";
 
     })
+
+    /*---------- Copy Button for TOI -------------------*/
+    nhlToiCopyBtn.addEventListener('click', ()=>{
+        
+        var copyToiBreakdown = timeOnIce.toiBreakdown;
+
+        copyToiBreakdown.select();
+        copyToiBreakdown.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyToiBreakdown.value);
+        
+    })
+
 }
