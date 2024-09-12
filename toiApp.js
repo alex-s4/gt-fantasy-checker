@@ -1,5 +1,7 @@
 window.onload = function() {
-    
+
+
+    /*---------- Declaration of Components -------------------*/ 
     const nhlToiBtn = document.querySelector("#nhl-toi-btn");
     const nhlToiCopyBtn = document.querySelector("#toi-copy");
     const nhlToiClearBtn = document.querySelector("#nhl-toi-clear");
@@ -62,6 +64,8 @@ window.onload = function() {
     /*---------- GO Button for TOI -------------------*/ 
     nhlToiBtn.addEventListener('click', ()=>{
 
+        /* COMPUTATION LOGIC */
+
         // Sum of all 'ss' value without the minute formatting
         var totalSecondsActualValue = Number(timeOnIce.firstPeriodSeconds.value) + Number(timeOnIce.secondPeriodSeconds.value) + Number(timeOnIce.thirdPeriodSeconds.value);
 
@@ -70,22 +74,37 @@ window.onload = function() {
         
         // Total Mintes computation
         var totalPeriodMinutesValue = Number(timeOnIce.firstPeriodMinutes.value) + Number(timeOnIce.secondPeriodMinutes.value) + Number(timeOnIce.thirdPeriodMinutes.value) + minuteFromTotalSeconds;
-        // Total Seconds computation - every total ss that reaches 
-        var totalPeriodSecondsValue = totalSecondsActualValue % 60
-        var totalSecondsInDec = Math.round(totalPeriodSecondsValue*100/60);
+        
+        // Total Seconds computation - every total ss that reaches 60
+        var totalPeriodSecondsValue = String(totalSecondsActualValue % 60)
+
+        if(totalPeriodSecondsValue.length == 1){ // if result is single digit - this will pad a string "0" to achieve "ss" formatting
+            totalPeriodSecondsValue = totalPeriodSecondsValue.padStart(2, "0");
+        }
+        
+        var totalSecondsInDec = String(Math.round(totalPeriodSecondsValue * 100 / 60) / 100).slice(2); // to get the proper formatting of decimal value in TOI
 
         
-        if(timeOnIce.totalPeriodMinutes.value == "" && timeOnIce.totalPeriodSeconds.value == ""){
-            // Code only execute if Period fields has input
-            
-            timeOnIce.decValue.innerHTML = `${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`;
-            timeOnIce.toiBreakdown.value = `Period 1 - ${timeOnIce.firstPeriodMinutes.value}:${timeOnIce.firstPeriodSeconds.value}\nPeriod 2 - ${timeOnIce.secondPeriodMinutes.value}:${timeOnIce.secondPeriodSeconds.value}\nPeriod 3 - ${timeOnIce.thirdPeriodMinutes.value}:${timeOnIce.thirdPeriodSeconds.value}\n\nTOTAL: ${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`
+        if(toiPeriodRadio.checked)
+        {
+        // Code only execute if Period fields has input
+        
+        timeOnIce.decValue.innerHTML = `${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`;
+        timeOnIce.toiBreakdown.value = `Period 1 - ${timeOnIce.firstPeriodMinutes.value}:${timeOnIce.firstPeriodSeconds.value}\nPeriod 2 - ${timeOnIce.secondPeriodMinutes.value}:${timeOnIce.secondPeriodSeconds.value}\nPeriod 3 - ${timeOnIce.thirdPeriodMinutes.value}:${timeOnIce.thirdPeriodSeconds.value}\n\nTOTAL: ${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`
+        } 
+        else if (toiTotalRadio.checked)
+        {
+        // Code only execute if Total fields has input
 
-        } else if (timeOnIce.totalPeriodMinutes.value != "" && timeOnIce.totalPeriodSeconds.value != ""){
-            // Code only execute if Total fields has input
+        var totSecondsDecimal = String(Math.round(timeOnIce.totalPeriodSeconds.value * 100 / 60) / 100).slice(2)
 
-            timeOnIce.decTotValue.innerHTML = ` = ${timeOnIce.totalPeriodMinutes.value}.${Math.round(timeOnIce.totalPeriodSeconds.value * 100 / 60)}`;
-            timeOnIce.toiBreakdown.value = `Total: ${timeOnIce.totalPeriodMinutes.value}:${timeOnIce.totalPeriodSeconds.value} = ${timeOnIce.totalPeriodMinutes.value}.${Math.round(timeOnIce.totalPeriodSeconds.value * 100 / 60)}`
+        if(timeOnIce.totalPeriodSeconds.value.length == 1){
+            timeOnIce.totalPeriodSeconds.value = timeOnIce.totalPeriodSeconds.value.padStart(2, "0");
+            console.log(timeOnIce.totalPeriodSeconds.value)
+        }
+
+        timeOnIce.decTotValue.innerHTML = ` = ${timeOnIce.totalPeriodMinutes.value}.${totSecondsDecimal}`;
+        timeOnIce.toiBreakdown.value = `Total: ${timeOnIce.totalPeriodMinutes.value}:${timeOnIce.totalPeriodSeconds.value} = ${timeOnIce.totalPeriodMinutes.value}.${totSecondsDecimal}`
 
         }
 

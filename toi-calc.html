@@ -37,11 +37,16 @@
                 
                 <div class="toi-section-content" id="content-bball">
 
+                    <div class="toi-info">
+                        <p><i class="fa-solid fa-circle-info"></i> <span>Time On Ice will only be calculated for First 3 Periods</span></p>
+                        <p>(Overtime does not count)</p>
+                    </div>
+
                     <div class="flex-container flex-start toi-period-section">
                         <input type="radio" name="toi-calculator" id="toi-periods" class="toi-radio-btn" checked/>
                         <div>
                             <label for="toi-periods">
-                                <p class="toi-label-radio">Compute Time on Ice for 3 Periods</p>
+                                <p class="toi-label-radio">Compute Time on Ice for first 3 Periods</p>
                             </label>
                             <ul class="toi-period-inputs">
                                 <li>Period 1&nbsp; 
@@ -63,7 +68,7 @@
                     <div class="flex-container flex-start toi-total-section">
                         <input type="radio" name="toi-calculator" id="toi-total" class="toi-radio-btn" />
                         <label for="toi-total">
-                            <p class="toi-label-radio">Convert "mm:ss" format to Decimal value (ex: 12:30 = 12.5)</p>
+                            <p class="toi-label-radio">Convert "mm:ss" format to Decimal value (ex: 12:30 = 12.50)</p>
                             <div>
                                 <p class="fs-total-result">Time On Ice: <input type="number" name="toi-tot-mm" id="tot-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-tot-ss" id="tot-secs" class="input-time-global" placeholder="ss" max="59" /><span id="toi-in-dec-tot" class="toi-val"></span></p>
                             </div>

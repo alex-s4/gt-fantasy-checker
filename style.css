@@ -288,6 +288,18 @@ footer p {
     display: none;
 }
 
+.toi-info {
+    border: 1px solid #5e00bd;
+    border-radius: 0.375rem;
+    background-color: #16002c;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.toi-info .fa-circle-info {
+    margin-right: 8px;
+}
+
 #toi-periods {
     margin-top: 6px;
 }
