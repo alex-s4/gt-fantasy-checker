@@ -22,6 +22,7 @@ window.onload = function() {
         periodInputs: document.querySelectorAll(".input-toi-period"),
         radioInputs: document.querySelectorAll(".toi-radio-btn"),
         toiBreakdown: document.querySelector("#nhl-toi-breakdown"),
+        toiMins: document.querySelectorAll(".input-toi-mins"),
         toiSecs: document.querySelectorAll(".input-toi-secs")
     }
 
@@ -87,22 +88,31 @@ window.onload = function() {
 
         
         if(toiPeriodRadio.checked)
-        {
-        // This code will only execute if first radio input was checked
+        { // This code will only execute if first radio input was checked
 
         for(var i = 0; i<timeOnIce.toiSecs.length; i++){
-            // console.log(timeOnIce.toiSecs[i].value.length)
-            if(timeOnIce.toiSecs[i].value.length == 1){
+
+            if(timeOnIce.toiSecs[i].value.length == 1){ // add leading zeroes if seconds input has 1 digit
                 timeOnIce.toiSecs[i].value = timeOnIce.toiSecs[i].value.padStart(2, "0");
             }
+            if(timeOnIce.toiSecs[i].value == "" || timeOnIce.toiSecs[i].value == "0"){ // input "00" if seconds input is empty
+                timeOnIce.toiSecs[i].value = "00";
+                totalSecondsInDec = "0";
+            }
+            if(timeOnIce.toiMins[i].value == "" || timeOnIce.toiMins[i].value == "0"){ // input "00" if minutes input is empty
+                timeOnIce.toiMins[i].value = "00";
+            }
+        }
+
+        if(totalPeriodSecondsValue == "00"){ // appear as ".0" if value of total 'ss' is "00"
+            totalSecondsInDec == "0"
         }
         
         timeOnIce.decValue.innerHTML = `${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`;
-        timeOnIce.toiBreakdown.value = `Period 1 - ${timeOnIce.firstPeriodMinutes.value}:${timeOnIce.firstPeriodSeconds.value}\nPeriod 2 - ${timeOnIce.secondPeriodMinutes.value}:${timeOnIce.secondPeriodSeconds.value}\nPeriod 3 - ${timeOnIce.thirdPeriodMinutes.value}:${timeOnIce.thirdPeriodSeconds.value}\n\nTOTAL: ${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`
+        timeOnIce.toiBreakdown.value = `Period 1 - ${timeOnIce.firstPeriodMinutes.value}:${timeOnIce.firstPeriodSeconds.value}\nPeriod 2 - ${timeOnIce.secondPeriodMinutes.value}:${timeOnIce.secondPeriodSeconds.value}\nPeriod 3 - ${timeOnIce.thirdPeriodMinutes.value}:${timeOnIce.thirdPeriodSeconds.value}\n\nTOTAL: ${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue} + (${totalPeriodSecondsValue}/60) = ${totalPeriodMinutesValue}.${totalSecondsInDec}`
         } 
         else if (toiTotalRadio.checked)
-        {
-        // Code only execute if Total fields has input
+        { // This code will only execute if second radio input was checked
 
         var totSecondsDecimal = String(Math.round(timeOnIce.totalPeriodSeconds.value * 100 / 60) / 100).slice(2)
 
@@ -111,12 +121,24 @@ window.onload = function() {
             console.log(timeOnIce.totalPeriodSeconds.value)
         }
 
-        timeOnIce.decTotValue.innerHTML = ` = ${timeOnIce.totalPeriodMinutes.value}.${totSecondsDecimal}`;
-        timeOnIce.toiBreakdown.value = `Total: ${timeOnIce.totalPeriodMinutes.value}:${timeOnIce.totalPeriodSeconds.value} = ${timeOnIce.totalPeriodMinutes.value}.${totSecondsDecimal}`
-
+        if(timeOnIce.totalPeriodMinutes.value == ""){
+            timeOnIce.totalPeriodMinutes.value = "0";
         }
-
+        if(timeOnIce.totalPeriodSeconds.value == ""){
+            timeOnIce.totalPeriodSeconds.value = "00";
+        }
+        if(timeOnIce.totalPeriodSeconds.value == "" || timeOnIce.totalPeriodSeconds.value == "00"){
+            totSecondsDecimal = "0"
+            
+        }
+    
+        timeOnIce.decTotValue.innerHTML = ` = ${timeOnIce.totalPeriodMinutes.value}.${totSecondsDecimal}`;
+        timeOnIce.toiBreakdown.value = `Total: ${timeOnIce.totalPeriodMinutes.value}:${timeOnIce.totalPeriodSeconds.value} = ${timeOnIce.totalPeriodMinutes.value} + (${timeOnIce.totalPeriodSeconds.value}/60) = ${timeOnIce.totalPeriodMinutes.value}.${totSecondsDecimal}`
+        
         document.querySelector("#toi-textarea-btn-cont").style.display = "block";
+        
+        }
+    
 
     })
 

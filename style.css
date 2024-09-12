@@ -104,10 +104,6 @@ main {
     display: none;
 }
 
-/* .toi-section.content {
-
-} */
-
 .league-icon {
     margin-right: 12px;
 }
@@ -209,6 +205,10 @@ input[type=number] {
     padding-bottom: 10px;
 }
 
+div.toi-section {
+    width: 31em;
+}
+
 .fantasy-section h4 {
     margin-bottom: 6px;
 }
@@ -298,6 +298,10 @@ footer p {
 
 .toi-info .fa-circle-info {
     margin-right: 8px;
+}
+
+.toi-info p {
+    line-height: 21px;
 }
 
 #toi-periods {

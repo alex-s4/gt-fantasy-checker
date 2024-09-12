@@ -26,63 +26,65 @@
         </header> 
         
         <main>
-            <h2 class="main-page-text">TOI/Fight Time Calculator</h2>
+            <h2 class="main-page-text">TOI Calculator</h2>
 
-            <div class="toi-section">
-
-                <div class="fantasy-section-head flex-container flex-align-center flex-justify-space-bet" id="head-bball">
-                    <h2><img alt="NHL" src="https://static.prizepicks.com/images/leagues/production/45.svg" class="league-icon ">&nbsp;NHL Time On Ice Converter</h2>
-                        <i class="fa-solid fa-chevron-down collapsible-btn" id="bball-coll"></i>
-                </div>
-                
-                <div class="toi-section-content" id="content-bball">
-
-                    <div class="toi-info">
-                        <p><i class="fa-solid fa-circle-info"></i> <span>Time On Ice will only be calculated for First 3 Periods</span></p>
-                        <p>(Overtime does not count)</p>
+            <div class="flex-container flex-justify-center">
+                <!-- TIME ON ICE CONTAINER -->
+                <div class="toi-section">
+    
+                    <div class="fantasy-section-head flex-container flex-align-center flex-justify-space-bet" id="head-bball">
+                        <h2><img alt="NHL" src="https://static.prizepicks.com/images/leagues/production/45.svg" class="league-icon ">&nbsp;NHL Time On Ice Converter</h2>
+                            <i class="fa-solid fa-chevron-down collapsible-btn" id="bball-coll"></i>
                     </div>
-
-                    <div class="flex-container flex-start toi-period-section">
-                        <input type="radio" name="toi-calculator" id="toi-periods" class="toi-radio-btn" checked/>
-                        <div>
-                            <label for="toi-periods">
-                                <p class="toi-label-radio">Compute Time on Ice for first 3 Periods</p>
-                            </label>
-                            <ul class="toi-period-inputs">
-                                <li>Period 1&nbsp; 
-                                <input type="number" name="toi-p1-mm" id="p1-mins" class="input-time-global input-toi-period" placeholder="mm" max="99" />:<input type="number" name="toi-p1-ss" id="p1-secs" class="input-time-global input-toi-period input-toi-secs" placeholder="ss" max="59" />
-                                <span id="toi-p1-val" class="toi-val"></span></li> 
-                                <li>Period 2
-                                <input type="number" name="toi-p2-mm" id="p2-mins" class="input-time-global input-toi-period" placeholder="mm" max="99" />:<input type="number" name="toi-p2-ss" id="p2-secs" class="input-time-global input-toi-period input-toi-secs" placeholder="ss" max="59" />
-                                <span id="toi-p2-val" class="toi-val"></span></li> 
-                                <li>Period 3
-                                <input type="number" name="toi-p3-mm" id="p3-mins" class="input-time-global input-toi-period" placeholder="mm" max="99" />:<input type="number" name="toi-p3-ss" id="p3-secs" class="input-time-global input-toi-period input-toi-secs" placeholder="ss" max="59" />
-                                <span id="toi-p3-val" class="toi-val"></span></li> 
-                            </ul>
-                            <p>TOTAL: <span id="toi-in-dec" class="toi-val"></span></p>
+                    
+                    <div class="toi-section-content" id="content-bball">
+    
+                        <div class="toi-info">
+                            <p><i class="fa-solid fa-circle-info"></i>Time On Ice will only be calculated for "First 3 Periods". OT does not count</p>
                         </div>
-                        
-                        
-                    </div>
-
-                    <div class="flex-container flex-start toi-total-section">
-                        <input type="radio" name="toi-calculator" id="toi-total" class="toi-radio-btn" />
-                        <label for="toi-total">
-                            <p class="toi-label-radio">Convert "mm:ss" format to Decimal value (ex: 12:30 = 12.50)</p>
+    
+                        <div class="flex-container flex-start toi-period-section">
+                            <input type="radio" name="toi-calculator" id="toi-periods" class="toi-radio-btn" checked/>
                             <div>
-                                <p class="fs-total-result">Time On Ice: <input type="number" name="toi-tot-mm" id="tot-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-tot-ss" id="tot-secs" class="input-time-global" placeholder="ss" max="59" /><span id="toi-in-dec-tot" class="toi-val"></span></p>
+                                <label for="toi-periods">
+                                    <p class="toi-label-radio">Compute Time on Ice for first 3 Periods</p>
+                                </label>
+                                <ul class="toi-period-inputs">
+                                    <li>Period 1&nbsp; 
+                                    <input type="number" name="toi-p1-mm" id="p1-mins" class="input-time-global input-toi-period input-toi-mins" placeholder="mm" max="99" />:<input type="number" name="toi-p1-ss" id="p1-secs" class="input-time-global input-toi-period input-toi-secs" placeholder="ss" max="59" />
+                                    <span id="toi-p1-val" class="toi-val"></span></li> 
+                                    <li>Period 2
+                                    <input type="number" name="toi-p2-mm" id="p2-mins" class="input-time-global input-toi-period input-toi-mins" placeholder="mm" max="99" />:<input type="number" name="toi-p2-ss" id="p2-secs" class="input-time-global input-toi-period input-toi-secs" placeholder="ss" max="59" />
+                                    <span id="toi-p2-val" class="toi-val"></span></li> 
+                                    <li>Period 3
+                                    <input type="number" name="toi-p3-mm" id="p3-mins" class="input-time-global input-toi-period input-toi-mins" placeholder="mm" max="99" />:<input type="number" name="toi-p3-ss" id="p3-secs" class="input-time-global input-toi-period input-toi-secs" placeholder="ss" max="59" />
+                                    <span id="toi-p3-val" class="toi-val"></span></li> 
+                                </ul>
+                                <p>TOTAL: <span id="toi-in-dec" class="toi-val"></span></p>
                             </div>
-                        </label>
-                    </div>
-
-                    <div class="btn-cont">
-                        <button id="nhl-toi-btn" class="btn btn-go">Go</button>
-                        <button id="nhl-toi-clear" class="btn btn-clear">Clear</button><br>
-                    </div>
-
-                    <textarea name="nhl-toi-breakdown" id="nhl-toi-breakdown" class="textarea-global" rows="8" cols="34" disabled></textarea><br>
-                    <div id="toi-textarea-btn-cont" class="textarea-btn-cont">
-                        <button id="toi-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                            
+                            
+                        </div>
+    
+                        <div class="flex-container flex-start toi-total-section">
+                            <input type="radio" name="toi-calculator" id="toi-total" class="toi-radio-btn" />
+                            <label for="toi-total">
+                                <p class="toi-label-radio">Convert "mm:ss" format to Decimal value (ex: 12:30 = 12.50)</p>
+                                <div>
+                                    <p class="fs-total-result">Time On Ice: <input type="number" name="toi-tot-mm" id="tot-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-tot-ss" id="tot-secs" class="input-time-global" placeholder="ss" max="59" /><span id="toi-in-dec-tot" class="toi-val"></span></p>
+                                </div>
+                            </label>
+                        </div>
+    
+                        <div class="btn-cont">
+                            <button id="nhl-toi-btn" class="btn btn-go">Go</button>
+                            <button id="nhl-toi-clear" class="btn btn-clear">Clear</button><br>
+                        </div>
+    
+                        <textarea name="nhl-toi-breakdown" id="nhl-toi-breakdown" class="textarea-global" rows="8" cols="34" disabled></textarea><br>
+                        <div id="toi-textarea-btn-cont" class="textarea-btn-cont">
+                            <button id="toi-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                        </div>
                     </div>
                 </div>
             </div>
