@@ -21,7 +21,8 @@ window.onload = function() {
         decTotValue: document.querySelector("#toi-in-dec-tot"),
         periodInputs: document.querySelectorAll(".input-toi-period"),
         radioInputs: document.querySelectorAll(".toi-radio-btn"),
-        toiBreakdown: document.querySelector("#nhl-toi-breakdown")
+        toiBreakdown: document.querySelector("#nhl-toi-breakdown"),
+        toiSecs: document.querySelectorAll(".input-toi-secs")
     }
 
     /*---------- Radio Button Behavior TOI -------------------*/ 
@@ -87,7 +88,14 @@ window.onload = function() {
         
         if(toiPeriodRadio.checked)
         {
-        // Code only execute if Period fields has input
+        // This code will only execute if first radio input was checked
+
+        for(var i = 0; i<timeOnIce.toiSecs.length; i++){
+            // console.log(timeOnIce.toiSecs[i].value.length)
+            if(timeOnIce.toiSecs[i].value.length == 1){
+                timeOnIce.toiSecs[i].value = timeOnIce.toiSecs[i].value.padStart(2, "0");
+            }
+        }
         
         timeOnIce.decValue.innerHTML = `${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`;
         timeOnIce.toiBreakdown.value = `Period 1 - ${timeOnIce.firstPeriodMinutes.value}:${timeOnIce.firstPeriodSeconds.value}\nPeriod 2 - ${timeOnIce.secondPeriodMinutes.value}:${timeOnIce.secondPeriodSeconds.value}\nPeriod 3 - ${timeOnIce.thirdPeriodMinutes.value}:${timeOnIce.thirdPeriodSeconds.value}\n\nTOTAL: ${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`
