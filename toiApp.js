@@ -2,6 +2,7 @@ window.onload = function() {
     
     const nhlToiBtn = document.querySelector("#nhl-toi-btn");
     const nhlToiCopyBtn = document.querySelector("#toi-copy");
+    const nhlToiClearBtn = document.querySelector("#nhl-toi-clear");
     const toiPeriodRadio = document.querySelector("#toi-periods");
     const toiTotalRadio = document.querySelector("#toi-total");
     
@@ -21,7 +22,7 @@ window.onload = function() {
         toiBreakdown: document.querySelector("#nhl-toi-breakdown")
     }
 
-
+    /*---------- Radio Button Behavior TOI -------------------*/ 
     if(!toiPeriodRadio.checked && !toiTotalRadio.checked){
         for(var j=0; j < timeOnIce.periodInputs.length; j++){
             timeOnIce.periodInputs[j].disabled = true;
@@ -103,5 +104,25 @@ window.onload = function() {
         navigator.clipboard.writeText(copyToiBreakdown.value);
         
     })
+
+    /*---------- Clear Button for TOI -------------------*/
+    nhlToiClearBtn.addEventListener('click', ()=>{
+        
+        // This will clear the input fields
+        for(var i=0; i<document.querySelectorAll(".input-time-global").length; i++){
+            document.querySelectorAll(".input-time-global")[i].value = "";
+        }
+
+        // This will clear the numbers beside the input fields
+        for(var j=0; j<document.querySelectorAll(".toi-val").length; j++){
+            document.querySelectorAll(".toi-val")[j].innerHTML = "";
+        }
+        
+        timeOnIce.toiBreakdown.value = "";
+
+        document.querySelector("#toi-textarea-btn-cont").style.display = "none";
+    })
+
+
 
 }

@@ -54,7 +54,7 @@
                                 <input type="number" name="toi-p3-mm" id="p3-mins" class="input-time-global input-toi-period" placeholder="mm" max="99" />:<input type="number" name="toi-p3-ss" id="p3-secs" class="input-time-global input-toi-period" placeholder="ss" max="59" />
                                 <span id="toi-p3-val" class="toi-val"></span></li> 
                             </ul>
-                            <p>TOTAL: <span id="toi-in-dec"></span></p>
+                            <p>TOTAL: <span id="toi-in-dec" class="toi-val"></span></p>
                         </div>
                         
                         
@@ -65,14 +65,14 @@
                         <label for="toi-total">
                             <p class="toi-label-radio">Convert "mm:ss" format to Decimal value (ex: 12:30 = 12.5)</p>
                             <div>
-                                <p class="fs-total-result">Time On Ice: <input type="number" name="toi-tot-mm" id="tot-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-tot-ss" id="tot-secs" class="input-time-global" placeholder="ss" max="59" /><span id="toi-in-dec-tot"></span></p>
+                                <p class="fs-total-result">Time On Ice: <input type="number" name="toi-tot-mm" id="tot-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-tot-ss" id="tot-secs" class="input-time-global" placeholder="ss" max="59" /><span id="toi-in-dec-tot" class="toi-val"></span></p>
                             </div>
                         </label>
                     </div>
 
                     <div class="btn-cont">
                         <button id="nhl-toi-btn" class="btn btn-go">Go</button>
-                        <button id="bball-clear" class="btn btn-clear">Clear</button><br>
+                        <button id="nhl-toi-clear" class="btn btn-clear">Clear</button><br>
                     </div>
 
                     <textarea name="nhl-toi-breakdown" id="nhl-toi-breakdown" class="textarea-global" rows="8" cols="34" disabled></textarea><br>
