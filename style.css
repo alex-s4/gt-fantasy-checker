@@ -81,6 +81,10 @@ body {
     margin-right: 8px;
 }
 
+.header-icons {
+    margin-right: 18px;
+}
+
 header {
     background: linear-gradient(90deg, #050614 50%, rgba(128,0,255,1) 100%);
     padding: 0.55rem 0;
