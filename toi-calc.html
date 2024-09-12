@@ -58,7 +58,7 @@
                                     <input type="number" name="toi-p3-mm" id="p3-mins" class="input-time-global input-toi-period input-toi-mins" placeholder="mm" max="99" />:<input type="number" name="toi-p3-ss" id="p3-secs" class="input-time-global input-toi-period input-toi-secs" placeholder="ss" max="59" />
                                     <span id="toi-p3-val" class="toi-val"></span></li> 
                                 </ul>
-                                <p>TOTAL: <span id="toi-in-dec" class="toi-val"></span></p>
+                                <p class="toi-total-txt">TOTAL: <span id="toi-in-dec" class="toi-val"></span></p>
                             </div>
                             
                             
@@ -69,7 +69,7 @@
                             <label for="toi-total">
                                 <p class="toi-label-radio">Convert "mm:ss" format to Decimal value (ex: 12:30 = 12.50)</p>
                                 <div>
-                                    <p class="fs-total-result">Time On Ice: <input type="number" name="toi-tot-mm" id="tot-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-tot-ss" id="tot-secs" class="input-time-global" placeholder="ss" max="59" /><span id="toi-in-dec-tot" class="toi-val"></span></p>
+                                    <p class="fs-total-result">TOI (3 Periods): <input type="number" name="toi-tot-mm" id="tot-mins" class="input-time-global" placeholder="mm" max="99" />:<input type="number" name="toi-tot-ss" id="tot-secs" class="input-time-global" placeholder="ss" max="59" /><span id="toi-in-dec-tot" class="toi-val"></span></p>
                                 </div>
                             </label>
                         </div>
@@ -79,7 +79,7 @@
                             <button id="nhl-toi-clear" class="btn btn-clear">Clear</button><br>
                         </div>
     
-                        <textarea name="nhl-toi-breakdown" id="nhl-toi-breakdown" class="textarea-global" rows="8" cols="34" disabled></textarea><br>
+                        <textarea name="nhl-toi-breakdown" id="nhl-toi-breakdown" class="textarea-global" rows="6" cols="34" disabled></textarea><br>
                         <div id="toi-textarea-btn-cont" class="textarea-btn-cont">
                             <button id="toi-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
                         </div>

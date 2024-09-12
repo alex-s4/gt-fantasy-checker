@@ -99,13 +99,13 @@ window.onload = function() {
                 timeOnIce.toiSecs[i].value = "00";
                 totalSecondsInDec = "0";
             }
-            if(timeOnIce.toiMins[i].value == "" || timeOnIce.toiMins[i].value == "0"){ // input "00" if minutes input is empty
+            if(timeOnIce.toiMins[i].value == "" || timeOnIce.toiMins[i].value == "0" ){ // input "00" if minutes input is empty
                 timeOnIce.toiMins[i].value = "00";
             }
         }
 
         if(totalPeriodSecondsValue == "00"){ // appear as ".0" if value of total 'ss' is "00"
-            totalSecondsInDec == "0"
+            totalSecondsInDec = "0"
         }
         
         timeOnIce.decValue.innerHTML = `${totalPeriodMinutesValue}:${totalPeriodSecondsValue} = ${totalPeriodMinutesValue}.${totalSecondsInDec}`;
