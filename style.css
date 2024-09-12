@@ -75,7 +75,10 @@ body {
 
 .nav-item i {
     margin-left: 14px;
-    
+}
+
+.nav-icons {
+    margin-right: 8px;
 }
 
 header {
