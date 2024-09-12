@@ -9,6 +9,10 @@
     font-family: 'TT Norms Pro';
     color: whitesmoke;
   }
+
+a {
+    text-decoration: none;
+}
       
   /* Fixed width container class that will "auto-center" itself */
   .container {
