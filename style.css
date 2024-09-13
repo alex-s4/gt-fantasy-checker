@@ -339,26 +339,30 @@ footer p {
     margin-bottom: 18px;
 }
 
-.mma-ft-mainlab, .mma-ft-numfield-cont {
+.mma-ft-mainlab, .mma-ft-numfield-cont, .box-ft-mainlab, .box-ft-numfield-cont {
     margin-bottom: 12px;
 }
 
-.mma-ft-radio-cont {
+.mma-ft-radio-cont, .box-ft-radio-cont {
     margin-bottom: 16px;
 }
 
-.mma-ft-input-cont {
+.mma-ft-input-cont, .box-ft-input-cont {
     margin-bottom: 12px;
 }
 
-.mma-ft-label {
+.mma-ft-label, .box-ft-label {
     margin-bottom: 6px;
 }
 
-.mma-ft-radio {
+.mma-ft-radio, .box-ft-radio {
     margin-right: 4px;
 }
 
-#mma-ft-total {
+#mma-ft-total, #box-ft-total {
     font-size: 18px;
+}
+
+.box-ft-col1 {
+    margin-right: 32px;
 }

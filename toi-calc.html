@@ -90,14 +90,11 @@
 
                 <!-- MMA FIGHT TIME CONTAINER -->
                 <div class="toi-section">
-
                     <div class="fantasy-section-head flex-container flex-align-center flex-justify-space-bet" id="head-bball">
                         <h2><img alt="MMA" src="https://static.prizepicks.com/images/leagues/production/23.svg" class="league-icon ">&nbsp;MMA Fight Time Calculator</h2>
                             <i class="fa-solid fa-chevron-down collapsible-btn" id="bball-coll"></i>
                     </div>
-
                     <div class="toi-section-content" id="content-bball">
-    
                         <div class="toi-info">
                             <p><i class="fa-solid fa-circle-info"></i>One full round = 5 minutes (5:00)</p>
                         </div>
@@ -150,11 +147,106 @@
                             <button id="mma-ft-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
                         </div>
 
+                    </div>
+                </div>
+
+                <!-- BOXING FIGHT TIME CONTAINER -->
+                <div class="toi-section">
+                    <div class="fantasy-section-head flex-container flex-align-center flex-justify-space-bet" id="head-boxing-ft">
+                        <h2><img alt="Boxing" src="https://static.prizepicks.com/images/leagues/boxing.svg" class="league-icon ">&nbsp;Boxing Fight Time Calculator</h2>
+                            <i class="fa-solid fa-chevron-down collapsible-btn" id="box-ft-coll"></i>
+                    </div>
+                    <div class="toi-section-content" id="content-bball">
+                        <div class="toi-info">
+                            <p><i class="fa-solid fa-circle-info"></i>One full round = 3 minutes (3:00)</p>
+                        </div>
+    
+                        <div class="box-ft-input-cont">
+
+                            <div class="box-ft-radio-cont">
+
+                            
+                                <p class="box-ft-mainlab">Fight ended in:</p>
+
+                                <div class="flex-container">
+                                    <div class="box-ft-col1">
+                                        <div class="box-ft-label">
+                                            <input type="radio" name="box-ft-radio" id="box-ft-rd1-radio" class="box-ft-radio" value="0" checked>
+                                            <label for="box-ft-rd1-radio">Round 1</label>
+                                        </div>
+                                        <div class="box-ft-label">
+                                            <input type="radio" name="box-ft-radio" id="box-ft-rd2-radio" class="box-ft-radio" value="1">
+                                            <label for="box-ft-rd2-radio">Round 2</label>
+                                        </div>
+                                        <div class="box-ft-label">
+                                            <input type="radio" name="box-ft-radio" id="box-ft-rd3-radio" class="box-ft-radio" value="2">
+                                            <label for="box-ft-rd3-radio">Round 3</label>
+                                        </div>
+                                        <div class="box-ft-label">
+                                            <input type="radio" name="box-ft-radio" id="box-ft-rd4-radio" class="box-ft-radio" value="3">
+                                            <label for="box-ft-rd4-radio">Round 4</label>
+                                        </div>
+                                        <div class="box-ft-label">
+                                            <input type="radio" name="box-ft-radio" id="box-ft-rd5-radio" class="box-ft-radio" value="4">
+                                            <label for="box-ft-rd5-radio">Round 5</label>
+                                        </div>
+                                        <div class="box-ft-label">
+                                            <input type="radio" name="box-ft-radio" id="box-ft-rd6-radio" class="box-ft-radio" value="5">
+                                            <label for="box-ft-rd6-radio">Round 6</label>
+                                        </div>
+                                    </div>
+                                    <div class="box-ft-col2">
+                                        <div class="box-ft-label">
+                                            <input type="radio" name="box-ft-radio" id="box-ft-rd7-radio" class="box-ft-radio" value="6">
+                                            <label for="box-ft-rd7-radio">Round 7</label>
+                                        </div>
+                                        <div class="box-ft-label">
+                                            <input type="radio" name="box-ft-radio" id="box-ft-rd8-radio" class="box-ft-radio" value="7">
+                                            <label for="box-ft-rd8-radio">Round 8</label>
+                                        </div>
+                                        <div class="box-ft-label">
+                                            <input type="radio" name="box-ft-radio" id="box-ft-rd9-radio" class="box-ft-radio" value="8">
+                                            <label for="box-ft-rd9-radio">Round 9</label>
+                                        </div>
+                                        <div class="box-ft-label">
+                                            <input type="radio" name="box-ft-radio" id="box-ft-rd10-radio" class="box-ft-radio" value="9">
+                                            <label for="box-ft-rd10-radio">Round 10</label>
+                                        </div>
+                                        <div class="box-ft-label">
+                                            <input type="radio" name="box-ft-radio" id="box-ft-rd11-radio" class="box-ft-radio" value="10">
+                                            <label for="box-ft-rd11-radio">Round 11</label>
+                                        </div>
+                                        <div class="box-ft-label">
+                                            <input type="radio" name="box-ft-radio" id="box-ft-rd12-radio" class="box-ft-radio" value="11">
+                                            <label for="box-ft-rd12-radio">Round 12</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            
+                            </div>
+
+                            <div class="box-ft-numfield-cont">
+                                <input type="number" name="box-ft-mm" id="box-ft-mins" class="input-time-global box-ft-num" placeholder="m" max="99" />:<input type="number" name="mma-ft-ss" id="box-ft-secs" class="input-time-global box-ft-num" placeholder="ss" max="59" />
+                                <!-- <p>(If fight ends after the round, leave it empty)</p> -->
+                            </div>
+
+                            <p id="box-ft-total">TOTAL FIGHT TIME: <span id="box-ft-result"></span></p>
+                            
+                        </div>
+    
+                        <div class="btn-cont">
+                            <button id="box-ft-btn" class="btn btn-go">Go</button>
+                            <button id="box-ft-clear" class="btn btn-clear">Clear</button><br>
+                        </div>
+    
+                        <textarea name="box-ft-breakdown" id="box-ft-breakdown" class="textarea-global" rows="6" cols="45" disabled></textarea><br>
+                        <div id="ft-textarea-btn-cont" class="textarea-btn-cont">
+                            <button id="box-ft-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                        </div>
 
                     </div>
-
-                    
-
                 </div>
 
                 
