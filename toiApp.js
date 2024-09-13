@@ -1,5 +1,6 @@
 window.onload = function() {
 
+    /* ============= NHL TOI CALCULATOR ================= */
 
     /*---------- Declaration of Components -------------------*/ 
     const nhlToiBtn = document.querySelector("#nhl-toi-btn");
@@ -133,12 +134,10 @@ window.onload = function() {
         }
     
         timeOnIce.decTotValue.innerHTML = ` = ${timeOnIce.totalPeriodMinutes.value}.${totSecondsDecimal}`;
-        timeOnIce.toiBreakdown.value = `Total: ${timeOnIce.totalPeriodMinutes.value}:${timeOnIce.totalPeriodSeconds.value} = ${timeOnIce.totalPeriodMinutes.value} + (${timeOnIce.totalPeriodSeconds.value}/60) = ${timeOnIce.totalPeriodMinutes.value}.${totSecondsDecimal}`
-        
-        document.querySelector("#toi-textarea-btn-cont").style.display = "block";
-        
-        }
+        timeOnIce.toiBreakdown.value = `Total: ${timeOnIce.totalPeriodMinutes.value}:${timeOnIce.totalPeriodSeconds.value} = ${timeOnIce.totalPeriodMinutes.value} + (${timeOnIce.totalPeriodSeconds.value}/60) = ${timeOnIce.totalPeriodMinutes.value}.${totSecondsDecimal}`    
+    }
     
+    document.querySelector("#toi-textarea-btn-cont").style.display = "block";
 
     })
 
@@ -172,6 +171,94 @@ window.onload = function() {
         document.querySelector("#toi-textarea-btn-cont").style.display = "none";
     })
 
+
+    /* ============= MMA FIGHT TIME CALCULATOR ================= */
+
+    /*---------- Declaration of Components -------------------*/ 
+
+    var mmaFightTime = {
+        goBtn: document.querySelector("#mma-ft-btn"),
+        clearBtn: document.querySelector("#mma-ft-clear"),
+        copyBtn: document.querySelector("#mma-ft-copy"),
+        inputMins: document.querySelector("#mma-ft-mins"),
+        inputSecs: document.querySelector("#mma-ft-secs"),
+        inputNum: document.querySelectorAll(".mma-ft-num"),
+        inputRadio: document.querySelectorAll(".mma-ft-radio"),
+        ftResult: document.querySelector("#mma-ft-result"),
+        ftTextarea: document.querySelector("#mma-ft-breakdown"),
+    }
+
+    /*---------- GO Button for MMA Fight Time -------------------*/ 
+    mmaFightTime.goBtn.addEventListener('click', () => {
+        
+        if(mmaFightTime.inputMins.value == "" && mmaFightTime.inputSecs.value == ""){
+            // input values will populate to 5:00 if both fields are empty
+            mmaFightTime.inputMins.value = "5"
+            mmaFightTime.inputSecs.value = "00"
+        } else if (mmaFightTime.inputMins.value == "" && !mmaFightTime.inputSecs.value == ""){
+            // minute input will populate to 0 if minute field is empty
+            mmaFightTime.inputMins.value = "0"
+        } else if(!mmaFightTime.inputMins.value == "" && mmaFightTime.inputSecs.value == ""){
+            // seconds input will populate to 00 if seconds field is empty
+            mmaFightTime.inputSecs.value = "00"
+        }
+
+        // add leading zero if 'ss' input is 1 digit
+        if(mmaFightTime.inputSecs.value.length == 1){
+            mmaFightTime.inputSecs.value = mmaFightTime.inputSecs.value.padStart(2, "0")
+        }
+
+        var totalMins = 0;
+        // var totalSecs = 0;
+        var secsToDecimal = String((Math.round(mmaFightTime.inputSecs.value * 100 / 60))/100).slice(2); // formatting of 'ss' to decimal
+
+        // console.log(secsToDecimal)
+        if(secsToDecimal == ""){
+            secsToDecimal = "00"
+        }
+
+        // Computation
+        for(var i=0; i<mmaFightTime.inputRadio.length; i++){
+            if(mmaFightTime.inputRadio[i].checked){
+                var roundNumber = Number(mmaFightTime.inputRadio[i].value) + 1
+                totalMins = (mmaFightTime.inputRadio[i].value * 5) + Number(mmaFightTime.inputMins.value);
+            }
+        }
+
+        var computation = ` = ${totalMins} + (${mmaFightTime.inputSecs.value}/60) = ${totalMins}.${secsToDecimal}`
+
+        mmaFightTime.ftResult.innerHTML = `${totalMins}:${mmaFightTime.inputSecs.value} = ${totalMins}.${secsToDecimal}`
+        mmaFightTime.ftTextarea.value = `Fight Ended at ${mmaFightTime.inputMins.value}:${mmaFightTime.inputSecs.value} of Round ${roundNumber}\n\nTotal Fight Time = ${totalMins}:${mmaFightTime.inputSecs.value}${computation}`
+
+        // Copy Btn appear upon computation
+        document.querySelector("#ft-textarea-btn-cont").style.display = "block";
+    })
+
+
+    /*---------- Copy Button for MMA Fight Time -------------------*/
+    mmaFightTime.copyBtn.addEventListener('click', ()=>{
+        
+        var copyMmaFtBreakdown = mmaFightTime.ftTextarea;
+
+        copyMmaFtBreakdown.select();
+        copyMmaFtBreakdown.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyMmaFtBreakdown.value);
+        
+    })
+
+    /*---------- Clear Button for MMA Fight Time -------------------*/
+    mmaFightTime.clearBtn.addEventListener('click', ()=>{
+        
+        // clears all input fields and texts
+        mmaFightTime.inputSecs.value = "";
+        mmaFightTime.inputMins.value = "";
+        mmaFightTime.ftTextarea.value = "";
+        mmaFightTime.ftResult.innerHTML = "";
+
+        // hides 'Copy' button
+        document.querySelector("#ft-textarea-btn-cont").style.display = "none";
+    })
 
 
 }

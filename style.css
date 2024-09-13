@@ -338,3 +338,27 @@ footer p {
 .toi-period-section, .toi-total-section {
     margin-bottom: 18px;
 }
+
+.mma-ft-mainlab, .mma-ft-numfield-cont {
+    margin-bottom: 12px;
+}
+
+.mma-ft-radio-cont {
+    margin-bottom: 16px;
+}
+
+.mma-ft-input-cont {
+    margin-bottom: 12px;
+}
+
+.mma-ft-label {
+    margin-bottom: 6px;
+}
+
+.mma-ft-radio {
+    margin-right: 4px;
+}
+
+#mma-ft-total {
+    font-size: 18px;
+}

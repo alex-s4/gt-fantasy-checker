@@ -102,45 +102,52 @@
                             <p><i class="fa-solid fa-circle-info"></i>One full round = 5 minutes (5:00)</p>
                         </div>
     
-                        <div>
+                        <div class="mma-ft-input-cont">
+
+                            <div class="mma-ft-radio-cont">
+
                             
-                            <p>Fight ended in:</p>
-                            <div>
-                                <input type="radio" name="rd-1" id="mma-ft-rd1-radio">
-                                <label for="rd-1">Round 1</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="rd-2" id="mma-ft-rd2-radio">
-                                <label for="rd-2">Round 2</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="rd-3" id="mma-ft-rd3-radio">
-                                <label for="rd-3">Round 3</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="rd-4" id="mma-ft-rd4-radio">
-                                <label for="rd-3">Round 4</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="rd-5" id="mma-ft-rd5-radio">
-                                <label for="rd-3">Round 5</label>
+                                <p class="mma-ft-mainlab">Fight ended in:</p>
+                                <div class="mma-ft-label">
+                                    <input type="radio" name="mma-ft-radio" id="mma-ft-rd1-radio" class="mma-ft-radio" value="0" checked>
+                                    <label for="mma-ft-rd1-radio">Round 1</label>
+                                </div>
+                                <div class="mma-ft-label">
+                                    <input type="radio" name="mma-ft-radio" id="mma-ft-rd2-radio" class="mma-ft-radio" value="1">
+                                    <label for="mma-ft-rd2-radio">Round 2</label>
+                                </div>
+                                <div class="mma-ft-label">
+                                    <input type="radio" name="mma-ft-radio" id="mma-ft-rd3-radio" class="mma-ft-radio" value="2">
+                                    <label for="mma-ft-rd3-radio">Round 3</label>
+                                </div>
+                                <div class="mma-ft-label">
+                                    <input type="radio" name="mma-ft-radio" id="mma-ft-rd4-radio" class="mma-ft-radio" value="3">
+                                    <label for="mma-ft-rd4-radio">Round 4</label>
+                                </div>
+                                <div class="mma-ft-label">
+                                    <input type="radio" name="mma-ft-radio" id="mma-ft-rd5-radio" class="mma-ft-radio" value="4">
+                                    <label for="mma-ft-rd5-radio">Round 5</label>
+                                </div>
+                            
                             </div>
 
-                            <div>
-                                <input type="number" name="toi-p1-mm" id="p1-mins" class="input-time-global input-toi-period input-toi-mins" placeholder="m" max="99" />:<input type="number" name="toi-p1-ss" id="p1-secs" class="input-time-global input-toi-period input-toi-secs" placeholder="ss" max="59" />
-                                <p>(If fight ends in full round, leave it empty)</p>
+                            <div class="mma-ft-numfield-cont">
+                                <input type="number" name="mma-ft-mm" id="mma-ft-mins" class="input-time-global mma-ft-num" placeholder="m" max="99" />:<input type="number" name="mma-ft-ss" id="mma-ft-secs" class="input-time-global mma-ft-num" placeholder="ss" max="59" />
+                                <!-- <p>(If fight ends after the round, leave it empty)</p> -->
                             </div>
+
+                            <p id="mma-ft-total">TOTAL FIGHT TIME: <span id="mma-ft-result"></span></p>
                             
                         </div>
     
                         <div class="btn-cont">
-                            <button id="nhl-toi-btn" class="btn btn-go">Go</button>
-                            <button id="nhl-toi-clear" class="btn btn-clear">Clear</button><br>
+                            <button id="mma-ft-btn" class="btn btn-go">Go</button>
+                            <button id="mma-ft-clear" class="btn btn-clear">Clear</button><br>
                         </div>
     
-                        <textarea name="nhl-toi-breakdown" id="nhl-toi-breakdown" class="textarea-global" rows="6" cols="34" disabled></textarea><br>
-                        <div id="toi-textarea-btn-cont" class="textarea-btn-cont">
-                            <button id="toi-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
+                        <textarea name="mma-ft-breakdown" id="mma-ft-breakdown" class="textarea-global" rows="6" cols="45" disabled></textarea><br>
+                        <div id="ft-textarea-btn-cont" class="textarea-btn-cont">
+                            <button id="mma-ft-copy" class="btn btn-copy"><i class="fa-solid fa-copy"></i>&nbsp;&nbsp;Copy</button><br>
                         </div>
 
 
