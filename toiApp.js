@@ -261,4 +261,94 @@ window.onload = function() {
     })
 
 
+    /* ============= Boxing FIGHT TIME CALCULATOR ================= */
+
+    /*---------- Declaration of Components -------------------*/ 
+
+    var boxFightTime = {
+        goBtn: document.querySelector("#box-ft-btn"),
+        clearBtn: document.querySelector("#box-ft-clear"),
+        copyBtn: document.querySelector("#box-ft-copy"),
+        inputMins: document.querySelector("#box-ft-mins"),
+        inputSecs: document.querySelector("#box-ft-secs"),
+        inputNum: document.querySelectorAll(".box-ft-num"),
+        inputRadio: document.querySelectorAll(".box-ft-radio"),
+        ftResult: document.querySelector("#box-ft-result"),
+        ftTextarea: document.querySelector("#box-ft-breakdown"),
+    }
+
+
+    /*---------- GO Button for Boxing Fight Time -------------------*/ 
+    boxFightTime.goBtn.addEventListener('click', () => {
+
+        if(boxFightTime.inputMins.value == "" && boxFightTime.inputSecs.value == ""){
+            // input values will populate to 3:00 if both fields are empty
+            boxFightTime.inputMins.value = "3"
+            boxFightTime.inputSecs.value = "00"
+        } else if (boxFightTime.inputMins.value == "" && !boxFightTime.inputSecs.value == ""){
+            // minute input will populate to 0 if minute field is empty
+            boxFightTime.inputMins.value = "0"
+        } else if(!boxFightTime.inputMins.value == "" && boxFightTime.inputSecs.value == ""){
+            // seconds input will populate to 00 if seconds field is empty
+            boxFightTime.inputSecs.value = "00"
+        }
+
+        // add leading zero if 'ss' input is 1 digit
+        if(boxFightTime.inputSecs.value.length == 1){
+            boxFightTime.inputSecs.value = boxFightTime.inputSecs.value.padStart(2, "0")
+        }
+
+        var totalMins = 0;
+        // var totalSecs = 0;
+        var secsToDecimal = String((Math.round(boxFightTime.inputSecs.value * 100 / 60))/100).slice(2); // formatting of 'ss' to decimal
+
+        // console.log(secsToDecimal)
+        if(secsToDecimal == ""){
+            secsToDecimal = "00"
+        }
+
+        // Computation
+        for(var i=0; i<boxFightTime.inputRadio.length; i++){
+            if(boxFightTime.inputRadio[i].checked){
+                var roundNumber = Number(boxFightTime.inputRadio[i].value) + 1
+                totalMins = (boxFightTime.inputRadio[i].value * 3) + Number(boxFightTime.inputMins.value);
+            }
+        }
+
+        var computation = ` = ${totalMins} + (${boxFightTime.inputSecs.value}/60) = ${totalMins}.${secsToDecimal}`
+
+        boxFightTime.ftResult.innerHTML = `${totalMins}:${boxFightTime.inputSecs.value} = ${totalMins}.${secsToDecimal}`
+        boxFightTime.ftTextarea.value = `Fight Ended at ${boxFightTime.inputMins.value}:${boxFightTime.inputSecs.value} of Round ${roundNumber}\n\nTotal Fight Time = ${totalMins}:${boxFightTime.inputSecs.value}${computation}`
+
+        // Copy Btn appear upon computation
+        document.querySelector("#box-ft-textarea-btn-cont").style.display = "block";
+
+        console.log(boxFightTime.ftResult);
+        
+
+    })
+
+    /*---------- Copy Button for Boxing Fight Time -------------------*/
+    boxFightTime.copyBtn.addEventListener('click', () => {
+
+        var copyBoxFtBreakdown = boxFightTime.ftTextarea;
+
+        copyBoxFtBreakdown.select();
+        copyBoxFtBreakdown.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyBoxFtBreakdown.value);
+    })
+
+    /*---------- Clear Button for Boxing Fight Time -------------------*/
+    boxFightTime.clearBtn.addEventListener('click', ()=>{
+        // clears all input fields and texts
+        boxFightTime.inputSecs.value = "";
+        boxFightTime.inputMins.value = "";
+        boxFightTime.ftTextarea.value = "";
+        boxFightTime.ftResult.innerHTML = "";
+
+        // hides 'Copy' button
+        document.querySelector("#box-ft-textarea-btn-cont").style.display = "none";
+    })
+
 }
